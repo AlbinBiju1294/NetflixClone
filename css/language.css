@@ -70,3 +70,11 @@ body{
     padding-left: 10px;
     width: 200px;
 }
+
+.cardtitle
+{
+    margin-top: 130px;
+    text-align: center;
+    color: white;
+    font-size: x-small;
+}

@@ -31,6 +31,10 @@ const filterByLanguage = (language) =>{
         parentElement.innerHTML = '';
         filteredMovies.forEach((item) => {
           const newElement = document.createElement("div");
+          const newTitle = document.createElement("p");
+          newTitle.innerText = `${item.title}`;
+          newTitle.className = "cardtitle";
+          newElement.appendChild(newTitle);
           newElement.className = "innercard";
           const imageUrl =
             "https://image.tmdb.org/t/p/original" + item.backdrop_path;
