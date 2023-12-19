@@ -20,7 +20,7 @@ body{
 
 .innercontent
 {
-    width: 85%;
+    width: 90%;
     color: white;
 }
 
@@ -34,7 +34,8 @@ body{
 {
     min-height: 150px;
     min-width: 260px;
-    margin-right: 8px;
+    margin-right: 33px;
+    margin-bottom: 20px;
     border-radius: 5px;
 }
 
@@ -42,5 +43,30 @@ body{
 {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    margin-left: 58px;
+}
+
+.selectsortlanguage
+{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    display: flex;
+}
+
+.selectsortlanguage h4
+{
+    font-weight: 400;
+
+}
+
+.selectsortlanguage select
+{
+    margin-left: 50px;
+    font-weight: 600;
+    outline: none;
+    border: 1px solid white;
+    background-color: #141414;
+    color: white;
+    padding-left: 10px;
+    width: 200px;
 }
