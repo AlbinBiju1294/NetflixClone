@@ -1,0 +1,55 @@
+.navbar
+{
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    height: 68px;
+    align-items: center;
+}
+
+.innernavbar
+{
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.firstinnernavbar
+{
+    display: flex;
+    align-items: center;
+}
+
+.nav-items
+{
+    margin-bottom: 5px;
+    margin-left: 50px;
+}
+
+.secondinnernavbar
+{
+    display: flex;
+    align-items: center;
+    width: 50px;
+    justify-content: space-between;
+
+}
+
+.nav-items a
+{
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: smaller;
+}
+
+.search
+{
+    color: white;
+}
