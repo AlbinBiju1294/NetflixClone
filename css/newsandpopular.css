@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100&family=Rubik+Doodle+Shadow&display=swap');
+
+
+#body{
+    
+    height: 1000px;
+    margin: 0;
+    background-color: #121212;
+    
+}
+
+/* .navbar
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    height: 68px;
+    align-items: center;
+}
+ 
+.innernavbar
+{
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+ 
+.firstinnernavbar
+{
+    display: flex;
+    align-items: center;
+}
+ 
+.nav-items
+{
+    margin-bottom: 5px;
+    margin-left: 50px;
+}
+ 
+.secondinnernavbar
+{
+    display: flex;
+    align-items: center;
+    width: 50px;
+    justify-content: space-between;
+ 
+}
+ 
+.nav-items a
+{
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: smaller;
+}
+ 
+.search
+{
+    color: white;
+} */
+
+
+
+#cardimg{
+    width: 210px;
+    height:100%;
+  
+    
+  
+    
+
+}
+#cardContainer{
+    display: flex;
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+    
+    margin-top: 70px;
+    
+    
+}
+.cardContainer::-webkit-scrollbar{
+    display:none;
+}
+
+.card{
+    width: 220px;
+    border: none !important;
+    padding: 10px;
+    background-color: #121212 !important;
+    
+   
+}
+
+
+#newonnetflix{
+    color: white;
+    position: absolute;
+    top: 100px;
+    left: 15px;  
+    z-index: 1;   
+}
+
+#tvshows{
+    color: white;
+    margin-left: 10px;
+    z-index: 1;
+    width: 400px;
+    position: absolute;
+    top: 10px;
+    
+  
+    
+}
+.showscontainer{
+   
+   display: flex;
+    position: absolute;
+    top: 10px;
+}
+.toptentvshows{
+    position: absolute;
+    top:300px;
+   
+  
+    height: 250px;
+}
+
+
+#topshowsimg{
+    width: 210px;
+    height: 120px;
+  
+    
+   display: block;
+    
+
+}
+
+#numcrpimg{
+    width:100px;
+    height: 120px;
+    right: 0px;
+    position: absolute;
+    top:30px;
+
+
+}
+#moviescontainer{
+     display: flex; 
+    position: absolute;
+    top:500px;
+}
+
+
+#topmovies{
+    color: white;
+    margin-left: 15px;
+    position: absolute;
+    top:500px;
+    z-index: 1;
+   
+}
+
+.comingnextweek{
+    height: 200px;
+   
+    z-index: 1;
+    position: absolute;
+    top: 700px;
+    
+}
+
+.nextweekcontainer{
+    display: flex;
+}
+#nextweek{
+   
+    color: white;
+    margin-left: 15px;
+
+    
+}
+#topmoviesimg{
+    width: 210px;
+    height:100%;
+}
+
+
+.worththewait{
+    height: 200px;
+   
+    
+    position: absolute;
+    top: 910px;
+    
+}
+#worthwait{
+    
+    color: white;
+    margin-left: 15px;
+}
+.worthwaitcontainer{
+    display: flex;
+
+   
+    z-index: 1;
+   
+}
+
+
+.comingthisweek{
+    position: absolute;
+    top: 1110px;
+}
+#comingweek{
+    color: white;
+    margin-left: 15px;
+}
+.comingthisweekcontainer{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+.footer
+{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1050px;
+   
+}
+ 
+.innerfooter
+{
+    width: 70%;
+}
+ 
+.socialicons
+{
+    margin-top: 40px;
+    color: white;
+}
+ 
+.socialicons i
+{
+    font-size: large;
+    margin-right: 20px;
+}
+ 
+.mainlinks
+{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+ 
+.innerlinks
+{
+    display: flex;
+    flex-direction: column;
+}
+ 
+.innerlinks a{
+    margin-bottom: 10px;
+    color: grey;
+    text-decoration: none;
+    font-size: smaller;
+}
+ 
+.servicebutton
+{
+    padding: 6px 10px;
+    border: 1px solid grey;
+    color: grey;
+    background-color: #141414;
+    margin-top: 30px;
+}
+ 
+.lastp
+{
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: #686a73;
+    font-size: x-small;
+}
+
+
+.innercard
+{
+    min-height: 150px;
+    min-width: 260px;
+    margin-right: 8px;
+    display: inline-block;
+    border-radius: 5px;
+}

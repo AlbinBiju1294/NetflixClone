@@ -1,0 +1,22 @@
+const details = [
+    {
+        mailid:"albin@gmail.com",
+        password:"albin1234"
+    },
+    {
+        mailid:"gokul@gmail.com",
+        password:"gokul1234"
+    },
+    {
+        mailid:"sarath@gmail.com",
+        password:"sarath1234"
+    },
+    {
+        mailid:"asima@gmail.com",
+        password:"asima1234"
+    },
+    {
+        mailid:"nikhil@gmail.com",
+        password:"nikhil1234"
+    }
+]
