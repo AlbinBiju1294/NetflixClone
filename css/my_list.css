@@ -1,6 +1,6 @@
 body{
     background-color: black;
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 /* .card-img-top{
@@ -126,7 +126,7 @@ border-radius: 10px;
     margin-left: 20px;
     text-decoration: none;
     color: white;
-    font-size: smaller;
+    font-size: 15px;
 }
  
 .search
