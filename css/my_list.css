@@ -1,0 +1,155 @@
+body{
+    background-color: black;
+    font-family: sans-serif;
+
+}
+/* .card-img-top{
+    position: relative;
+    top: 100px;
+
+}
+
+/* .card
+/* {   position:relative;
+    border-radius: 1px;
+    height:35px;
+    width:40px;
+} */ 
+/* .card-img-top
+{position:relative;
+    border-radius: 20px;
+    left: 400px;
+    height:150px;
+    width:300px;
+    margin-left: 25px;
+    margin-right:50px;
+}
+.card-img-top
+{position:relative;
+    border-radius: 20px;
+    left: 400px;
+    height:150px;
+    width:300px;
+}  */
+.wholecard
+{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10%;
+    position: relative;
+   
+
+}
+.card{
+width: 240px;
+height: 150px;
+border-radius: 3px;
+margin-left: -10px;
+}
+/* .card2 img{
+width: 250px;
+ height: 180px;
+ border-radius: 10px;
+}
+.card3 img{
+width: 250px;
+height: 180px;
+border-radius: 10px;
+ }
+ .card4 img{
+   width: 250px;
+   height: 180px;
+   border-radius: 10px;
+    } */
+
+
+ card1{
+    flex: 1;
+ }
+
+ card2{
+    flex: 1;
+ }
+ card3{
+    flex: 1;
+ }
+ card4{
+    flex: 1;
+ }
+
+ 
+.navbar
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    height: 68px;
+    align-items: center;
+}
+ 
+.innernavbar
+{
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+ 
+.firstinnernavbar
+{
+    display: flex;
+    align-items: center;
+    font-size: x-large;
+}
+ 
+.nav-items
+{
+    margin-bottom: 5px;
+    margin-left: 50px;
+}
+ 
+.secondinnernavbar
+{
+    display: flex;
+    align-items: center;
+    width: 50px;
+    justify-content: space-between;
+ 
+}
+ 
+.nav-items a
+{
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: smaller;
+}
+ 
+.search
+{
+    color: white;
+}
+
+
+.wholecard{
+    display: flex;
+    left: 20px;
+    padding-left: 50px;
+    justify-content:space-around;
+}
+
+h1{
+    font-size: larger;
+    color: white;
+    margin-top: 5px;
+    top: 66px;
+    left:30px;
+    position: fixed;
+    font-family:sans-serif ;
+    font-weight: normal;
+    font-size:x-large;
+}
