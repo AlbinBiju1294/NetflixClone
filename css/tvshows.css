@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100&family=Rubik+Doodle+Shadow&display=swap');
+
 body{
     background-color: black;
     background-size: cover;
@@ -14,7 +17,7 @@ body{
     height: 68px;
     align-items: center;
     z-index: 2;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
  
 .innernavbar
@@ -52,7 +55,7 @@ body{
     margin-left: 20px;
     text-decoration: none;
     color: white;
-    font-size: medium;
+    font-size: smaller;
 }
  
 .search
@@ -60,7 +63,7 @@ body{
     color: white;
 }
 .preview{
-    background-image: url(../assests/moneyheist\ \(2\).jpg); 
+    background-image: url(../assets/moneyheist\ \(2\).jpg); 
     background-size: cover;
     height: 600PX;
     width: 100%;
@@ -97,6 +100,7 @@ body{
     display: flex;
     transform: translateY(-40%);
     position: fixed;
+    z-index: 1;
 }
 .head{
     flex:2;
