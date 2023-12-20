@@ -122,25 +122,25 @@ function toptenShows(showspath,numcrpimg)
   }
 
 
-  // function worthwait(imagePath) {
-  //   const cardContainer = document.getElementById('worthwaitcontainer');
+  function worthwait(imagePath) {
+    const cardContainer = document.getElementById('worthwaitcontainer');
 
-  //   const cardHtml = `
-  //     <div class="card">
-  //       <div class="card-body">
-  //         <img src="${imagePath}" class="card-img-top" id="topmoviesimg">
+    const cardHtml = `
+      <div class="card">
+        <div class="card-body">
+          <img src="${imagePath}" class="card-img-top" id="topmoviesimg">
          
           
-  //       </div>
-  //     </div>
-  //   `;
+        </div>
+      </div>
+    `;
 
-  //   cardContainer.innerHTML += cardHtml;
-  // }
-  // for(let i=0;i<5;i++){
-  //   worthwait(imagePaths[i])
+    cardContainer.innerHTML += cardHtml;
+  }
+  for(let i=0;i<5;i++){
+    worthwait(imagePaths[i])
     
-  // }
+  }
 
 
 
