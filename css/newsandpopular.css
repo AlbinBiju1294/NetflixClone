@@ -17,6 +17,13 @@
     background-color: black;
     height: 68px;
     align-items: center;
+    margin-left: 70px;
+}
+.navbar a{
+    text-decoration: none !important;
+}
+.navbar a:hover{
+    color: white;
 }
  
 .innernavbar
@@ -38,6 +45,7 @@
     margin-bottom: 5px;
     margin-left: 50px;
 }
+
  
 .secondinnernavbar
 {
@@ -152,6 +160,7 @@
      display: flex; 
     position: absolute;
     top:500px;
+   
 }
 
 
@@ -168,13 +177,16 @@
     height: 200px;
    
     z-index: 1;
-    position: absolute;
-    top: 700px;
+    margin-top:400px ;
     
 }
 
 .nextweekcontainer{
     display: flex;
+    overflow-x: scroll;
+}
+.nextweekcontainer::-webkit-scrollbar{
+        display: none;
 }
 #nextweek{
    
@@ -191,10 +203,9 @@
 
 .worththewait{
     height: 200px;
-   
+   margin-top: 20px;
     
-    position: absolute;
-    top: 910px;
+    
     
 }
 #worthwait{
@@ -204,16 +215,20 @@
 }
 .worthwaitcontainer{
     display: flex;
-
    
+    overflow-x: scroll;
     z-index: 1;
    
 }
+.worthwaitcontainer::-webkit-scrollbar{
+    display: none;
+}
+
+
 
 
 .comingthisweek{
-    position: absolute;
-    top: 1110px;
+    margin-top: 20px;
 }
 #comingweek{
     color: white;
@@ -221,6 +236,11 @@
 }
 .comingthisweekcontainer{
     display: flex;
+    overflow-x: scroll;
+    
+}
+.comingthisweekcontainer::-webkit-scrollbar{
+    display: none;
 }
 
 
@@ -237,7 +257,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1050px;
+    margin-top: 40px;
    
 }
  
