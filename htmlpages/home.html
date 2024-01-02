@@ -10,28 +10,32 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="../css/navbar.css" />
-    <script src="../script/home.js"></script>
+    <script src="../script/home.js" type="module"></script>
+    <script src="../script/profile.js" type="module"></script>
     <title>Home</title>
   </head>
   <body>
-    <nav class="navbar">
+    <nav class="navbar" id="navbarselector">
       <div class="innernavbar">
         <div class="firstinnernavbar">
           <div class="logoimg">
             <img src="../assets/logo.png" alt="logo" height="25px" />
           </div>
           <div class="nav-items">
-            <a class="active" href="#">Home</a>
-            <a href="#">TV Shows</a>
-            <a href="#">Movies</a>
-            <a href="#">New & popular</a>
-            <a href="../htmlpages/my_list.html">My List</a>
+            <a class="active" href="./home.html">Home</a>
+            <a href="./tvshows.html">TV Shows</a>
+            <a href="./moviepage.html">Movies</a>
+            <a href="./newsandpopular.html">New & popular</a>
+            <a href="./my_list.html">My List</a>
             <a href="./language.html">Browse by languages</a>
           </div>
         </div>
         <div class="secondinnernavbar">
           <i class="bi bi-search search"></i>
           <img src="../assets/profile__logo.png" alt="pr" height="20px" />
+          <select name="profile" id="profile" style="margin-left: 10px;">
+            <option value="profile1">Albin</option>
+          </select>
         </div>
       </div>
     </nav>
@@ -62,6 +66,10 @@
       <div class="moviescontainer">
         <div class="newmovies" id="trending-all"></div>
       </div>
+      <h2>Watch History</h2>
+      <div class="moviescontainer">
+        <div class="newmovies" id="watch-history"></div>
+      </div>
       <h2>Popular Movies</h2>
       <div class="moviescontainer">
         <div class="newmovies" id="popular-movies"></div>
@@ -70,9 +78,9 @@
       <div class="moviescontainer">
         <div class="newmovies" id="popular-series"></div>
       </div>
-      <h2>Horror Movies</h2>
+      <h2>Comedy Movies</h2>
       <div class="moviescontainer">
-        <div class="newmovies" id="horror-movies"></div>
+        <div class="newmovies" id="comedy-movies"></div>
       </div>
       <h2>Action Movies</h2>
       <div class="moviescontainer">
@@ -81,10 +89,6 @@
       <h2>Adventure Movies</h2>
       <div class="moviescontainer">
         <div class="newmovies" id="adventure-movies"></div>
-      </div>
-      <h2>Comedy Movies</h2>
-      <div class="moviescontainer">
-        <div class="newmovies" id="comedy-movies"></div>
       </div>
       <h2>Romantic Movies</h2>
       <div class="moviescontainer">
