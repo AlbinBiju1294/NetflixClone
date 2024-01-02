@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Text at the Top with JavaScript</title>
+    <style>
+        #container {
+            height: 100px; /* Set the height of the container */
+            border: 1px solid #ccc; /* Optional: Add a border for better visualization */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <span id="topText">This text is positioned at the top.</span>
+    </div>
+
+    <script>
+        // JavaScript code to position text at the top
+        var container = document.getElementById("container");
+        var topText = document.getElementById("topText");
+
+        // Set the line-height dynamically to match the height of the container
+        topText.style.lineHeight = container.clientHeight + "px";
+    </script>
+
+</body>
+</html>

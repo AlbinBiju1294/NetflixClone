@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100&family=Rubik+Doodle+Shadow&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #141414;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bannersection
+{
+    height: 720px;
+    background-image: url('../assets/banner4.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bannercontent
+{
+    width: 500px;
+    position: absolute;
+    top: 30%;
+    left: 5%;
+}
+
+.bannercontent h1
+{
+    font-family: 'Rubik Doodle Shadow';
+    color: white;
+    font-weight: 300;
+    font-size: 3rem;
+}
+
+.bannercontent p
+{
+    margin-top: 25px;
+    color: white;
+    font-weight: 400;
+}
+
+.buttons
+{
+    margin-top: 20px;
+}
+
+.buttons .play
+{
+    background-color: white;
+    color: black;
+    padding: 7px 25px;
+    border-radius: 4px;
+    border: none;
+    font-size: larger;
+}
+
+.buttons .info
+{
+    background-color: #686a73;
+    color: white;
+    padding: 7px 25px;
+    border-radius: 4px;
+    border: none;
+    font-size: larger;
+    margin-left: 10px;
+}
+
+.buttonicon
+{
+    font-size: 23px;
+    margin-right: 10px;
+}
+
+.content-section
+{
+    margin-left: 20px;
+    color: white;
+}
+
+.content-section h2
+{
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+/* .shimer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #eee 0%, #f5f5f5 50%, #eee 100%);
+    background-size: 200% 100%;
+    animation: shimmerAnimation 2s infinite;
+  }
+  
+  @keyframes shimmerAnimation {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  } */
+
+.innercard
+{
+    min-height: 150px;
+    min-width: 260px;
+    margin-right: 8px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+
+.moviescontainer
+{
+    width: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap;
+    margin-top: 10px;
+}
+
+.newmovies
+{
+    display: flex;
+}
+
+.moviescontainer::-webkit-scrollbar {
+    display: none;
+  }
+
+
