@@ -21,6 +21,13 @@
     background-color: black;
     height: 68px;
     align-items: center;
+    margin-left: 0px;
+}
+.navbar a{
+    text-decoration: none !important;
+}
+.navbar a:hover{
+    color: white;
 }
  
 .innernavbar
@@ -35,6 +42,7 @@
 {
     display: flex;
     align-items: center;
+    margin-left: 60px;
 }
  
 .nav-items
@@ -42,6 +50,7 @@
     margin-bottom: 5px;
     margin-left: 50px;
 }
+
  
 .secondinnernavbar
 {
@@ -49,6 +58,7 @@
     align-items: center;
     width: 50px;
     justify-content: space-between;
+    margin-right: 60px;
  
 }
  
@@ -81,7 +91,8 @@
     scroll-behavior: smooth;
     overflow-x: scroll;
     
-    margin-top: 70px;
+    margin-top: 10px;
+    
     
     
 }
@@ -89,31 +100,39 @@
     display:none;
 }
 
-.card{
-    width: 220px;
+/* .card{
+    width: 220px !important;
     border: none !important;
     padding: 10px;
+    margin-left: 22px;
+
     background-color: #121212 !important;
     
    
-}
+} */
 
 
 #newonnetflix{
     color: white;
-    position: absolute;
-    top: 100px;
-    left: 15px;  
+    margin-top: 20px;
+    margin-left: 15px; 
     z-index: 1;   
 }
+.toptentvshows{
+    margin-top: 20px;
+  
+    
+     
+ }
 
 #tvshows{
     color: white;
     margin-left: 10px;
-    z-index: 1;
-    width: 400px;
-    position: absolute;
-    top: 10px;
+    
+    /* width: 400px; */
+    margin-top: 10px;
+   
+   
     
   
     
@@ -121,50 +140,46 @@
 .showscontainer{
    
    display: flex;
-    position: absolute;
-    top: 10px;
+   margin-top: 20px;
+   margin: left 10px !important;
+   overflow-x: scroll;
 }
-.toptentvshows{
-    position: absolute;
-    top:300px;
-   
-  
-    height: 250px;
+.showscontainer::-webkit-scrollbar{
+    display: none;
 }
+
+
 
 
 #topshowsimg{
     width: 210px;
     height: 120px;
-  
     
-   display: block;
-    
-
 }
 
 #numcrpimg{
     width:100px;
     height: 120px;
-    right: 0px;
-    position: absolute;
-    top:30px;
-
-
+   
+    margin-left: 130px;
+    margin-top: -92%;
 }
-#moviescontainer{
-     display: flex; 
-    position: absolute;
-    top:500px;
+
+.moviescontainer{
+    display: flex;
+    margin-top: 20px;
+    overflow-x: scroll;
+}
+.moviescontainer::-webkit-scrollbar{
+    display: none;
 }
 
 
 #topmovies{
     color: white;
     margin-left: 15px;
-    position: absolute;
-    top:500px;
-    z-index: 1;
+   margin-top: 10px;
+    
    
 }
 
@@ -172,13 +187,16 @@
     height: 200px;
    
     z-index: 1;
-    position: absolute;
-    top: 700px;
+    margin-top:20px ;
     
 }
 
 .nextweekcontainer{
     display: flex;
+    overflow-x: scroll;
+}
+.nextweekcontainer::-webkit-scrollbar{
+        display: none;
 }
 #nextweek{
    
@@ -195,10 +213,9 @@
 
 .worththewait{
     height: 200px;
-   
+   margin-top: 20px;
     
-    position: absolute;
-    top: 910px;
+    
     
 }
 #worthwait{
@@ -208,16 +225,20 @@
 }
 .worthwaitcontainer{
     display: flex;
-
    
+    overflow-x: scroll;
     z-index: 1;
    
 }
+.worthwaitcontainer::-webkit-scrollbar{
+    display: none;
+}
+
+
 
 
 .comingthisweek{
-    position: absolute;
-    top: 1110px;
+    margin-top: 20px;
 }
 #comingweek{
     color: white;
@@ -225,6 +246,11 @@
 }
 .comingthisweekcontainer{
     display: flex;
+    overflow-x: scroll;
+    
+}
+.comingthisweekcontainer::-webkit-scrollbar{
+    display: none;
 }
 
 
@@ -241,7 +267,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1050px;
+    margin-top: 40px;
    
 }
  
@@ -302,9 +328,67 @@
 
 .innercard
 {
-    min-height: 150px;
+    min-height: 170px;
     min-width: 260px;
     margin-right: 8px;
     display: inline-block;
     border-radius: 5px;
 }
+
+.innercard:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Styles for the card image */
+  .innercard .card-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+
+  }
+  
+  /* Styles for the description container */
+  .innercard .description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Adjust as needed */
+    padding: 10px;
+    box-sizing: border-box;
+    color: white;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .innercard:hover .description {
+    opacity: 1; /* Show on hover */
+  }
+  
+  .innercard .description h3 {
+    margin: 0;
+    font-size: 16px; /* Adjust as needed */
+  }
+  
+  .innercard .description p {
+    margin: 5px 0;
+    font-size: 14px; /* Adjust as needed */
+  }
+  
+  /* Styles for the play button */
+  .innercard .description .play-button {
+    background-color: #ffffff; /* Adjust as needed */
+    color: #000000; /* Adjust as needed */
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 14px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .innercard .description .play-button:hover {
+    background-color: #cccccc; /* Adjust as needed */
+  }
+  

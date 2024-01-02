@@ -14,28 +14,29 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
   </head>
+  
 <body id="body">
-  <nav class="navbar">
-    <div class="innernavbar">
-      <div class="firstinnernavbar">
-        <div class="logoimg">
-          <img src="../assets/logo.png" alt="logo" height="25px" />
+    <nav class="navbar">
+        <div class="innernavbar">
+          <div class="firstinnernavbar">
+            <div class="logoimg">
+              <img src="../assets/netflix1_logo.png" alt="logo" height="25px" id="nlogo"/>
+            </div>
+            <div class="nav-items">
+              <a class="active" href="../htmlpages/home.html">Home</a>
+              <a href="../htmlpages/tvshows.html">TV Shows</a>
+              <a href="../htmlpages/moviepage.html">Movies</a>
+              <a href="../htmlpages/newsandpopular.html">New & popular</a>
+              <a href="../htmlpages/my_list.html">My List</a>
+              <a href="../htmlpages/language.html">Browse by languages</a>
+            </div>
+          </div>
+          <div class="secondinnernavbar">
+              <i class="bi bi-search search"></i>
+              <img src="../assets/profile_pic.png" alt="pr" height="20px">
+          </div>
         </div>
-        <div class="nav-items">
-          <a class="active" href="./home.html">Home</a>
-          <a href="./tvshows.html">TV Shows</a>
-          <a href="./moviepage.html">Movies</a>
-          <a href="./newsandpopular.html">New & popular</a>
-          <a href="./my_list.html">My List</a>
-          <a href="./language.html">Browse by languages</a>
-        </div>
-      </div>
-      <div class="secondinnernavbar">
-        <i class="bi bi-search search"></i>
-        <img src="../assets/profile__logo.png" alt="pr" height="20px" />
-      </div>
-    </div>
-  </nav>
+      </nav>
 
       <div class="content">
         <div class="newon-netflix">
@@ -45,13 +46,13 @@
             
         </div>
         <div class="toptentvshows">
-          <h5 id="tvshows">Top Ten TV Shows in India Today </h5>
+          <h5 id="tvshows">Top  TV Shows in India Today </h5>
           <div class="showscontainer" id="showscontainer"></div>
         </div>
 
         <div class="toptenmovies">
-          <h5 id="topmovies">Top Ten Movies in India Today </h5>
-          <div class="moviescontainer" id="moviescontainer"></div>
+          <h5 id="topmovies">Top Movies in India Today </h5>
+          <div class="moviescontainer" id="moviesContainer"></div>
         </div>
       </div>
 
@@ -60,21 +61,21 @@
 
       <div class="comingnextweek">
         <h5 id="nextweek">Coming Next Week</h5>
-        <div class="nextweekcontainer" id="nextweekcontainer"></div>
+        <div class="nextweekcontainer" id="nextWeekContainer"></div>
       </div>
     </div>
     
     
     <div class="worththewait">
       <h5 id="worthwait">Worth The Wait</h5>
-      <div class="worthwaitcontainer" id="worthwaitcontainer"></div>
+      <div class="worthwaitcontainer" id="worthWaitContainer"></div>
     </div>
   </div>
 
 
   <div class="comingthisweek">
     <h5 id="comingweek">Coming This Week</h5>
-    <div class="comingthisweekcontainer" id="comingthisweekcontainer"></div>
+    <div class="comingthisweekcontainer" id="comingThisWeekContainer"></div>
   </div>
 </div>
 
@@ -118,6 +119,6 @@
     
       
 
-      <script src="../script/newsandpopular.js"></script>
+      <script src="../script/newsandpopularnew.js"></script>
 </body>
 </html>
