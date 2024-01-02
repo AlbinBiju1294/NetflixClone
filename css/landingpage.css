@@ -1,4 +1,4 @@
-body{
+ body{
     margin: 0;
     font-family:sans-serif;
 }
@@ -9,7 +9,7 @@ body{
     background-size: cover;
 }
 .bg_shadow{
-    /* background: url('../assests/landingpage_bgshadow.png'); */
+   
     position:absolute;
     height: 600px;
     width: 1263px;
@@ -92,7 +92,10 @@ padding-left: 140px;
     border: 0.5px solid rgb(131, 126, 126);
     border-radius: 5px;
 }
-
+#errormsg{
+    font-size: 15px;
+    padding-right: 230px;
+}
 
 .section2{
     background-color: rgb(0, 0, 0);
@@ -110,11 +113,20 @@ padding-left: 140px;
 }
 .tv_image{
     flex: 1;
+    position: relative;
 }
-.tv_image img{
+.tv_video video{
+    position: absolute;
+    padding-top: 70px;
+    padding-left: 50px;
+    width: 330px;
+    height: 320px;
+}
+.tv_img img{
+    padding-top: 70px;
+    position: absolute;
     width: 430px;
     height: 320px;
-    padding-top: 100px;
 }
 
 
@@ -125,9 +137,14 @@ padding-left: 140px;
 .mobile_container{
     display: flex;
 }
-.mobile_image{
+.mobileside{
     flex: 1;
+   position: relative;
 }
+.mobile_image{
+    position: absolute;
+}
+
 .mobileoutside_text{
     flex: 1;
     color: white;
@@ -141,8 +158,48 @@ padding-left: 140px;
     height: 320px;
     padding-top: 80px;
     padding-left: 150px;
+    position: relative;
+}
+.mobile_imageover_container{
+    background-color: black;
+    position: absolute;
+    display: flex;
+    height: 95px;
+    width: 270px;
+    margin-top: 300px;
+    margin-left: 265px;
+    border: 1.8px solid rgb(83, 82, 82);
+    border-radius: 15px;
 }
 
+.strangerThings_img{
+    flex: 1;
+}
+.strangerThings_text{
+    flex: 2;
+    color: white;
+    padding-top: 20px;
+    font-size: 10px;
+}
+
+.strangerThings_gif{
+    flex:1
+}
+.strangerThings_img img{
+    padding: 15px;
+    height: 65px;
+    width: 55px;
+}
+.strangerThings_gif img{
+    padding-top: 28px;
+    width: 50px;
+    height: 50px;
+}
+.strangerThings_text h2 span{
+    color: rgb(0, 0, 255);
+    font-size: 12px;
+    padding-top: 2px;
+}
 .section4{
     background-color: rgb(0, 0, 0);
     height: 500px;
@@ -160,10 +217,18 @@ padding-left: 140px;
 .tvmobile_image{
     flex: 1;
 }
-.tvmobile_image img{
+.tvmobile_video video{
+    position: absolute;
+    padding-top: 10px;
+    padding-left: 80px;
+    width: 265px;
+    height: 300px;
+}
+.tvmobile_img img{
+    padding-top: 70px;
+    position: absolute;
     width: 430px;
     height: 320px;
-    padding-top: 100px;
 }
 
 .section5{
@@ -201,7 +266,10 @@ padding-left: 140px;
     text-align: center  ;
     font-size: 25px;
 }
-
+#errormsg_end{
+    font-size: 15px;
+    padding-right: 230px;
+}
 .section6{
     height: 1000px;
     color: white; 
@@ -245,7 +313,7 @@ padding-left: 140px;
 }
 span{
     transform: rotate(90deg);
-    font-size: 20px;
+    font-size: 35px;
 }
 #accordion .content p{
     color: rgb(251, 251, 251);
@@ -258,16 +326,21 @@ span{
 }
 .footer{
     background-color: rgb(0, 0, 0);
-    color: antiquewhite;
-    
+    height: 405px;
+    color: rgb(178, 179, 181); 
+    font-size: 16px;
+    letter-spacing: 0.02rem;
 }
 .footer_text{
-    padding-left: 160px;
-    padding-top: 10px;
+    padding-left: 155px;
+    padding-top: 50px;
     color: rgb(165, 171, 174);
 }
+.footer_text a{
+    color: rgb(219, 219, 220);
+}
 .footer_container{
-    margin-left: 130px;
+    margin-left: 113px;
     margin-right: 130px;
     display: flex;
 }
@@ -287,8 +360,11 @@ ul {
     list-style-type: none;
   }
 li{
-    padding-bottom: 10px;
+    padding-bottom: 16px;
+    font-size: 14px;
 }
 li a{
-    color: rgb(165, 171, 174);    
-}
+    color: rgb(160, 161, 162);    
+} 
+
+

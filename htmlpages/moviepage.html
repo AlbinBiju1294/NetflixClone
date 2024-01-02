@@ -13,7 +13,7 @@
           <div class="innernavbar">
             <div class="firstinnernavbar">
               <div class="logoimg">
-                <img src="../assets/netflix_logo.png" alt="logo" height="25px" />
+                <a href="../htmlpages/home.html"><img src="../assets/Netflixlogo.png" alt="logo" height="80px" /></a>
               </div>
               <div class="nav-items">
                 <a href="#">Home</a>
@@ -32,21 +32,25 @@
       </nav>
       <div class="moviepage_banner">
         <div class="banner">
-            <div class="headgenre_container">
+            <div class="headgenre_container" id="headgenre_container">
               <div class="moviepage_head">
-                <h1>Movie</h1>
+                <h1>Movies</h1>
               </div>
               <div class="genre">
-                <select>
-                <option value="default">Genre</option>
-                <option value="comedy">Comedy</option>
-                <option value="romance">Romance</option>
-                <option value="romance">Horror</option>
+                <select id="genre_dropdown" onchange="movieTypeSelection()">
+                    <option value="defaults">Genre</option>
+                    <option value="horror">Horror</option>
+                    <option value="romantic">Romantic</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="action">Action</option>
+                    <option value="adventure">Adventure</option>
+                    <option value="history">History</option>
+                    <option value="thriller">Thriller</option>
                 </select>
               </div>
             </div>
             <div class="movie_description">
-              <h1>MAAMANNAN</h1>
+              <h1>JOHN WICK</h1>
               <p>A veteran statesman and his son are pulled into a violent power <br> struggle when a cold-blooded political scion pursues a vengeful <br> rise. </p>
             </div>
             
@@ -59,21 +63,66 @@
         </div>
         
       </div>
-      <div class="movie_container" >
-        <h2>Movies</h2>
-        <div id="allmovie" class="movie">
-        </div>
-        <h2>Upcoming</h2>
-        <div id="upcomingmovie" class="movie">
-        </div>
-        <h2>Top Rated</h2>
-        <div id="topmovie" class="movie">
-        </div>
-        <h2>Popular Movies</h2>
-        <div id="popularmovie" class="movie">
-        </div>
+      <div class="movie_container" id="movie_container" >
+          <div class="main-text">
+            <h2>Movies</h2>
+            <div class="hidden-text" onclick="showCard('nested-card-movie')">ExploreAll>></div>
+          </div>
+          <!-- **************************** -->
+          <div class="card-container" id="cardContainer" onclick="closeCard()">
+            <div class="main-card" id="main-card" onclick="stopPropagation(event)">
+              <span class="close-btn" onclick="closeCard()">X</span>
+              <div id="nested-card-movie"></div>
+              <div id="nested-card-upcoming"></div>
+              <div id="nested-card-topmovie"></div>
+              <div id="nested-card-popularmovie"></div>
+            </div>
+          </div>
+          <!-- **************************** -->
+          <div id="allmovie" class="movie">
+          </div>
+         
+          <div class="main-text">
+            <h2>Upcoming</h2>
+            <div class="hidden-text" onclick="showCard('nested-card-upcoming')">ExploreAll>></div>
+          </div>
+          <div class="card-container" id="cardContainer" onclick="closeCard()">
+            <div class="main-card" id="main-card" onclick="stopPropagation(event)">
+              <span class="close-btn" onclick="closeCard()">Close</span>
+              <div id="nested-card-upcoming"></div>
+            </div>
+          </div>
+          <div id="upcomingmovie" class="movie">
+          </div>
+          
+          <div class="main-text">
+            <h2>Top Rated</h2>
+            <div class="hidden-text" onclick="showCard('nested-card-topmovie')">ExploreAll>></div>
+          </div>
+          <div class="card-container" id="cardContainer" onclick="closeCard()">
+            <div class="main-card" id="main-card" onclick="stopPropagation(event)">
+              <span class="close-btn" onclick="closeCard()">Close</span>
+              <div id="nested-card-topmovie"></div>
+            </div>
+          </div>
+          <div id="topmovie" class="movie">
+          </div>
+          
+          <div class="main-text">
+            <h2>Popular Movies</h2>
+            <div class="hidden-text" onclick="showCard('nested-card-popularmovie')">ExploreAll>></div>
+          </div>
+          <div class="card-container" id="cardContainer" onclick="closeCard()">
+            <div class="main-card" id="main-card" onclick="stopPropagation(event)">
+              <span class="close-btn" onclick="closeCard()">Close</span>
+              <div id="nested-card-popularmovie"></div>
+            </div>
+          </div>
+          <div id="popularmovie" class="movie">
+          </div>
       </div>
-
+      <div id="movie_container_outside">
+      </div>
       <footer class="footer">
         <div class="innerfooter">
           <div class="socialicons">

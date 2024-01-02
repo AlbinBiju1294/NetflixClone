@@ -4,6 +4,7 @@ body{
 }
 .navbar
 {
+    
     position: fixed;
     top: 0;
     left: 0;
@@ -14,6 +15,7 @@ body{
     height: 68px;
     font-family: Arial, Helvetica, sans-serif;
     align-items: center;
+    z-index: 998;
 }
  
 .innernavbar
@@ -22,6 +24,7 @@ body{
     justify-content: space-between;
     align-items: center;
     display: flex;
+    
 }
  
 .firstinnernavbar
@@ -58,7 +61,7 @@ body{
     color: white;
 }
 .banner{
-    background: url('../assets/banner_image.png');
+    background: url('../assets/johnwick.jpg');
     background-size: cover;
     height: 600px;
 }
@@ -66,20 +69,24 @@ body{
 .headgenre_container{
     top: 10%;
     height: 100px;
-    background-color: rgba(0, 0, 0, 0.237);
+    background-color: transparent;
+    transition: background-color 0.5s ease;
     width: 100%;
     position: fixed;
     display: flex;
+    z-index: 992;
 }
 .moviepage_head{
     padding-top: 5px;
-    padding-left: 72px;
+    padding-left: 4%;
     flex: 1;
+    font-size: 18px;
     color: rgb(248, 247, 247);
+    font-family: Arial, Helvetica, sans-serif;
 }
 .genre{
     padding-top: 33px;
-    padding-right: 970px;
+    padding-right: 940px;
     flex: 1;
 }
 .genre select{
@@ -90,40 +97,49 @@ body{
     border: none;
     border-radius: 5px;
 }
-.playinfo_buttons{
-    padding-top: 10px;
-    padding-left: 68px;
-
+.genre option{
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0);
 }
 .movie_description{
     padding-top: 300px;
     color: rgb(255, 255, 255);
-    padding-left: 68px;
+    padding-left: 4%;
+
 }
 .movie_description h1{
     font-size: 60px;
-    font-family: ;
+}
+.playinfo_buttons{
+    padding-top: 10px;
+    padding-left: 4%;
+
+
+}
+.playinfo_buttons button{
+    padding: 10px;
 }
 .play{
     padding: 5px;
     width: 100px;
-    font-size: 20px;
+    font-size: 16.587px;
     border: none;
     border-radius: 5px;
 }
 .info{
     padding: 5px;
     width: 150px;
-
-    font-size: 20px;
+    font-size: 16.587px;
     color: white;
     border: none;
     border-radius: 5px;
-    background-color: rgba(227, 219, 219, 0.381);
-}
-i{
-font-size: 25px;
-}
+    background-color: rgba(109, 109, 110, 0.7);}
+
+.buttonicon
+    {
+        margin-right: 10px;
+    }
 .innercard
 {
     min-height: 150px;
@@ -136,7 +152,7 @@ font-size: 25px;
     transform: scale(1.2);
 }
 .movie_container h2{
-    padding-left: 68px;
+    padding-left: 53px;
 }
 .movie_container{
   color: white;
@@ -157,13 +173,87 @@ font-size: 25px;
   display: flex;
   overflow-x: scroll;
 }
+#movie_container_outside{
+    display: flex;
+    overflow-x: scroll;
+    padding-left: 4%;
+    padding-top: 68px;
+}
+#movie_container_outside::-webkit-scrollbar {
+    display: none;
+  }
 .movie::-webkit-scrollbar {
   display: none;
 }
 .movie{
-    padding-left: 68px;
+    padding-left: 4%;
+}
+.main-text {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .hidden-text {
+    position: absolute;
+    left: 100%;
+    top: 40%;
+    opacity: 0;
+    transition: left 1s, opacity 0.3s;
+
+  }
+  .hidden-text{
+    font-size: 13px;
+    color: rgb(3, 102, 102);
+  }
+  .main-text:hover .hidden-text {
+    left: 110%;
+    opacity: 1;
+  }
+
+  /* ***************************** */
+  .card-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 998;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0; /* Initial opacity */
+    transition: opacity 0.5s ease-in-out; /* Transition for opacity */
+  }
+
+  .main-card {
+    width: 70%;
+    max-height: 70vh;
+    background-color: #0b0b0b;
+    padding-left: 80px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    position: fixed;
+    overflow: auto; /* Enable scrolling within the main card */
+    transform: scale(0.7);
+    z-index: 999;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Added transition for opacity */
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 100px;
+    cursor: pointer;
+    color: white;
+  }
+  #main-card::-webkit-scrollbar{
+    display: none;
 }
 
+  /* ***************************** */
 .footer
 {
     margin-top: 20px;
