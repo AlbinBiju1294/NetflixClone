@@ -6,6 +6,8 @@
     <script src="../script/landingpage.js"></script>
     <title>Document</title>
     <link rel="stylesheet" href="../css/landingpage.css">
+    <script src="../script/landingpage.js"></script>
+    
 </head>
 <body>
     <div class="section1">
@@ -16,7 +18,7 @@
                 <img src="../assets/netflix_logo.png" alt="netflixlogo">
             </div>
             <div class="signin_button">
-                <a href="./login.html"><button type="button" id="signin_button_id">Sign In</button></a>
+                <a href="./login.html"><button type="button" id="signin_button_id" >Sign In</button></a>
             </div>
         </div>
                     <!-- get start section -->
@@ -27,9 +29,11 @@
             <div class="getstart_conatiner">
                 <div class="email">
                     <input type="text" id="email_id" placeholder="Email address" required>
+                    <p id="errormsg"></p>
                 </div>
                 <div class="start_button">
-                    <button type="button" id="getstart_buttonid" onclick="checktext()">Get Started ></button>
+                    <button type="button" id="getstart_buttonid" onclick="checktext('email_id','errormsg')">Get Started ></button>
+                    
                 </div>
             </div>
         </div> 
@@ -48,7 +52,14 @@
                         more.</p>
                 </div>
                 <div class="tv_image">
-                    <img src="../assets/tvcard.png" alt="tvimage">
+                    <div class="tv_video">
+                        <video width="400" autoplay muted preload="auto" loop>
+                        <source src="../assets/video-tv-in-0819.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                    <div class="tv_img">
+                        <img src="../assets/tvcard.png" alt="tvimage">
+                    </div>
                 </div>
            </div> 
 
@@ -58,9 +69,24 @@
                  <!-- section3 -->
     <div class="section3">
         <div class="mobile_container">
-            <div class="mobile_image">
-                <img src="../assets/mobilecard.png" alt="mobilecard">
+            <div class="mobileside">
+                <div class="mobile_image">
+                    <img src="../assets/mobilecard.png" alt="mobilecard">
+                </div>
+                <div class="mobile_imageover_container">
+                    <div class="strangerThings_img">
+                        <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png" alt="">
+                    </div>
+                    <div class="strangerThings_text">
+                        <h2>Stranger Things <br><span>Downloading...</span></h2>
+        
+                    </div>
+                    <div class="strangerThings_gif">
+                        <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif" alt="">
+                    </div>
+                </div> 
             </div>
+            
             <div class="mobileoutside_text">
                 <h1>Download your <br> shows to watch <br> offline</h1>
                 <p>Save your favourites easily and always have <br> something to watch.</p>
@@ -80,7 +106,15 @@
                 <p>Stream unlimited movies and TV shows on <br>your phone, tablet, laptop, and TV.</p>
             </div>
             <div class="tvmobile_image">
-                <img src="../assets/tv_mobilecard.png" alt="tvmobilecard">
+                <div class="tvmobile_video">
+                    <video width="400" autoplay muted preload="auto" loop>
+                    <source src="../assets/video-devices-in.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="tvmobile_img">
+                    <img src="../assets/tv_mobilecard.png" alt="tvmobilecard">
+                </div>
+                
             </div>
 
         </div>
@@ -114,7 +148,7 @@
             <div class="frequent_questions">
                 <ul id="accordion">
                     <li>
-                        <label for="first">What is Netflix?<span>></span></label>
+                        <label for="first">What is Netflix?<span>+</span></label>
                         <input type="radio" name="accordian" id="first" checked>
                         <div class="content">
                             <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices.
@@ -123,7 +157,7 @@
                         </div>
                     </li>
                     <li>
-                        <label for="second">How much does Netflix cost?<span>></span></label>
+                        <label for="second">How much does Netflix cost?<span>+</span></label>
                         <input type="radio" name="accordian" id="second">
                         <div class="content">
                             <p>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. 
@@ -131,7 +165,7 @@
                         </div>
                     </li>
                     <li>
-                        <label for="third">Where can I watch?<span>></span></label>
+                        <label for="third">Where can I watch?<span>+</span></label>
                         <input type="radio" name="accordian" id="third">
                         <div class="content">
                             <p>Watch anywhere, anytime. Sign in with your Netflix account 
@@ -143,7 +177,7 @@
                         </div>
                     </li>
                     <li>
-                        <label for="four">How do I cancel?<span>></span></label>
+                        <label for="four">How do I cancel?<span>+</span></label>
                         <input type="radio" name="accordian" id="four">
                         <div class="content">
                             <p>Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account
@@ -151,7 +185,7 @@
                         </div>
                     </li>
                     <li>
-                        <label for="five">What can I watch on Netflix?<span>></span></label>
+                        <label for="five">What can I watch on Netflix?<span>+</span></label>
                         <input type="radio" name="accordian" id="five">
                         <div class="content">
                             <p>Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, 
@@ -159,7 +193,7 @@
                         </div>
                     </li>
                     <li>
-                        <label for="six">Is Netflix good for kids?<span>></span></label>
+                        <label for="six">Is Netflix good for kids?<span>+</span></label>
                         <input type="radio" name="accordian" id="six">
                         <div class="content">
                             <p>The Netflix Kids experience is included in your membership to give parents control while kids enjoy 
@@ -177,10 +211,11 @@
         <p>Ready to watch? Enter your email to create or restart your membership.</p>
         <div class="getstart_conatiner">
             <div class="email">
-                <input type="text" id="email_id" placeholder="Email address">
+                <input type="text" id="email_id_end" placeholder="Email address" required>
+                <p id="errormsg_end"></p>
             </div>
             <div class="start_button">
-                <a href="../htmlpages/signupstp1.html"><button type="button" id="getstart_buttonid">Get Started ></button></a>
+                <button type="button" id="getstart_buttonid_end" onclick="checktext('email_id_end','errormsg_end')">Get Started ></button>
             </div>
         </div>
 
@@ -190,7 +225,7 @@
                     <!-- footer -->
     <div class="footer">
         <div class="footer_text">
-            <p>Questions? Call 000-800-919-1694</p>
+            <p>Questions? Call <a href="">000-800-919-1694</a></p>
         </div>
         <div class="footer_container">
             
@@ -201,8 +236,10 @@
                     <li><a href="">Investor Relations</a></li>
                     <li><a href="">Privacy</a></li>
                     <li><a href="">Speed Test</a></li>
+                    <p>Netflix India</p>
                 </ul>
             </div>
+            
             <div class="col2">
                 <ul>
                     <li><a href="">Help Centre</a></li>
@@ -229,9 +266,9 @@
                 </ul>
                 
             </div>
-
+            
         </div>
-        <p>Netflix India</p>
+        
     </div>
 </body>
 </html>
