@@ -1,3 +1,26 @@
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+
+import { getFirestore, collection, getDoc, doc , arrayUnion, updateDoc} from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
+const firebaseConfig = {
+    apiKey: "AIzaSyAcbi3_oCi8ZvIaVJCo_nity5rZnjpObow",
+    authDomain: "netflixclone-28d52.firebaseapp.com",
+    projectId: "netflixclone-28d52",
+    storageBucket: "netflixclone-28d52.appspot.com",
+    messagingSenderId: "478121105015",
+    appId: "1:478121105015:web:f14cdfd963421075805872"
+  };
+  
+  // Initialize Firebase
+ const app = initializeApp(firebaseConfig);
+  
+const db = getFirestore(app);
+
+const colRef = collection(db, "profileCollection");
+const docRef = doc(colRef,"user1");
+
+
+
 const options = {
   method: "GET",
   headers: {
@@ -7,289 +30,95 @@ const options = {
   },
 };
 
+const baseUrl = "https://api.themoviedb.org/3/";
+const baseImageUrl = "https://image.tmdb.org/t/p/original";
 
-
-fetch("https://api.themoviedb.org/3/genre/movie/list?language=en", options)
-  .then((response) => response.json())
-  .then((response) => console.log(response))
-  .catch((err) => console.error(err));
-
-fetch(
-  "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=27",
-  options
-)
-  .then((response) => response.json())
-  .then((response) => console.log(response))
-  .catch((err) => console.error(err));
-
-//   fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=horror', options)
+window.addEventListener("scroll", function() {
+  var navbarSelector = document.getElementById("navbarselector");
+  if (window.scrollY > 50) {
+      navbarSelector.style.backgroundColor = "black";
+  } else {
+      navbarSelector.style.backgroundColor = "transparent";
+  }
+});
 
 window.onload = () => {
-  fetch('https://api.themoviedb.org/3/configuration/languages', options)
-  .then(response => response.json())
-  .then(response =>{
-    console.log("language");
-     console.log(response);
-  })
-  .catch(err => console.error(err));
-  showPopularMovies();
-    showTrending();
-    showPopularSeries();
-    showHorrorMovies();
-    showAdventureMovies();
-    showRomanticMovies();
-    showHistoryMovies();
-    showThrillerMovies();
-    showActionMovies();
+    showWatchHistory();
+    showContent("trending/all/day?language=en-US","trending-all");
+    showContent("movie/popular?language=en-US&page=1","popular-movies");
+    showContent("tv/popular?language=en-US&page=1","popular-series");
+    showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=27","horror-movies");
+    showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=12","adventure-movies");
+    showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=28","action-movies");
+    showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=10749","romantic-movies");
+    showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=36","history-movies");
+    showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=53","thriller-movies");
+    showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=35","comedy-movies");
 };
 
-const showTrending = () => {
-    let trending = [];
-    fetch(
-      "https://api.themoviedb.org/3/trending/all/day?language=en-US",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        trending = response.results;
-        const parentElement = document.getElementById("trending-all");
-  
-        trending.forEach((item) => {
-          const newElement = document.createElement("div");
-          newElement.className = "innercard";
-          const imageUrl =
-            "https://image.tmdb.org/t/p/original" + item.backdrop_path;
-          console.log(imageUrl);
-          newElement.style.backgroundImage = `url(${imageUrl})`;
-          newElement.style.backgroundSize = "cover";
-          parentElement.appendChild(newElement);
-        });
-      })
-      .catch((err) => console.error(err));
-  };
 
-const showPopularMovies = () => {
-  console.log("here");
-  let popularMovies = [];
+const showContent = (url,elementId) => {
+  let content = [];
   fetch(
-    "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
+    baseUrl+url,
     options
   )
     .then((response) => response.json())
     .then((response) => {
-      popularMovies = response.results;
-      console.log(popularMovies);
-      const parentElement = document.getElementById("popular-movies");
+      content = response.results;
+      const parentElement = document.getElementById(elementId);
 
-      popularMovies.forEach((movie) => {
-        console.log("inner card");
+      content.forEach((item) => {
         const newElement = document.createElement("div");
         newElement.className = "innercard";
         const imageUrl =
-          "https://image.tmdb.org/t/p/original" + movie.backdrop_path;
-        console.log(imageUrl);
+          baseImageUrl + item.backdrop_path;
         newElement.style.backgroundImage = `url(${imageUrl})`;
         newElement.style.backgroundSize = "cover";
+
+
+
+        newElement.addEventListener('click', () => { addHistory(item)});
+
+
+
         parentElement.appendChild(newElement);
+
       });
     })
     .catch((err) => console.error(err));
 };
 
-const showPopularSeries = () => {
-    console.log("here");
-    let popularSeries = [];
-    fetch(
-      "https://api.themoviedb.org/3/tv/popular?language=en-US&page=1",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        popularSeries = response.results;
-        console.log(popularSeries);
-        const parentElement = document.getElementById("popular-series");
-  
-        popularSeries.forEach((item) => {
-          console.log("inner card");
-          const newElement = document.createElement("div");
-          newElement.className = "innercard";
-          const imageUrl =
-            "https://image.tmdb.org/t/p/original" + item.backdrop_path;
-          console.log(imageUrl);
-          newElement.style.backgroundImage = `url(${imageUrl})`;
-          newElement.style.backgroundSize = "cover";
-          parentElement.appendChild(newElement);
-        });
-      })
-      .catch((err) => console.error(err));
-  };
 
 
-  const showHorrorMovies = () => {
-    console.log("here");
-    let horrorMovies = [];
-    fetch(
-      "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=27",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        horrorMovies = response.results;
-        console.log(horrorMovies);
-        const parentElement = document.getElementById("horror-movies");
-  
-        horrorMovies.forEach((movie) => {
-          console.log("inner card");
-          const newElement = document.createElement("div");
-          newElement.className = "innercard";
-          const imageUrl =
-            "https://image.tmdb.org/t/p/original" + movie.backdrop_path;
-          console.log(imageUrl);
-          newElement.style.backgroundImage = `url(${imageUrl})`;
-          newElement.style.backgroundSize = "cover";
-          parentElement.appendChild(newElement);
-        });
-      })
-      .catch((err) => console.error(err));
-  };
+const addHistory = async (item) => {
+  const collection2 = collection(docRef,"profiles");
+  const document2 = doc(collection2,"profile1");
+  const unionRes = await updateDoc(document2,{
+    watchHistory: arrayUnion(item)
+  });
 
-  const showActionMovies = () => {
-    console.log("here");
-    let actionMovies = [];
-    fetch(
-      "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=28",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        actionMovies = response.results;
-        console.log(actionMovies);
-        const parentElement = document.getElementById("action-movies");
-  
-        actionMovies.forEach((movie) => {
-          console.log("innercard");
-          const newElement = document.createElement("div");
-          newElement.className = "innercard";
-          const imageUrl =
-            "https://image.tmdb.org/t/p/original" + movie.backdrop_path;
-          console.log(imageUrl);
-          newElement.style.backgroundImage = `url(${imageUrl})`;
-          newElement.style.backgroundSize = "cover";
-          parentElement.appendChild(newElement);
-        });
-      })
-      .catch((err) => console.error(err));
-  };
+console.log(unionRes);
+}
 
-  const showAdventureMovies = () => {
-    console.log("here");
-    let adventureMovies = [];
-    fetch(
-      "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=12",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        adventureMovies = response.results;
-        console.log(adventureMovies);
-        const parentElement = document.getElementById("adventure-movies");
-  
-        adventureMovies.forEach((movie) => {
-          console.log("innercard");
-          const newElement = document.createElement("div");
-          newElement.className = "innercard";
-          const imageUrl =
-            "https://image.tmdb.org/t/p/original" + movie.backdrop_path;
-          console.log(imageUrl);
-          newElement.style.backgroundImage = `url(${imageUrl})`;
-          newElement.style.backgroundSize = "cover";
-          parentElement.appendChild(newElement);
-        });
-      })
-      .catch((err) => console.error(err));
-  };
+const showWatchHistory = async () => {
+  let content = [];
+  const parentElement = document.getElementById('watch-history');
 
-  const showRomanticMovies = () => {
-    console.log("here");
-    let romanceMovies = [];
-    fetch(
-      "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=10749",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        romanceMovies = response.results;
-        const parentElement = document.getElementById("romantic-movies");
-  
-        romanceMovies.forEach((movie) => {
-          console.log("innercard");
-          const newElement = document.createElement("div");
-          newElement.className = "innercard";
-          const imageUrl =
-            "https://image.tmdb.org/t/p/original" + movie.backdrop_path;
-          console.log(imageUrl);
-          newElement.style.backgroundImage = `url(${imageUrl})`;
-          newElement.style.backgroundSize = "cover";
-          parentElement.appendChild(newElement);
-        });
-      })
-      .catch((err) => console.error(err));
-  };
+  const collection2 = collection(docRef,"profiles");
+  const document2 = doc(collection2,`${localStorage.getItem('profile')}`);
+  const newDoc = await getDoc(document2);
+  console.log(newDoc);
+  content = newDoc.data().watchHistory;
+  console.log(content);
 
-  const showHistoryMovies = () => {
-    console.log("here");
-    let historyMovies = [];
-    fetch(
-      "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=36",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        historyMovies = response.results;
-        console.log("Hello");
-        console.log(historyMovies);
-        const parentElement = document.getElementById("history-movies");
-  
-        historyMovies.forEach((movie) => {
-          console.log("innercard");
-          const newElement = document.createElement("div");
-          newElement.className = "innercard";
-          const imageUrl =
-            "https://image.tmdb.org/t/p/original" + movie.backdrop_path;
-          console.log(imageUrl);
-          newElement.style.backgroundImage = `url(${imageUrl})`;
-          newElement.style.backgroundSize = "cover";
-          parentElement.appendChild(newElement);
-        });
-      })
-      .catch((err) => console.error(err));
-  };
-
-  const showThrillerMovies = () => {
-    console.log("here");
-    let thrillerMovies = [];
-    fetch(
-      "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=53",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        thrillerMovies = response.results;
-        console.log("Hello");
-        console.log(thrillerMovies);
-        const parentElement = document.getElementById("thriller-movies");
-  
-        thrillerMovies.forEach((movie) => {
-          console.log("innercard");
-          const newElement = document.createElement("div");
-          newElement.className = "innercard";
-          const imageUrl =
-            "https://image.tmdb.org/t/p/original" + movie.backdrop_path;
-          console.log(imageUrl);
-          newElement.style.backgroundImage = `url(${imageUrl})`;
-          newElement.style.backgroundSize = "cover";
-          parentElement.appendChild(newElement);
-        });
-      })
-      .catch((err) => console.error(err));
-  };
+  content.forEach((item) => {
+    const newElement = document.createElement("div");
+    newElement.className = "innercard";
+    const imageUrl =
+      baseImageUrl + item.backdrop_path;
+    newElement.style.backgroundImage = `url(${imageUrl})`;
+    newElement.style.backgroundSize = "cover";
+    parentElement.appendChild(newElement);
+  });
+};

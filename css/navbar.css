@@ -7,7 +7,7 @@
     right: 0;
     display: flex;
     justify-content: center;
-    background-color: black;
+    background-color: transparent;
     height: 68px;
     align-items: center;
 }
