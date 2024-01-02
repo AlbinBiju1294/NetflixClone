@@ -13,15 +13,15 @@
         <div class="innernavbar">
           <div class="firstinnernavbar">
             <div class="logoimg">
-              <img src="../assets/Netflixlogo.png" alt="logo" height="80px" />
+              <a href="./home.html"><img src="../assets/Netflixlogo.png" alt="logo" height="80px" /></a>
             </div>
             <div class="nav-items">
-              <a class="active" href="./home.html">Home</a>
-            <a href="./tvshows.html">TV Shows</a>
-            <a href="./moviepage.html">Movies</a>
-            <a href="./newsandpopular.html">New & popular</a>
-            <a href="./my_list.html">My List</a>
-            <a href="./language.html">Browse by languages</a>
+              <a href="./home.html">Home</a>
+              <a class="active" href="#">TV Shows</a>
+              <a href="./moviepage.html">Movies</a>
+              <a href="./newsandpopular.html">New & popular</a>
+              <a href="./my_list.html">My List</a>
+              <a href="./language.html">Browse by languages</a>
             </div>
           </div>
           <div class="secondinnernavbar">
@@ -35,32 +35,31 @@
             <!-- <iframe width="560" height="315" src="./assests/Money heist - bella ciao whatsapp status.mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> --> -->
         </div>
         <div class="content">
-        <div class="banner">
+        <div id="banner">
            <div class="head">
             <h1>TV Shows</h1>
            </div>
            <div class="genre">
-             <select name="" id="">
-              <option value="default">Genre</option>
-              <option value="comedy">Comedy</option>
-              <option value="action">Action</option>
-              <option value="romance">Romance</option>
-              <option value="horror">Horror</option>
-             </select>
-            </div>
+            <select id="genre_dropdown" onchange="movieTypeSelection()">
+                <option value="defaults">Genre</option>
+                <option value="horror">Horror</option>
+                <option value="romantic">Romantic</option>
+                <option value="comedy">Comedy</option>
+                <option value="action">Action</option>
+                <option value="adventure">Adventure</option>
+                <option value="history">History</option>
+                <option value="thriller">Thriller</option>
+            </select>
+          </div>
 
-            <select name="" id=""></select>
-            <!-- <div class="sort">
-                <i class="bi bi-card-list"></i>
-                <i class="bi bi-grid-fill"></i>
-            </div> -->
+            
        </div>
        <div class="sound">
         <i class="bi bi-volume-down-fill"></i>
     </div>
        <div class="buttons">
         <button class="play"><i class="bi bi-play-fill buttonicon"></i>Play</button>
-        <button class="info"><i class="bi bi-info-circle buttonicon"></i>More Info</button>
+        <button class="info" onclick="showVideoCard()"><i class="bi bi-info-circle buttonicon"></i>More Info</button>
       </div>
         <div class="title">
         <img src="../assets/mh (2).png">
@@ -72,32 +71,98 @@
     </div>
     </div>
     <div class="content">
+    <div class="moviescontainer" id="moviescontainer">
+      <div class="maintext">
+        <h2>POPULAR</h2>
+        <div class="hidden-text" onclick="showCard('nested-card-movie')">ExploreAll>></div>
+     </div>
+        <div class="newmovies" id="popular-movies" onmouseover="showVideoCard()">
+          <div class="card-container" id="cardContainer" onclick="closeCard()">
+            <div class="main-card" id="main-card" onclick="stopPropagation(event)">
+              <span class="close-btn" onclick="closeCard()">X</span>
+              <div id="nested-card-movie"></div>
+              <div id="nested-card-upcoming"></div>
+              <div id="nested-card-topmovie"></div>
+              <div id="nested-card-popularmovie"></div>
+            </div>
+          </div>
+          <!-- **************************** -->
+          <div id="allmovie" class="movie">
+          </div>
+        </div>
+
+        <div class="card" id="videoCard" onmouseleave="closeVideoCard()">
+          <span class="close-icon" onclick="closeVideoCard()">&times;</span>
+          <video src="../assets/video-devices-in.mp4" alt="Video" controls autoplay loop muted></video>
+          <div class="card-content">
+            <p><p><strong>Title</strong></p>
+            <p>Duration : 2h 30m</p>
+            <p>Genre</p></p>
+          </div>
+      </div>
+
       
-      <h2>POPULAR</h2>
-      <div class="moviescontainer">
-        <div class="newmovies" id="popular-movies">
-         
-        </div>
-      </div>
       <h2>NOW PLAYING</h2>
-      <div class="moviescontainer">
-        <div class="newmovies" id="now-playing">
+
+        <div class="newmovies" id="now-playing" onmouseover="showVideoCard()">
          
         </div>
+
+        <div class="card" id="videoCard" onmouseleave="closeVideoCard()">
+          <span class="close-icon" onclick="closeVideoCard()">&times;</span>
+          <video src="../assets/video-devices-in.mp4" alt="Video" controls autoplay loop muted></video>
+          <div class="card-content">
+            <p><p><strong>Title</strong></p>
+            <p>Duration : 2h 30m</p>
+            <p>Genre</p></p>
+          </div>
       </div>
+      
       <h2>TOP RATED</h2>
-      <div class="moviescontainer">
-        <div class="newmovies" id="top-rated">
+
+        <div class="newmovies" id="top-rated"onmouseover="showVideoCard()">
          
         </div>
+
+        <div class="card" id="videoCard" onmouseleave="closeVideoCard()">
+          <span class="close-icon" onclick="closeVideoCard()">&times;</span>
+          <video src="../assets/video-devices-in.mp4" alt="Video" controls autoplay loop muted></video>
+          <div class="card-content">
+            <p><p><strong>Title</strong></p>
+            <p>Duration : 2h 30m</p>
+            <p>Genre</p></p>
+          </div>
       </div>
+
       <h2>UPCOMING</h2>
-      <div class="moviescontainer">
-        <div class="newmovies" id="upcoming">
+
+        <div class="newmovies" id="upcoming" onmouseover="showVideoCard()">
          
         </div>
+
+        <div class="card" id="videoCard" onmouseleave="closeVideoCard()">
+          <span class="close-icon" onclick="closeVideoCard()">&times;</span>
+          <video src="../assets/video-devices-in.mp4" alt="Video" controls autoplay loop muted></video>
+          <div class="card-content">
+            <p><p><strong>Title</strong></p>
+            <p>Duration : 2h 30m</p>
+            <p>Genre</p></p>
+          </div>
+      </div>
+
       </div>
     </div>
+    <div id="movie_container_outside" onmouseover="showVideoCard()">
+    </div>
+    <span class="close-icon" onclick="closeVideoCard()">&times;</span>
+          <video src="../assets/video-devices-in.mp4" alt="Video" controls autoplay loop muted></video>
+          <div class="card-content">
+            <p><p><strong>Title</strong></p>
+            <p>Duration : 2h 30m</p>
+            <p>Genre</p></p>
+          </div>
+      </div>
+
     <script src="../script/tvshows.js"></script>
     <footer class="footer">
       <div class="innerfooter">

@@ -1,18 +1,3 @@
-// function createCard(cardNumber,imagePath) {
-//     const cardContainer = document.getElementById('cardContainer');
-
-//     const cardHtml = `
-//       <div class="card">
-//         <div class="card-body">
-//           <img src="${imagePath}" class="card-img-top" alt="Image for Card ${cardNumber}" id="cardimg">
-         
-          
-//         </div>
-//       </div>
-//     `;
-
-//     cardContainer.innerHTML += cardHtml;
-//   }
 
 
 
@@ -24,10 +9,7 @@
     "../assets/shesham.jpg"
   ];
 
-  // Loop to create five cards
-  // for (let i = 1; i <= 5; i++) {
-  //   createCard(i,imagePaths[i-1]);
-  // }
+
 
   const  numimgpaths=[
     "../assets/oneblock.png",
@@ -41,16 +23,9 @@
     "../assets/9block.png",
     "../assets/10block.png"
   ]
-
-const numcrpimg=[
-  "	https://occ-0-5452-3662.1.nflxso.net/dnm/api/v6/WNXvwmBb8WUeFCw5votVRuO1ZMUhRI8q7sQcm80mg.jpg?r=6fa",
-  "	https://occ-0-5452-3662.1.nflxso.net/dnm/api/v6/WN…Lf5_Y7vovT9E3H52kySnc_pJTsa_KwHUNE7vBAA.jpg?r=002",
-  "	https://occ-0-5452-3662.1.nflxso.net/dnm/api/v6/WN…lsVbWz_UmRRFC4GA9GCS7XTnKtmFGWk8CXd41qg.jpg?r=e3c",
-  "	https://occ-0-5452-3662.1.nflxso.net/dnm/api/v6/WN…NsSFyBRxb2h8MqIKBtHWPqUqX077o_6l-WEF_-w.jpg?r=d1d",
-
   
-]
-function toptenShows(showspath,numcrpimg)
+  
+  function toptenShows(showspath,numcrpimg)
 {
     const cardContainer = document.getElementById('showscontainer');
 
@@ -72,106 +47,13 @@ function toptenShows(showspath,numcrpimg)
     
   }
 
-
-
-
-
-
-
-  function topMovies(showspath,numcrpimg)
-{
-    const cardContainer = document.getElementById('moviescontainer');
-
-    const cardHtml = `
-      <div class="card">
-        <div class="card-body">
-          <img src="${showspath}" class="card-img-top" id="topshowsimg">
-          <img src="${numcrpimg}" class="card-img-top" id="numcrpimg">
-        </div>
-      </div>
-    `;
-
-    // Append the card HTML to the container
-    cardContainer.innerHTML += cardHtml;
-
-}
-  for(let i=0;i<5;i++){
-    topMovies(numimgpaths[i],imagePaths[i])
-    
-  }
-
-
-  function nextWeek(imagePath) {
-    const cardContainer = document.getElementById('nextweekcontainer');
-
-    const cardHtml = `
-      <div class="card">
-        <div class="card-body">
-          <img src="${imagePath}" class="card-img-top" id="topmoviesimg">
-         
-          
-        </div>
-      </div>
-    `;
-
-    cardContainer.innerHTML += cardHtml;
-  }
-  for(let i=0;i<5;i++){
-    nextWeek(imagePaths[i])
-    
-  }
-
-
-  function worthwait(imagePath) {
-    const cardContainer = document.getElementById('worthwaitcontainer');
-
-    const cardHtml = `
-      <div class="card">
-        <div class="card-body">
-          <img src="${imagePath}" class="card-img-top" id="topmoviesimg">
-         
-          
-        </div>
-      </div>
-    `;
-
-    cardContainer.innerHTML += cardHtml;
-  }
-  for(let i=0;i<5;i++){
-    worthwait(imagePaths[i])
-    
-  }
-
-
-
-
-  function comingthisweek(imagePath) {
-    const cardContainer = document.getElementById('comingthisweekcontainer');
-
-    const cardHtml = `
-      <div class="card">
-        <div class="card-body">
-          <img src="${imagePath}" class="card-img-top" id="topmoviesimg">
-         
-          
-        </div>
-      </div>
-    `;
-
-    cardContainer.innerHTML += cardHtml;
-  }
-  for(let i=0;i<5;i++){
-    comingthisweek(imagePaths[i])
-    
-  }
-
-
-
-
-
+ 
+  //calling functions
   window.onload= () =>{
     showHistoryMovies();
     worthWaiting();
+    comingnextweek();
+    comingthisweek1();
   }
 
   const options = {
@@ -224,6 +106,7 @@ function toptenShows(showspath,numcrpimg)
 
 
 
+  
 
 
   
@@ -231,13 +114,13 @@ function toptenShows(showspath,numcrpimg)
   const worthWaiting = () => {
     console.log("here");
     let worthMovies = [];
-      fetch("https://api.themoviedb.org/3/movie/movie_id/recommendations?language=en-US&page=1",options)
+      fetch("https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1",options)
       .then((response) => response.json())
       .then((response) => {
         worthMovies = response.results;
         console.log("Hello");
         console.log(worthMovies);
-        const parentElement = document.getElementById('worthwaitcontainer');
+        const parentElement = document.getElementById('worthWaitContainer');
  
         worthMovies.forEach((movie) => {
           console.log("innercard");
@@ -257,3 +140,92 @@ function toptenShows(showspath,numcrpimg)
 
 
 
+
+
+
+  // https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1
+  // https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1
+  // nextweekcontainer
+  // comingthisweekcontainer
+  // comingthisweek1
+  
+
+    
+
+  const comingnextweek = () => {
+    console.log("here");
+    let worthMovies = [];
+      fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",options)
+      .then((response) => response.json())
+      .then((response) => {
+        worthMovies = response.results;
+        console.log("Hello");
+        console.log(worthMovies);
+        const parentElement = document.getElementById('nextWeekContainer');
+ 
+        worthMovies.forEach((movie) => {
+          console.log("innercard");
+          const newElement = document.createElement("div");
+          newElement.className = "innercard";
+          const imageUrl =
+            "https://image.tmdb.org/t/p/original" + movie.backdrop_path;
+          console.log(imageUrl);
+          newElement.style.backgroundImage = `url(${imageUrl})`;
+          newElement.style.backgroundSize = "cover";
+          parentElement.appendChild(newElement);
+          
+        });
+      })
+      .catch((err) => console.error(err));
+  };
+
+
+
+  const comingthisweek1 = () => {
+    console.log("here");
+    let worthMovies = [];
+      fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1",options)
+      .then((response) => response.json())
+      .then((response) => {
+        worthMovies = response.results;
+        console.log("Hello");
+        console.log(worthMovies);
+        const parentElement = document.getElementById('comingThisWeekContainer');
+ 
+        worthMovies.forEach((movie) => {
+          console.log("innercard");
+          const newElement = document.createElement("div");
+          newElement.className = "innercard";
+          const imageUrl =
+            "https://image.tmdb.org/t/p/original" + movie.backdrop_path;
+          console.log(imageUrl);
+          newElement.style.backgroundImage = `url(${imageUrl})`;
+          newElement.style.backgroundSize = "cover";
+          parentElement.appendChild(newElement);
+          
+        });
+      })
+      .catch((err) => console.error(err));
+  };
+
+  function toptenmovies(showspath,numcrpimg)
+  {
+      const cardContainer = document.getElementById('moviesContainer');
+  
+      const cardHtml = `
+        <div class="card">
+          <div class="card-body">
+            <img src="${showspath}" class="card-img-top" id="topshowsimg">
+            <img src="${numcrpimg}" class="card-img-top" id="numcrpimg">
+          </div>
+        </div>
+      `;
+  
+      // Append the card HTML to the container
+      cardContainer.innerHTML += cardHtml;
+  
+  }
+    for(let i=0;i<5;i++){
+      toptenmovies(numimgpaths[i],imagePaths[i])
+      
+    }
