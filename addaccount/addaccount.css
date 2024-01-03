@@ -32,4 +32,46 @@ body{
     display: flex;
     align-items: center;
     margin-top: 30px;
+    border-bottom: 1px solid grey;
+    padding-bottom: 30px;
+}
+
+.nameinput
+{
+    background-color: #666;
+    color: white;
+    outline: none;
+    border-color: #666;
+    margin-left: 15px;
+    width: 250px;
+}
+
+.inputlabel
+{
+    margin-left: 40px;
+}
+
+.buttons
+{
+    margin-top: 30px;
+}
+.continuebutton
+{
+    width: 100px;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #fff;
+    color: #000;
+    font-weight: 500;
+}
+
+.cancelbutton
+{
+    width: 100px;
+    height: 35px;
+    background: #14140f;
+    border: 1px solid gray;
+    color: gray;
+    font-weight: 500;
+    margin-left: 20px;
 }
