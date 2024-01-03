@@ -1,5 +1,5 @@
 window.addEventListener("scroll", function() {
-  var headgenreContainer = document.getElementById("headgenre_container");
+  const headgenreContainer = document.getElementById("headgenre_container");
   if (window.scrollY > 50) {
       headgenreContainer.style.backgroundColor = "black";
   } else {
@@ -55,8 +55,8 @@ function reload(){
 }
 // var originalContent = document.getElementById("movie_container").cloneNode(true);
 function movieTypeSelection() {
-  var dropdown = document.getElementById("genre_dropdown");
-  var selectedOption = dropdown.options[dropdown.selectedIndex].value;
+  const dropdown = document.getElementById("genre_dropdown");
+  let selectedOption = dropdown.options[dropdown.selectedIndex].value;
   document.getElementById("movie_container").innerHTML = '';
   document.getElementById("movie_container_outside").innerHTML = '';
 
@@ -89,7 +89,7 @@ function movieTypeSelection() {
 
 
 // *******************************
-var id1;
+let id1;
 function showCard(id1) {
   document.getElementById('nested-card-movie').innerHTML='';
   document.getElementById('nested-card-topmovie').innerHTML='';

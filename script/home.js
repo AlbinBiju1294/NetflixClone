@@ -1,5 +1,4 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-
 import { getFirestore, collection, getDoc, doc , arrayUnion, updateDoc} from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 
 const firebaseConfig = {
@@ -9,17 +8,14 @@ const firebaseConfig = {
     storageBucket: "netflixclone-28d52.appspot.com",
     messagingSenderId: "478121105015",
     appId: "1:478121105015:web:f14cdfd963421075805872"
-  };
+};
   
-  // Initialize Firebase
- const app = initializeApp(firebaseConfig);
-  
+// Initializing Firebase
+const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const colRef = collection(db, "profileCollection");
 const docRef = doc(colRef,`${localStorage.getItem('userId')}`);
-
-
 
 const options = {
   method: "GET",
@@ -33,6 +29,8 @@ const options = {
 const baseUrl = "https://api.themoviedb.org/3/";
 const baseImageUrl = "https://image.tmdb.org/t/p/original";
 
+
+//function to change background colour of navbar on scroll
 window.addEventListener("scroll", function() {
   var navbarSelector = document.getElementById("navbarselector");
   if (window.scrollY > 50) {
@@ -42,6 +40,8 @@ window.addEventListener("scroll", function() {
   }
 });
 
+
+//onloading the page we call the given functions to display content
 window.onload = () => {
     showWatchHistory();
     showWatchList();
@@ -57,9 +57,7 @@ window.onload = () => {
     showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=35","comedy-movies");
 };
 
-
-
-
+//showContent function receives the fetch url and the element id to which the content needs to be inserted
 const showContent = (url,elementId) => {
   let content = [];
   fetch(
@@ -78,15 +76,9 @@ const showContent = (url,elementId) => {
           baseImageUrl + item.backdrop_path;
         newElement.style.backgroundImage = `url(${imageUrl})`;
         newElement.style.backgroundSize = "cover";
-        newElement.innerHTML = `<div class="movie-info"><p class="movie-title">${item.original_title}</p><p class="movie-desc">${item.overview}</p><div class="PWbuttons"><i class="bi bi-play-circle-fill playbutton" id="playbutton${item.id}"></i><i class="bi bi-plus-circle plusbutton" id="plusbutton${item.id}"></i></div></div>`
-
+        newElement.innerHTML = `<div class="movie-info"><p class="movie-title" style="width: 100px;">${item.original_title}</p><p class="movie-title" style="width: 250px;">Language:${item.original_language}</p><p class="movie-popularity" style="width: 250px;">Release Date:${item.release_date}</p><div class="PWbuttons"><i class="bi bi-play-circle-fill playbutton" id="playbutton${item.id}"></i><i class="bi bi-plus-circle plusbutton" id="plusbutton${item.id}"></i></div></div>`
         newElement.querySelector(`#playbutton${item.id}`).addEventListener('click',() => { addHistory(item)});
         newElement.querySelector(`#plusbutton${item.id}`).addEventListener('click',() => { addList(item)});
-        
-        // newElement.addEventListener('click', () => { addHistory(item)});
-
-
-
         parentElement.appendChild(newElement);
 
       });
@@ -95,33 +87,28 @@ const showContent = (url,elementId) => {
 };
 
 
-
+// onclicking the play button the movie or tvshow item gets stored in the watch history
 const addHistory = async (item) => {
   const collection2 = collection(docRef,"profiles");
   const document2 = doc(collection2,`${localStorage.getItem('profile')}`);
   const unionRes = await updateDoc(document2,{
     watchHistory: arrayUnion(item)
   });
-
-
-
-
-console.log(unionRes);
+  location.reload();
 }
 
+// onclicking the play button the movie or tvshow item gets stored in the watch list
 const addList = async (item) => {
   const collection2 = collection(docRef,"profiles");
   const document2 = doc(collection2,`${localStorage.getItem('profile')}`);
   const unionRes = await updateDoc(document2,{
     watchList: arrayUnion(item)
   });
-
-
-
-
-console.log(unionRes);
+  location.reload();
 }
 
+
+//function for showing the watch history
 const showWatchHistory = async () => {
   let content = [];
   const parentElement = document.getElementById('watch-history');
@@ -144,6 +131,7 @@ const showWatchHistory = async () => {
   });
 };
 
+// function for showing the watch list
 const showWatchList= async () => {
   let content = [];
   const parentElement = document.getElementById('watch-list');
