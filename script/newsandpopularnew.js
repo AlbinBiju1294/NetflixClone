@@ -1,4 +1,17 @@
+
+
+// import options from './config.js'; // Importing the default export from config.js
+
+// console.log("nsjn  " +options)
+
 const dynamicImages=[]
+const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkOTE3OTg4MzMyOTg2NmIwMzVjNGEyYzc1NjJmZmNkMCIsInN1YiI6IjY1ODE4ZWNkZDUxOTFmMDhhNGFlMWIyMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7D9t0FdYo_NqaFsELFkSVFcyfv-WlRwMSkmx0v_HYrA'
+  }
+};
 
 
 const imagePaths = [
@@ -47,9 +60,10 @@ const imagePaths = [
 
 
   window.onload= () =>{
-    for(let i=0;i<6;i++)
+    for(let i=0;i<7;i++)
     {
         apicall(apiFetches[i],containerDivs[i]);
+       
     }
       // for(let i=0;i<5;i++){
       //   toptenShows(numimgpaths[i],imagePaths[i],'showscontainer')
@@ -59,19 +73,14 @@ const imagePaths = [
    
   }
 
-  const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkOTE3OTg4MzMyOTg2NmIwMzVjNGEyYzc1NjJmZmNkMCIsInN1YiI6IjY1ODE4ZWNkZDUxOTFmMDhhNGFlMWIyMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7D9t0FdYo_NqaFsELFkSVFcyfv-WlRwMSkmx0v_HYrA'
-    }
-  };
+ 
 
 const apiFetches=[
     "https://api.themoviedb.org/3/trending/movie/day?language=en-US",
     "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1",
     "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
     "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1",
+    "https://api.themoviedb.org/3/trending/movie/day?language=en-US",
     "https://api.themoviedb.org/3/trending/movie/day?language=en-US",
     "https://api.themoviedb.org/3/trending/movie/day?language=en-US"
 ]
@@ -83,8 +92,10 @@ const containerDivs=[
     "comingThisWeekContainer",
     "showscontainer",
     "moviesContainer",
+    "toptestinner"
 
 ]
+
 
 let counter=0;
 var k=0;
@@ -101,8 +112,9 @@ var k=0;
         console.log("Hello");
         console.log(apicall);
         const parentElement = document.getElementById(containerDiv);
- 
+        
        apicall.forEach((movie) => {
+        
           console.log("innercard");
 
 
@@ -142,6 +154,7 @@ var k=0;
       .catch((err) => console.error(err));
     
   };
+
 
 
   

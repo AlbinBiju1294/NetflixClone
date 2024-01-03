@@ -39,8 +39,21 @@
       </nav>
 
       <div class="content">
+
         <div class="newon-netflix">
-            <h5 id="newonnetflix">New On Netflix</h5>
+            <div id="main-text"><h5 id="newonnetflix">New On Netflix</h5>
+              <div class="hidden-text" id="hidden-text" onclick="showCard('nested-card-movie')">ExploreAll>></div>
+              
+            </div>
+            <!-- <div class="card-container" id="popcardContainer" onclick="closeCard()"> -->
+              <div class="main-card" id="main-card" onclick="stopPropagation(event)">
+                <!-- <span class="close-btn" onclick="closeCard()">X</span>
+                <div id="nested-card-movie"></div>
+                <div id="nested-card-upcoming"></div>
+                <div id="nested-card-topmovie"></div>
+                <div id="nested-card-popularmovie"></div>
+              </div>
+            </div> -->
             <div class="cardContainer" id="cardContainer"></div>
 
             
@@ -77,6 +90,11 @@
     <h5 id="comingweek">Coming This Week</h5>
     <div class="comingthisweekcontainer" id="comingThisWeekContainer"></div>
   </div>
+</div>
+
+<div class="toptest">
+  <h5>afaifjafj</h5>
+  <div class="toptestinner" id="toptestinner"></div>
 </div>
 
 
