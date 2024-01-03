@@ -28,7 +28,7 @@ signInButton.addEventListener("click",() => {
         const auth = getAuth();
         const user = auth.currentUser;
         localStorage.setItem('userId',user.uid);
-        window.location.href = 'home.html';
+        window.location.href = '../profileselection/profileselection.html';
       })
       .catch((error) => {
         const errorCode = error.code;
