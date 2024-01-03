@@ -60,7 +60,7 @@ const imagePaths = [
 
 
   window.onload= () =>{
-    for(let i=0;i<7;i++)
+    for(let i=0;i<6;i++)
     {
         apicall(apiFetches[i],containerDivs[i]);
        
@@ -76,13 +76,15 @@ const imagePaths = [
  
 
 const apiFetches=[
-    "https://api.themoviedb.org/3/trending/movie/day?language=en-US",
-    "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1",
+  
+
+    
     "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
+    "https://api.themoviedb.org/3/trending/tv/day?language=en-US",
     "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1",
     "https://api.themoviedb.org/3/trending/movie/day?language=en-US",
     "https://api.themoviedb.org/3/trending/movie/day?language=en-US",
-    "https://api.themoviedb.org/3/trending/movie/day?language=en-US"
+    "https://api.themoviedb.org/3/trending/all/day?language=en-US"
 ]
 
 const containerDivs=[
