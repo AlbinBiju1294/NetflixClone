@@ -1,6 +1,6 @@
-var id1,id2;
+let id1,id2;
 function isValidEmail(email) {
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
 function checktext(id1,id2){
@@ -14,10 +14,10 @@ function checktext(id1,id2){
     else{
         if(document.getElementById(id1).value!=="")
         {
-            var emailInput = document.getElementById(id1);
-            var email = emailInput.value;
+            const emailInput = document.getElementById(id1);
+            const email = emailInput.value;
             if (isValidEmail(email)) {
-                location.href="./signupstp1.html"
+                location.href="./signuptry.html"
               }  
             else {
                 const msg=document.getElementById(id2);

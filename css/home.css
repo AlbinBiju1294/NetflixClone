@@ -121,10 +121,15 @@ body{
     font-size: small;
   }
 
+  .movie-popularity
+  {
+    font-size: small;
+  }
+
   .movie-info .movie-desc
   {
     font-size: xx-small;
-    overflow: hidden;
+    overflow-wrap: break-word;
   }
 
   
