@@ -95,12 +95,9 @@ const containerDivs=[
     "showscontainer",
     "moviesContainer",
     "toptestinner"
-
 ]
 
 
-let counter=0;
-var k=0;
    const apicall = (apiUrl,containerDiv) => {
     console.log("here");
     let apicall = [];
