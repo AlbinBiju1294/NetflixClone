@@ -75,12 +75,9 @@ const imagePaths = [
 
  
 
-const apiFetches=[
-  
-
-    
-    "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
+const apiFetches=[    
     "https://api.themoviedb.org/3/trending/tv/day?language=en-US",
+    "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
     "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1",
     "https://api.themoviedb.org/3/trending/movie/day?language=en-US",
     "https://api.themoviedb.org/3/trending/movie/day?language=en-US",
@@ -121,13 +118,13 @@ const containerDivs=[
          
 
           const cardElement = document.createElement("div");
-          cardElement.className = "innercard"; // Use the "innercard" class
+          cardElement.className = "innercard"; 
           const imageUrl = "https://image.tmdb.org/t/p/original" + movie.backdrop_path;
           console.log(imageUrl);
           cardElement.style.backgroundImage = `url(${imageUrl})`;
           cardElement.style.backgroundSize = "cover";
           
-          // Create description elements
+         
           const descriptionContainer = document.createElement("div");
           descriptionContainer.className = "description";
           const titleElement = document.createElement("h3");
