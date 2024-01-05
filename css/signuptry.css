@@ -22,13 +22,15 @@ body {
     top: 15px;
     position: relative;
     left: 15px;
+    z-index: 999;
 }
 .form-wrapper {
     position: relative;
     left: 50%;
-    top: 35%;
+    top: 45%;
     border-radius: 4px;
     padding: 70px;
+    padding-top: 5px;
     width: 400px;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, .75);
@@ -142,6 +144,20 @@ form .form-help :where(label, a) {
     .form-wrapper form {
         margin: 25px 0 40px;
     }
+}
+#videosign{
+    scale: 1.4;
+}
+
+#create-acct-btn{
+    display: none;
+}
+#otp-signup
+{
+    display: none;
+}
+#otpLabel{
+    display: none;
 }
 .footer
 {

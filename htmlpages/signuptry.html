@@ -7,17 +7,21 @@
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <script type = "module" src = "../script/signuptry.js"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script src="../script/email.js"></script>
+    <script type="module" src="../script/email.js"></script>
   </head>
 <body>
     <div class="overlay"></div>
     <img class="logo" src="../assets/netflix1_logo.png" alt="netflix logo">
-<!-- login form -->
+    
 <div class="form-wrapper">
     <h2>Sign Up</h2>
     <h2>Create a password to start<br>your membership </h2>
     <h3 id="fewmoresteps">Just a few more steps and you're done!<br>We hate paperwork, too.</h3>
     <form action="#">
+      <div class="form-control">
+        <input id = "usersname" type="text" required>
+        <label>Your Name</label>
+    </div>
         <div class="form-control">
             <input id = "email-signup" type="text" required>
             <label>Email or phone number</label>
@@ -26,7 +30,13 @@
             <input id = "password-signup" type="password" required>
             <label>Password</label>
         </div>
-        <button id = "create-acct-btn" onclick="sendEmail()">Sign Up</button>
+        <button id = "getOtp" >GET OTP</button>
+        
+        <div class="form-control">
+          <input id = "otp-signup" type="text">
+          <label id="otpLabel">Otp</label>
+      </div>
+        <button id = "create-acct-btn" >Sign Up</button>
         <div class="form-help"> 
             <div class="remember-me">
                 <input type="checkbox" id="remember-me">

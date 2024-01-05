@@ -339,7 +339,7 @@
     transform: scale(1.2);
   }
   
-  /* Styles for the card image */
+ 
   .innercard .card-image {
     width: 100%;
     height: 100%;
@@ -354,7 +354,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Adjust as needed */
+    background: rgba(0, 0, 0, 0.7); 
     padding: 10px;
     box-sizing: border-box;
     color: white;
@@ -378,8 +378,8 @@
   
   /* Styles for the play button */
   .innercard .description .play-button {
-    background-color: #ffffff; /* Adjust as needed */
-    color: #000000; /* Adjust as needed */
+    /* background-color: #ffffff; */
+    color: #000000; 
     padding: 5px 10px;
     border: none;
     cursor: pointer;
@@ -388,7 +388,119 @@
     transition: background-color 0.3s ease-in-out;
   }
   
-  .innercard .description .play-button:hover {
-    background-color: #cccccc; /* Adjust as needed */
+  /* .innercard .description .play-button:hover {
+    background-color: #cccccc;
+  } */
+
+
+  /* .toptest{
+    margin-top: 20px;
+    
+   
+  } 
+
+  .toptest h5{
+    color:white;
+ 
+   
+  }
+  .toptestinner{
+   
+    display: flex;
+   
+  
+  } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*   
+  #hidden-text{
+    background-color: aqua !important;
+    color: red !important;  
   }
   
+
+
+
+
+
+
+
+
+
+  .main-text {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
+
+  #hidden-text {
+    position: absolute;
+    left: 0px ;
+    top: 1px;
+     opacity: 0;
+    transition: left 1s, opacity 0.3s;
+    z-index: 1;
+    height: 800px;
+    width:200px;
+    z-index: 999 !important;
+    background-color: yellowgreen !important;
+    
+ 
+  }
+  #hidden-text{
+    font-size: 13px;
+    color: rgb(3, 102, 102);
+    z-index: 10;
+  }
+  .main-text:hover .hidden-text {
+    left: 110%;
+    opacity: 1;
+    z-index: 10;
+  }
+  
+ 
+  .card-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 998;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; 
+  }
+ 
+  .main-card {
+    width: 70%;
+    max-height: 70vh;
+    background-color: #0b0b0b;
+    padding-left: 80px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    position: fixed;
+    overflow: auto;
+    transform: scale(0.7);
+    z-index: 999;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+  } 
+  */
