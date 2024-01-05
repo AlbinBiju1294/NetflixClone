@@ -5,7 +5,6 @@ import { sendEmailSender } from "./email.js";
 import { firebaseConfig } from "./config.js";
 import {returnOTP} from "./email.js";
 const otp=returnOTP();
- console.log(otp)
 
 
 
@@ -28,38 +27,24 @@ buttonGet.addEventListener("click", function(event) {
 
   signupEmail = emailGet.value;
   signupPassword = passwordGet.value;
-  console.log("chekcing")
+
   userName=userNameGet.value;
-  console.log(userName)
+
   
   if(signupEmail == null || signupPassword == null) {
     window.alert("Please fill out all required fields.");
     isVerified = false;
   }
 
-  console.log(signupEmail);
-  console.log(signupPassword);
- console.log("checkotp"+checkOtp.value)
- 
- 
- console.log(otp+"new otp")
+
   if(isVerified && checkOtp.value==otp) {
       createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
           .then((userCredential) => {
             localStorage.setItem("successKey","true");
      
-              const user = userCredential.user;
-              console.log(user.uid);
-              
-              
-              console.log("trying to enter")
-             
-             
+              const user = userCredential.user;             
              sendEmailSender(signupEmail,userName);
               
-             
-
-                
             const videoElement = document.createElement("video");
             videoElement.id='videosign'
             videoElement.src = "../assets/netflixlogovideo.mp4";
@@ -67,7 +52,7 @@ buttonGet.addEventListener("click", function(event) {
             videoElement.loop = true;
             videoElement.muted = false;
             videoElement.playbackRate = 2;
-            // Set the styles for the video element
+            
             videoElement.style.width = "1150px";
             videoElement.style.height = "100vh";
             videoElement.style.position = "fixed";
@@ -76,14 +61,14 @@ buttonGet.addEventListener("click", function(event) {
             videoElement.style.zIndex = "9999";
             
 
-            // Append the video element to the body
+         
             document.body.appendChild(videoElement);
             document.body.style.overflow="hidden";
 
 
               setTimeout(function() {
                 window.location.href = '../htmlpages/login.html';
-            }, 8000); // 20000 milliseconds = 20 seconds
+            }, 8000); 
             
           })
           .catch((error) => {
