@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="./search.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="../css/footer.css">
+    <title>Search</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg pt-3 pb-3 ps-5 pe-5" id="navbarselector">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="../assets/logo.png" width="100px" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse ms-md-5" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Movies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Tv shows</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">New & popular</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Browse by languages</a>
+          </li>
+        </ul>
+        <input type="text" class="searchbox bg-dark text-white ps-3 pe-3" id="searchbox">
+        <i class="bi bi-search search text-white ms-2" id="searchIcon"></i>
+      </div>
+      <div class="Navbarprofileicon" style="margin-left: 10px;">
+
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn" id="dropdownBtn">
+          <i class="bi bi-caret-down-fill arrow" id="arrowButton" style="margin-left: 10px;"></i>
+        </button>
+        <div class="dropdown-content" id="dropdownContent">
+          <div class="profileDiv" id="profileDivId">
+            
+          </div>
+          <a href="">Manage Profiles</a>
+          <a href="">Account</a>
+          <a href="">Help center</a>
+          <a id="signOutLink" style="color: white; cursor: pointer;">Sign out of Netflix</a>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+      <div class="searcharea d-flex justify-content-center mt-5">
+        <div class="searchinputarea">
+            <input type="text" placeholder="search movies or tv shows" id="advancedsearchbox">
+            <button class="searchpagebutton" id="advancedsearchbutton">Search</button>
+        </div>
+    </div>
+    <div class="newcontent" id="filteredcontent">
+
+    </div>
+    <footer class="footer">
+        <div class="innerfooter">
+          <div class="socialicons">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-twitter-x"></i>
+            <i class="bi bi-youtube"></i>
+          </div>
+          <div class="mainlinks">
+            <div class="firstlink innerlinks">
+              <a href="#">Audio description</a>
+              <a href="">Investor relations</a>
+              <a href="">Legal notices</a>
+            </div>
+            <div class="firstlink innerlinks">
+              <a href="#">Help center</a>
+              <a href="">Jobs</a>
+              <a href="">Cookie preference</a>
+            </div>
+            <div class="firstlink innerlinks">
+              <a href="#">Gift cards</a>
+              <a href="">Terms of use</a>
+              <a href="">Corporate Information</a>
+            </div>
+            <div class="firstlink innerlinks">
+              <a href="#">Media center</a>
+              <a href="">Privacy</a>
+              <a href="">Contact as</a>
+            </div>
+          </div>
+          <button class="servicebutton">Service code</button>
+          <p class="lastp">©1997-2023 Netflix,Inc.</p>
+        </div>
+      </footer>
+    <script src="./search.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

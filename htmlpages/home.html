@@ -5,38 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/home.css" />
     <link rel="stylesheet" href="../css/footer.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="../css/navbar.css" />
-    <script src="../script/home.js" type="module"></script>
+    <script src="../script/home.js" type="module" ></script>
     <script src="../script/profile.js" type="module"></script>
     <title>Home</title>
   </head>
   <body>
-    <nav class="navbar" id="navbarselector">
-      <div class="innernavbar">
-        <div class="firstinnernavbar">
-          <div class="logoimg">
-            <img src="../assets/logo.png"  alt="logo" height="25px" />
-          </div>
-          <div class="nav-items">
-            <a class="active" href="./home.html">Home</a>
-            <a href="./tvshows.html">TV Shows</a>
-            <a href="./moviepage.html">Movies</a>
-            <a href="./newsandpopular.html">New & popular</a>
-            <a href="./my_list.html">My List</a>
-            <a href="./language.html">Browse by languages</a>
+    <nav class="navbar navbar-expand-lg pt-3 pb-3 ps-5 pe-5" id="navbarselector">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="../assets/logo.png" width="100px" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ms-md-5" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Movies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Tv shows</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">New & popular</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Browse by languages</a>
+            </li>
+          </ul>
+          <input type="text" class="searchbox bg-dark text-white ps-3 pe-3" id="searchbox">
+          <i class="bi bi-search search text-white ms-2" id="searchIcon"></i>
+        </div>
+        <div class="Navbarprofileicon" style="margin-left: 10px;">
+
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn" id="dropdownBtn">
+            <i class="bi bi-caret-down-fill arrow" id="arrowButton" style="margin-left: 10px;"></i>
+          </button>
+          <div class="dropdown-content" id="dropdownContent">
+            <div class="profileDiv" id="profileDivId">
+              
+            </div>
+            <a href="">Manage Profiles</a>
+            <a href="">Account</a>
+            <a href="">Help center</a>
+            <a id="signOutLink" style="color: white; cursor: pointer;">Sign out of Netflix</a>
           </div>
         </div>
-        <div class="secondinnernavbar">
-          <i class="bi bi-search search"></i>
-          <img src="../assets/profile__logo.png" alt="pr" height="20px" />
-          <select class="profileselect" name="profile" id="profile" style="margin-left: 10px;">
-            <option value="profile1">Albin</option>
-          </select>
-        </div>
+
       </div>
     </nav>
     <div class="bannersection">
@@ -63,49 +87,38 @@
     </div>
     <div class="content-section">
       <h2>Trending</h2>
-      <div class="moviescontainer">
+      
         <div class="newmovies" id="trending-all"></div>
-      </div>
       <h2>Watch History</h2>
-      <div class="moviescontainer">
+      
         <div class="newmovies" id="watch-history"></div>
-      </div>
       <h2>My List</h2>
-      <div class="moviescontainer">
+      
         <div class="newmovies" id="watch-list"></div>
-      </div>
       <h2>Popular Movies</h2>
-      <div class="moviescontainer">
+      
         <div class="newmovies" id="popular-movies"></div>
-      </div>
       <h2>Popular Series</h2>
-      <div class="moviescontainer">
+      
         <div class="newmovies" id="popular-series"></div>
-      </div>
       <h2>Comedy Movies</h2>
-      <div class="moviescontainer">
+      
         <div class="newmovies" id="comedy-movies"></div>
-      </div>
       <h2>Action Movies</h2>
-      <div class="moviescontainer">
+      
         <div class="newmovies" id="action-movies"></div>
-      </div>
       <h2>Adventure Movies</h2>
-      <div class="moviescontainer">
+      
         <div class="newmovies" id="adventure-movies"></div>
-      </div>
       <h2>Romantic Movies</h2>
-      <div class="moviescontainer">
+      
         <div class="newmovies" id="romantic-movies"></div>
-      </div>
       <h2>History Movies</h2>
-      <div class="moviescontainer">
+      
         <div class="newmovies" id="history-movies"></div>
-      </div>
       <h2>Thriller Movies</h2>
-      <div class="moviescontainer">
+      
         <div class="newmovies" id="thriller-movies"></div>
-      </div>
     </div>
     <footer class="footer">
       <div class="innerfooter">
@@ -141,5 +154,6 @@
         <p class="lastp">©1997-2023 Netflix,Inc.</p>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>

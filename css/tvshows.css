@@ -528,3 +528,7 @@ font-weight: 500;
   #movie_container_outside{
     padding: 68px 0px 0px 10px;
   }
+
+.genre select{
+   width:80px;
+}
