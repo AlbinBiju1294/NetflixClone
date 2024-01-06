@@ -1,4 +1,4 @@
-window.addEventListener("scroll", function() {
+  window.addEventListener("scroll", function() {
   const headgenreContainer = document.getElementById("headgenre_container");
   if (window.scrollY > 50) {
       headgenreContainer.style.backgroundColor = "black";

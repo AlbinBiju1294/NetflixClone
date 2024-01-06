@@ -1,0 +1,171 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Watch Party</title>
+  <style>
+    video {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Virtual Watch Party</h1>
+
+  <video id="sharedVideo" controls>
+    <source src="../assets/video-devices-in.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <script>
+    // Simulating shared playback time (in seconds)
+    let sharedPlaybackTime = 0;
+
+    // Update shared playback time every second
+    setInterval(() => {
+      sharedPlaybackTime += 1;
+      console.log('Shared Playback Time:', sharedPlaybackTime);
+      // Here, you can send the sharedPlaybackTime to a server or other clients
+    }, 1000);
+
+    // Event listener for seeking the video
+    document.getElementById('sharedVideo').addEventListener('seeked', function() {
+      // Update shared playback time when the user seeks
+      sharedPlaybackTime = this.currentTime;
+      console.log('User Seeked. Updated Shared Playback Time:', sharedPlaybackTime);
+      // Here, you can send the updated sharedPlaybackTime to a server or other clients
+    });
+  </script>
+
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Sign in Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="logo">
+        <img src="logo.png" alt="">
+    </div>
+ 
+    <div class="container">
+        <h1 id="signIn_head">Sign In</h1>
+        <div class="form">
+            <div class="input-container">
+            <input type="email" placeholder="Email or phone number">
+            <label class="placeholder-label" for = "email">Email</label>
+            </div>
+            <div class="input-container">
+            <input type="password" placeholder="Password">
+            <label class="placeholder-label" for = "password">Password</label>
+           </div>
+            <input type="submit" value="Sign In">
+            <input type="checkbox">
+            <label id="remember_me">Remember me</label>
+            <a href="#" id="need_help">Need help?</a>
+        </div>
+        <div class="content">
+            <h2>New to Netflix? <a href="#" id="signUpNow">Sign up now.</a> </h2> <br>
+            <h2 id="page_endLine">This page is protected by Google reCAPTCHA to ensure you're not a bot. Learn more.</h2>
+        </div>
+    </div>
+</body>
+</html> -->
+
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="../css/signuptry.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <script type = "module" src = "../script/signuptry.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="module" src="../script/email.js"></script>
+  </head>
+<body>
+    <div class="overlay"></div>
+    <img class="logo" src="../assets/netflix1_logo.png" alt="netflix logo">
+    
+<div class="form-wrapper">
+    <h2 id="signUp_head">Sign Up</h2>
+    <h2 id="mainhead_line1">Create a password to start</h2>
+    <h2 id="mainhead_line2">your membership </h2>    
+    <h3 id="fewmoresteps">Just a few more steps and you're done!  We hate paperwork, too.</h3>
+    <form action="#">
+      <div class="form-control">
+        <input id = "usersname" type="text" required>
+        <label id="yourname_id">Your Name</label>
+    </div>
+        <div class="form-control">
+            <input id = "email-signup" type="text" required>
+            <label id="emailentryfield_id">Email or phone number</label>
+        </div>
+        <div class="form-control">
+            <input id = "password-signup" type="password" required>
+            <label id="passwordEntryField_id">Password</label>
+        </div>
+        <button id = "getOtp" >GET OTP</button>
+        
+        <div class="form-control">
+          <input id = "otp-signup" type="text">
+          <label id="otpLabel">Otp</label>
+      </div>
+        <button id = "create-acct-btn" >Sign Up</button>
+        <div class="form-help"> 
+            <div class="remember-me">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Remember me</label>
+            </div>
+            <a href="#" id="need_help">Need help?</a>
+        </div>
+    </form>
+ 
+</div>
+</body>
+<footer class="footer">
+  <div class="innerfooter">
+    <div class="socialicons">
+      <i class="bi bi-facebook"></i>
+      <i class="bi bi-instagram"></i>
+      <i class="bi bi-twitter-x"></i>
+      <i class="bi bi-youtube"></i>
+    </div>
+    <div class="mainlinks">
+      <div class="firstlink innerlinks">
+        <a href="#" id="footer_col1_item1">Audio description</a>
+        <a href="" id="footer_col1_item2">Investor relations</a>
+        <a href="" id="footer_col1_item3">Legal notices</a>
+      </div>
+      <div class="firstlink innerlinks">
+        <a href="#" id="footer_col2_item1">Help center</a>
+        <a href="" id="footer_col2_item2">Jobs</a>
+        <a href="" id="footer_col2_item3">Cookie preference</a>
+      </div>
+      <div class="firstlink innerlinks">
+        <a href="#" id="footer_col3_item1">Gift cards</a>
+        <a href="" id="footer_col3_item2">Terms of use</a>
+        <a href="" id="footer_col3_item3">Corporate Information</a>
+      </div>
+      <div class="firstlink innerlinks">
+        <a href="#" id="footer_col4_item1">Media center</a>
+        <a href="" id="footer_col4_item2">Privacy</a>
+        <a href="" id="footer_col4_item3">Contact as</a>
+      </div>
+    </div>
+    <button class="servicebutton" id="servicebutton_id">Service code</button>
+    <p class="lastp" id="lastp_id">©1997-2023 Netflix,Inc.</p>
+  </div>
+</footer>
+</html>

@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="../css/moviepage.css">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <title>Document</title>
-    <script src="../script/moviepage.js"></script>
 </head>
 <body>
       <nav class="navbar">
@@ -16,12 +15,12 @@
                 <a href="../htmlpages/home.html"><img src="../assets/Netflixlogo.png" alt="logo" height="80px" /></a>
               </div>
               <div class="nav-items">
-                <a class="active" href="./home.html">Home</a>
-            <a href="./tvshows.html">TV Shows</a>
-            <a href="./moviepage.html">Movies</a>
-            <a href="./newsandpopular.html">New & popular</a>
-            <a href="./my_list.html">My List</a>
-            <a href="./language.html">Browse by languages</a>
+                <a class="active" href="./home.html" id="nav_home">Home</a>
+                <a href="./tvshows.html" id="nav_tvshows">TV Shows</a>
+                <a href="./moviepage.html" id="nav_movies">Movies</a>
+                <a href="./newsandpopular.html" id="nav_newpopular">New & popular</a>
+                <a href="./my_list.html" id="nav_mylist">My List</a>
+                <a href="./language.html" id="nav_browse">Browse by languages</a>
               </div>
             </div>
             <div class="secondinnernavbar">
@@ -34,18 +33,18 @@
         <div class="banner">
             <div class="headgenre_container" id="headgenre_container">
               <div class="moviepage_head">
-                <h1>Movies</h1>
+                <h1 id="movieid">Movies</h1>
               </div>
               <div class="genre">
                 <select id="genre_dropdown" onchange="movieTypeSelection()">
-                    <option value="defaults">Genre</option>
-                    <option value="horror">Horror</option>
-                    <option value="romantic">Romantic</option>
-                    <option value="comedy">Comedy</option>
-                    <option value="action">Action</option>
-                    <option value="adventure">Adventure</option>
-                    <option value="history">History</option>
-                    <option value="thriller">Thriller</option>
+                    <option value="defaults" id="genre">Genre</option>
+                    <option value="horror" id="horror">Horror</option>
+                    <option value="romantic" id="romantic">Romantic</option>
+                    <option value="comedy" id="comedy">Comedy</option>
+                    <option value="action" id="action">Action</option>
+                    <option value="adventure" id="adventure">Adventure</option>
+                    <option value="history" id="history">History</option>
+                    <option value="thriller" id="thriller">Thriller</option>
                 </select>
               </div>
             </div>
@@ -55,18 +54,16 @@
             </div>
             
             <div class="playinfo_buttons">
-              <button class="play"><i class="bi bi-play-fill buttonicon"></i>Play</button>
-              <button class="info"><i class="bi bi-info-circle buttonicon"></i>More Info</button>
+              <button class="play" id="play_id"><i class="bi bi-play-fill buttonicon"></i>Play</button>
+              <button class="info" id="info_id"><i class="bi bi-info-circle buttonicon"></i>More Info</button>
             </div>
-            
-             
         </div>
         
       </div>
       <div class="movie_container" id="movie_container" >
           <div class="main-text">
-            <h2>Movies</h2>
-            <div class="hidden-text" onclick="showCard('nested-card-movie')">ExploreAll>></div>
+            <h2 id="category_movies">Movies</h2>
+            <div class="hidden-text" id="movies_exploreall" onclick="showCard('nested-card-movie')">ExploreAll>></div>
           </div>
           <!-- **************************** -->
           <div class="card-container" id="cardContainer" onclick="closeCard()">
@@ -83,40 +80,21 @@
           </div>
          
           <div class="main-text">
-            <h2>Upcoming</h2>
-            <div class="hidden-text" onclick="showCard('nested-card-upcoming')">ExploreAll>></div>
-          </div>
-          <div class="card-container" id="cardContainer" onclick="closeCard()">
-            <div class="main-card" id="main-card" onclick="stopPropagation(event)">
-              <span class="close-btn" onclick="closeCard()">Close</span>
-              <div id="nested-card-upcoming"></div>
-            </div>
+            <h2 id="category_upcoming">Upcoming</h2>
+            <div class="hidden-text" id="upcoming_exploreall" onclick="showCard('nested-card-upcoming')">ExploreAll>></div>
           </div>
           <div id="upcomingmovie" class="movie">
           </div>
           
           <div class="main-text">
-            <h2>Top Rated</h2>
-            <div class="hidden-text" onclick="showCard('nested-card-topmovie')">ExploreAll>></div>
-          </div>
-          <div class="card-container" id="cardContainer" onclick="closeCard()">
-            <div class="main-card" id="main-card" onclick="stopPropagation(event)">
-              <span class="close-btn" onclick="closeCard()">Close</span>
-              <div id="nested-card-topmovie"></div>
-            </div>
+            <h2 id="category_toprated">Top Rated</h2>
+            <div class="hidden-text" id="top_exploreall" onclick="showCard('nested-card-topmovie')">ExploreAll>></div>
           </div>
           <div id="topmovie" class="movie">
           </div>
-          
           <div class="main-text">
-            <h2>Popular Movies</h2>
-            <div class="hidden-text" onclick="showCard('nested-card-popularmovie')">ExploreAll>></div>
-          </div>
-          <div class="card-container" id="cardContainer" onclick="closeCard()">
-            <div class="main-card" id="main-card" onclick="stopPropagation(event)">
-              <span class="close-btn" onclick="closeCard()">Close</span>
-              <div id="nested-card-popularmovie"></div>
-            </div>
+            <h2 id="category_popularmovie">Popular Movies</h2>
+            <div class="hidden-text" id="popular_exploreall" onclick="showCard('nested-card-popularmovie')">ExploreAll>></div>
           </div>
           <div id="popularmovie" class="movie">
           </div>
@@ -133,29 +111,31 @@
           </div>
           <div class="mainlinks">
             <div class="firstlink innerlinks">
-              <a href="#">Audio description</a>
-              <a href="">Investor relations</a>
-              <a href="">Legal notices</a>
+              <a href="#" id="footer_col1_item1">Audio description</a>
+              <a href="" id="footer_col1_item2">Investor relations</a>
+              <a href="" id="footer_col1_item3">Legal notices</a>
             </div>
             <div class="firstlink innerlinks">
-              <a href="#">Help center</a>
-              <a href="">Jobs</a>
-              <a href="">Cookie preference</a>
+              <a href="#" id="footer_col2_item1">Help center</a>
+              <a href="" id="footer_col2_item2">Jobs</a>
+              <a href="" id="footer_col2_item3">Cookie preference</a>
             </div>
             <div class="firstlink innerlinks">
-              <a href="#">Gift cards</a>
-              <a href="">Terms of use</a>
-              <a href="">Corporate Information</a>
+              <a href="#" id="footer_col3_item1">Gift cards</a>
+              <a href="" id="footer_col3_item2">Terms of use</a>
+              <a href="" id="footer_col3_item3">Corporate Information</a>
             </div>
             <div class="firstlink innerlinks">
-              <a href="#">Media center</a>
-              <a href="">Privacy</a>
-              <a href="">Contact as</a>
+              <a href="#" id="footer_col4_item1">Media center</a>
+              <a href="" id="footer_col4_item2">Privacy</a>
+              <a href="" id="footer_col4_item3">Contact as</a>
             </div>
           </div>
-          <button class="servicebutton">Service code</button>
-          <p class="lastp">©1997-2023 Netflix,Inc.</p>
+          <button class="servicebutton" id="servicebutton_id">Service code</button>
+          <p class="lastp" id="lastp_id">©1997-2023 Netflix,Inc.</p>
         </div>
       </footer>
+      <script src="../script/moviepage.js"></script>
+      <script src="../script/languageChange.js"></script>
 </body>
 </html>
