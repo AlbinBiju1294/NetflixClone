@@ -2,7 +2,7 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { getFirestore, collection, getDoc, doc , arrayUnion, updateDoc, getDocs} from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 
 import {firebaseConfig} from '../script/config.js'
-import { getOptions } from './tmdbkeys.js';
+import { getOptions } from '../script/tmdbkeys.js';
   
 // Initializing Firebase
 const app = initializeApp(firebaseConfig);
@@ -50,7 +50,7 @@ document.getElementById('searchIcon').addEventListener('click',() => {
   setSearchKeyword();
 })
 
-const setSearchKeyword = () => {
+export const setSearchKeyword = () => {
   let searchKeyword =  document.getElementById('searchbox').value;
   localStorage.setItem('searchKeyword',searchKeyword);
   window.location.href = '../search/search.html';
@@ -65,7 +65,7 @@ window.onload = () => {
     showContent("trending/all/day?language=en-US","trending-all");
     showContent("movie/popular?language=en-US&page=1","popular-movies");
     showContent("tv/popular?language=en-US&page=1","popular-series");
-    showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=27","horror-movies");
+    // showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=27","horror-movies");
     showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=12","adventure-movies");
     showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=28","action-movies");
     showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=10749","romantic-movies");
@@ -85,7 +85,13 @@ const showContent = (url,elementId) => {
     .then((response) => {
       content = response.results;
       const parentElement = document.getElementById(elementId);
+      const exploreId = elementId+"-span";
+      console.log(exploreId);
+      document.getElementById(`${exploreId}`).addEventListener('click',() => {
+        generateExploreMore(content);
+      })
 
+      
       content.forEach((item) => {
         const newElement = document.createElement("div");
         newElement.className = "innercard";
@@ -108,15 +114,15 @@ const showContent = (url,elementId) => {
         newElement.querySelector(`#playbutton${item.id}`).addEventListener('click',() => { addHistory(item)});
         newElement.querySelector(`#plusbutton${item.id}`).addEventListener('click',() => { addList(item)});
 
-        newElement.addEventListener("mouseenter", () => {
-          // newElement.style.backgroundImage = "none";
-          videoElement.style.display = "block";
-      });
+      //   newElement.addEventListener("mouseenter", () => {
+      //     // newElement.style.backgroundImage = "none";
+      //     videoElement.style.display = "block";
+      // });
    
-      newElement.addEventListener("mouseleave", () => {
-          newElement.style.backgroundImage = `url(${imageUrl})`;
-          videoElement.style.display = "none";
-      });
+      // newElement.addEventListener("mouseleave", () => {
+      //     newElement.style.backgroundImage = `url(${imageUrl})`;
+      //     videoElement.style.display = "none";
+      // });
       // newElement.appendChild(videoElement);
         parentElement.appendChild(newElement);
 
@@ -125,8 +131,30 @@ const showContent = (url,elementId) => {
     .catch((err) => console.error(err));
 };
 
+//explore more
+const generateExploreMore = ( content ) => {
+  const exploreContentDiv = document.getElementById('exploreContentId');
+  content.forEach((item) => {
+    const newElement = document.createElement("div");
+    newElement.className = "innercard";
+    const imageUrl =
+      baseImageUrl + item.backdrop_path;
+    newElement.style.backgroundImage = `url(${imageUrl})`;
+    newElement.style.backgroundSize = "cover";
+    newElement.innerHTML = `<div class="movie-info"><p class="movie-title">${item.original_title}</p><p class="movie-title">Language:${item.original_language}</p><p class="movie-popularity" style="width: 250px;">Release Date:${item.release_date}</p><div class="PWbuttons"><i class="bi bi-play-circle-fill playbutton" id="playbutton${item.id}"></i><i class="bi bi-plus-circle plusbutton" id="plusbutton${item.id}"></i></div></div>`
+    newElement.querySelector(`#playbutton${item.id}`).addEventListener('click',() => { addHistory(item)});
+    newElement.querySelector(`#plusbutton${item.id}`).addEventListener('click',() => { addList(item)});
+    exploreContentDiv.appendChild(newElement);
 
-// onclicking the play button the movie or tvshow item gets stored in the watch history
+  });
+  document.getElementById('exploreMoreId').style.display = 'block';
+  document.getElementById('exploreMoreId').style.opacity = 1;
+  document.getElementById('closeButtonId').addEventListener('click',() => {
+    closeExploreContent();
+  })
+}
+
+
 const addHistory = async (item) => {
   const collection2 = collection(docRef,"profiles");
   const document2 = doc(collection2,`${localStorage.getItem('profile')}`);
@@ -194,7 +222,6 @@ const showWatchList= async () => {
 
 
 // for appending profiles
-
 export const setNavbarProfiles = async () => {
   const colRef = collection(db, "profileCollection");
   const docRef = doc(colRef,`${localStorage.getItem('userId')}`);
@@ -223,3 +250,17 @@ export const signOut = () => {
   localStorage.removeItem('profile');
   window.location.href = '../htmlpages/login.html';
 }
+
+
+
+const closeExploreContent = () => {
+  console.log("Entered");
+  const exploreContentDiv = document.getElementById('exploreContentId');
+  exploreContentDiv.innerHTML = '';
+  document.getElementById('exploreMoreId').style.display = 'none';
+  document.getElementById('exploreMoreId').style.opacity = 0;
+
+}
+
+
+// onclicking the play button the movie or tvshow item gets stored in the watch history

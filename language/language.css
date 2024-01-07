@@ -8,8 +8,8 @@
 }
 
 body{
-    background-color: #141414;
-    font-family: 'Poppins', sans-serif;
+    background-color: #141414 !important;
+    font-family: 'Poppins', sans-serif !important;
 }
 
 .content
@@ -26,10 +26,15 @@ body{
 
 .content h2
 {
-    font-weight: 400;
-    margin-top: 80px;
+    font-size: 27px;
+    font-weight: 400 !important;
+    margin-top: 80px !important;
 }
 
+.content h4
+{
+    font-size: 20px;
+}
 .innercard
 {
     min-height: 150px;
@@ -55,14 +60,16 @@ body{
 
 .selectsortlanguage h4
 {
-    font-weight: 400;
+    font-weight: 400 !important;
 
 }
 
 .selectsortlanguage select
 {
+    border-radius: 3px;
+    font-size: small;
     margin-left: 50px;
-    font-weight: 600;
+    font-weight: 400;
     outline: none;
     border: 1px solid white;
     background-color: #141414;
