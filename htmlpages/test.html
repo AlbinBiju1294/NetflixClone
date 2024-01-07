@@ -1,171 +1,152 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Virtual Watch Party</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Responsive Text with Bootstrap</title>
   <style>
-    video {
-      width: 100%;
+    body {
+        background: url('../assets/landingpage_bgimage.png');
+      padding-top: 56px; /* Adjust based on your navbar height */
+      margin: 0; /* Remove default margin to ensure full coverage of the background */
+      height: 100vh; /* Set a minimum height to ensure the background is visible */
     }
+.superclass{
+    
+}
+    /* Custom styles for the container */
+    .container-content {
+      color: white; /* Adjust text color for better visibility on the background */
+    }
+    .footer
+{   background-color: #00000087;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.innerfooter
+{
+    width: 70%;
+}
+ 
+.socialicons
+{
+    margin-top: 40px;
+    color: white;
+}
+ 
+.socialicons i
+{
+    font-size: large;
+    margin-right: 20px;
+}
+ 
+.mainlinks
+{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+ 
+.innerlinks
+{
+    display: flex;
+    flex-direction: column;
+}
+ 
+.innerlinks a{
+    margin-bottom: 10px;
+    color: grey;
+    text-decoration: none;
+    font-size: smaller;
+}
+ 
+.servicebutton
+{
+    padding: 6px 10px;
+    border: 1px solid grey;
+    color: grey;
+    background-color: #141414;
+    margin-top: 30px;
+}
+ 
+.lastp
+{
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: #686a73;
+    font-size: x-small;
+}
   </style>
 </head>
 <body>
-
-  <h1>Virtual Watch Party</h1>
-
-  <video id="sharedVideo" controls>
-    <source src="../assets/video-devices-in.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <script>
-    // Simulating shared playback time (in seconds)
-    let sharedPlaybackTime = 0;
-
-    // Update shared playback time every second
-    setInterval(() => {
-      sharedPlaybackTime += 1;
-      console.log('Shared Playback Time:', sharedPlaybackTime);
-      // Here, you can send the sharedPlaybackTime to a server or other clients
-    }, 1000);
-
-    // Event listener for seeking the video
-    document.getElementById('sharedVideo').addEventListener('seeked', function() {
-      // Update shared playback time when the user seeks
-      sharedPlaybackTime = this.currentTime;
-      console.log('User Seeked. Updated Shared Playback Time:', sharedPlaybackTime);
-      // Here, you can send the updated sharedPlaybackTime to a server or other clients
-    });
-  </script>
-
-</body>
-</html> -->
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix Sign in Page</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="logo">
-        <img src="logo.png" alt="">
-    </div>
- 
-    <div class="container">
-        <h1 id="signIn_head">Sign In</h1>
-        <div class="form">
-            <div class="input-container">
-            <input type="email" placeholder="Email or phone number">
-            <label class="placeholder-label" for = "email">Email</label>
-            </div>
-            <div class="input-container">
-            <input type="password" placeholder="Password">
-            <label class="placeholder-label" for = "password">Password</label>
-           </div>
-            <input type="submit" value="Sign In">
-            <input type="checkbox">
-            <label id="remember_me">Remember me</label>
-            <a href="#" id="need_help">Need help?</a>
+  <!-- NavBar -->
+  <div class="superclass">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: black;">
+        <a class="navbar-brand" href="#">
+          <img src="../assets/Netflixlogo.png" alt="logo" height="40px">
+        </a>
+        <div class="ml-auto">
+          <button class="btn btn-outline-secondary" type="button">Sign Out</button>
         </div>
-        <div class="content">
-            <h2>New to Netflix? <a href="#" id="signUpNow">Sign up now.</a> </h2> <br>
-            <h2 id="page_endLine">This page is protected by Google reCAPTCHA to ensure you're not a bot. Learn more.</h2>
-        </div>
-    </div>
-</body>
-</html> -->
-
-
-
-
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix</title>
-    <link rel="stylesheet" href="../css/signuptry.css">
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-    <script type = "module" src = "../script/signuptry.js"></script>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="module" src="../script/email.js"></script>
-  </head>
-<body>
-    <div class="overlay"></div>
-    <img class="logo" src="../assets/netflix1_logo.png" alt="netflix logo">
+      </nav>
     
-<div class="form-wrapper">
-    <h2 id="signUp_head">Sign Up</h2>
-    <h2 id="mainhead_line1">Create a password to start</h2>
-    <h2 id="mainhead_line2">your membership </h2>    
-    <h3 id="fewmoresteps">Just a few more steps and you're done!  We hate paperwork, too.</h3>
-    <form action="#">
-      <div class="form-control">
-        <input id = "usersname" type="text" required>
-        <label id="yourname_id">Your Name</label>
-    </div>
-        <div class="form-control">
-            <input id = "email-signup" type="text" required>
-            <label id="emailentryfield_id">Email or phone number</label>
-        </div>
-        <div class="form-control">
-            <input id = "password-signup" type="password" required>
-            <label id="passwordEntryField_id">Password</label>
-        </div>
-        <button id = "getOtp" >GET OTP</button>
-        
-        <div class="form-control">
-          <input id = "otp-signup" type="text">
-          <label id="otpLabel">Otp</label>
-      </div>
-        <button id = "create-acct-btn" >Sign Up</button>
-        <div class="form-help"> 
-            <div class="remember-me">
-                <input type="checkbox" id="remember-me">
-                <label for="remember-me">Remember me</label>
+      <div class="container mt-5 container-content">
+        <div class="row">
+          <div class="col-lg-6 col-md-8 col-sm-12 mx-auto">
+            <h1 class="text-lg">Redeem your gift</h1>
+            <p class="text-md">Enter your code below to get started.</p>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Code or PIN">
             </div>
-            <a href="#" id="need_help">Need help?</a>
+            <div class="mb-3">
+              <button class="btn btn-primary" type="button">Redeem</button>
+            </div>
+            <p>Need help with gift cards</p>
+          </div>
         </div>
-    </form>
- 
-</div>
-</body>
-<footer class="footer">
-  <div class="innerfooter">
-    <div class="socialicons">
-      <i class="bi bi-facebook"></i>
-      <i class="bi bi-instagram"></i>
-      <i class="bi bi-twitter-x"></i>
-      <i class="bi bi-youtube"></i>
-    </div>
-    <div class="mainlinks">
-      <div class="firstlink innerlinks">
-        <a href="#" id="footer_col1_item1">Audio description</a>
-        <a href="" id="footer_col1_item2">Investor relations</a>
-        <a href="" id="footer_col1_item3">Legal notices</a>
       </div>
-      <div class="firstlink innerlinks">
-        <a href="#" id="footer_col2_item1">Help center</a>
-        <a href="" id="footer_col2_item2">Jobs</a>
-        <a href="" id="footer_col2_item3">Cookie preference</a>
-      </div>
-      <div class="firstlink innerlinks">
-        <a href="#" id="footer_col3_item1">Gift cards</a>
-        <a href="" id="footer_col3_item2">Terms of use</a>
-        <a href="" id="footer_col3_item3">Corporate Information</a>
-      </div>
-      <div class="firstlink innerlinks">
-        <a href="#" id="footer_col4_item1">Media center</a>
-        <a href="" id="footer_col4_item2">Privacy</a>
-        <a href="" id="footer_col4_item3">Contact as</a>
-      </div>
-    </div>
-    <button class="servicebutton" id="servicebutton_id">Service code</button>
-    <p class="lastp" id="lastp_id">©1997-2023 Netflix,Inc.</p>
   </div>
-</footer>
+  
+  <footer class="footer">
+    <div class="innerfooter">
+      <div class="socialicons">
+        <i class="bi bi-facebook"></i>
+        <i class="bi bi-instagram"></i>
+        <i class="bi bi-twitter-x"></i>
+        <i class="bi bi-youtube"></i>
+      </div>
+      <div class="mainlinks">
+        <div class="firstlink innerlinks">
+          <a href="#" id="footer_col1_item1">Audio description</a>
+          <a href="" id="footer_col1_item2">Investor relations</a>
+          <a href="" id="footer_col1_item3">Legal notices</a>
+        </div>
+        <div class="firstlink innerlinks">
+          <a href="#" id="footer_col2_item1">Help center</a>
+          <a href="" id="footer_col2_item2">Jobs</a>
+          <a href="" id="footer_col2_item3">Cookie preference</a>
+        </div>
+        <div class="firstlink innerlinks">
+          <a href="#" id="footer_col3_item1">Gift cards</a>
+          <a href="" id="footer_col3_item2">Terms of use</a>
+          <a href="" id="footer_col3_item3">Corporate Information</a>
+        </div>
+        <div class="firstlink innerlinks">
+          <a href="#" id="footer_col4_item1">Media center</a>
+          <a href="" id="footer_col4_item2">Privacy</a>
+          <a href="" id="footer_col4_item3">Contact as</a>
+        </div>
+      </div>
+      <button class="servicebutton" id="servicebutton_id">Service code</button>
+      <p class="lastp" id="lastp_id">©1997-2023 Netflix,Inc.</p>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>

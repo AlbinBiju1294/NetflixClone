@@ -97,19 +97,27 @@ function showCard(id1) {
   document.getElementById('nested-card-upcoming').innerHTML='';
   const cardContainer = document.getElementById('cardContainer');
   const mainCard = document.querySelector('.main-card');
+  const title=document.getElementById('nested-card-movie');
+  let headingText = '';
+  let headingText1 = '';
   switch(id1){
-    case "nested-card-movie":const title=document.getElementById('nested-card-movie').innerHTML='Movie';
-                            title.t
+    case "nested-card-movie":headingText = 'Movies';
                             showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=35", "nested-card-movie");
+                            headingText1 = 'Moviesdbiwbdbwd';
                               break;
-    case "nested-card-topmovie":  showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=27", "nested-card-topmovie");
+    case "nested-card-topmovie":headingText = 'Top Rated Movies';
+        showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=27", "nested-card-topmovie");
                                 break;
-    case "nested-card-popularmovie":  showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=36", "nested-card-popularmovie");
+    case "nested-card-popularmovie":  headingText = 'Popular Movies';
+    showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=36", "nested-card-popularmovie");
                                     break;
-    case "nested-card-upcoming":showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=12", "nested-card-upcoming");
+    case "nested-card-upcoming":headingText = 'Upcoming Movies';
+      showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=12", "nested-card-upcoming");
                                 break;
   }
+  title.innerHTML = `<h2 style="text-align: center; font-size:50px; padding: 20px;">${headingText}</h2>`;
   cardContainer.style.display = 'flex';
+
   setTimeout(function() {
     mainCard.style.transform = 'scale(1)';
     cardContainer.style.opacity = 1;
