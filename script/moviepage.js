@@ -130,3 +130,42 @@ function stopPropagation(event) {
   event.stopPropagation();
 }
 
+// Function to read content of #content div
+// Load JSON data
+let elementIds;
+
+fetch('../elements.json')
+  .then(response => response.json())
+  .then(data => {
+    elementIds = data;
+    // Set up event delegation for the entire document
+    document.addEventListener('mouseover', function (event) {
+      handleMouseover(event);
+    });
+  });
+
+// Function to toggle audio
+let audioEnabled = true;
+
+function toggleAudio() {
+  audioEnabled = !audioEnabled; // Toggle audio state
+}
+
+// Function to handle mouseover event using event delegation
+function handleMouseover(event) {
+  // console.log("qwertyuiop");
+  if (audioEnabled && elementIds) {
+    // Get the ID from the event target
+    const elementId = event.target.id;
+    // console.log(elementIds[elementId])
+    // Check if the ID is in the JSON file
+    if (elementIds[elementId]) {
+      const contentElement = document.getElementById(elementIds[elementId]);
+      if (contentElement) {
+        const synth = window.speechSynthesis;
+        const utterance = new SpeechSynthesisUtterance(contentElement.innerText);
+        synth.speak(utterance);
+      }
+    }
+  }
+}

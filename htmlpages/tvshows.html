@@ -16,12 +16,12 @@
               <a href="./home.html"><img src="../assets/Netflixlogo.png" alt="logo" height="80px" /></a>
             </div>
             <div class="nav-items">
-              <a href="./home.html">Home</a>
-              <a class="active" href="#">TV Shows</a>
-              <a href="./moviepage.html">Movies</a>
-              <a href="./newsandpopular.html">New & popular</a>
-              <a href="./my_list.html">My List</a>
-              <a href="./language.html">Browse by languages</a>
+              <a id="nav_home" href="./home.html" >Home</a>
+              <a id="nav_tvshows" class="active" href="#">TV Shows</a>
+              <a id="nav_movies" href="./moviepage.html">Movies</a>
+              <a id="nav_newpopular" href="./newsandpopular.html">New & popular</a>
+              <a id="nav_mylist" href="./my_list.html">My List</a>
+              <a id="nav_browse" href="./language.html">Browse by languages</a>
             </div>
           </div>
           <div class="secondinnernavbar">
@@ -34,35 +34,44 @@
         <div class="videoContainer">
             <!-- <iframe width="560" height="315" src="./assests/Money heist - bella ciao whatsapp status.mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> --> -->
         </div>
-        <div class="content">
+       
+        <div class="content" id="content">
+          
         <div id="banner">
-           <div class="head">
+           <div class="head" id="head">
             <h1>TV Shows</h1>
            </div>
+           <!-- Add this inside the <body> tag -->
+
+
+           <!-- <button onclick="readDynamicContent()">Audio</button> -->
            <div class="genre">
             <select id="genre_dropdown" onchange="movieTypeSelection()">
-                <option value="defaults">Genre</option>
-                <option value="horror">Horror</option>
-                <option value="romantic">Romantic</option>
-                <option value="comedy">Comedy</option>
-                <option value="action">Action</option>
-                <option value="adventure">Adventure</option>
-                <option value="history">History</option>
-                <option value="thriller">Thriller</option>
+                <option id="genre" value="defaults">Genre</option>
+                <option id="horror" value="horror">Horror</option>
+                <option id="romantic" value="romantic">Romantic</option>
+                <option id="comedy" value="comedy">Comedy</option>
+                <option id="action" value="action">Action</option>
+                <option id="adventure" value="adventure">Adventure</option>
+                <option id="history" value="history">History</option>
+                <option id="thriller" value="thriller">Thriller</option>
             </select>
           </div>
 
             
        </div>
        <div class="sound">
-        <i class="bi bi-volume-down-fill"></i>
+        <div class="audio-toggle">
+          <label for="audioCheckbox">Enable Audio</label>
+          <input type="checkbox" id="audioCheckbox" onchange="toggleAudio()">
+        </div>
     </div>
        <div class="buttons">
-        <button class="play"><i class="bi bi-play-fill buttonicon"></i>Play</button>
-        <button class="info" onclick="showVideoCard()"><i class="bi bi-info-circle buttonicon"></i>More Info</button>
+        <button class="play" id="play"><i class="bi bi-play-fill buttonicon"></i>Play</button>
+        <button class="info" id="info" onclick="showVideoCard()"><i class="bi bi-info-circle buttonicon"></i>More Info</button>
       </div>
-        <div class="title">
-        <img src="../assets/mh (2).png">
+        <div class="title" id="title">
+        <h1 style="font-family: 'Rubik Doodle Shadow';font-size: 50px;">MONEY HEIST</h1>
         <p>In the heart-pounding world of Money Heist, where the line between heroes and villains blurs, every move is a gamble, every plan a high-stakes heist, and the true currency is not just money, but the cost of loyalty, deception, and the relentless pursuit of a perfect crime.</p>
         </div>
     </div>
@@ -73,10 +82,13 @@
     <div class="content">
     <div class="moviescontainer" id="moviescontainer">
       <div class="maintext">
-        <h2>POPULAR</h2>
+        <h2 id="popular">POPULAR</h2>
         <div class="hidden-text" onclick="showCard('nested-card-movie')">ExploreAll>></div>
      </div>
-        <div class="newmovies" id="popular-movies" onmouseover="showVideoCard()">
+        <div class="newmovies" id="popular-movies">
+
+          <!-- ****************************************************************************** -->
+          <!-- Working On It -->
           <div class="card-container" id="cardContainer" onclick="closeCard()">
             <div class="main-card" id="main-card" onclick="stopPropagation(event)">
               <span class="close-btn" onclick="closeCard()">X</span>
@@ -86,82 +98,40 @@
               <div id="nested-card-popularmovie"></div>
             </div>
           </div>
-          <!-- **************************** -->
+          
           <div id="allmovie" class="movie">
           </div>
+
+          <!-- ********************************************************************************* -->
+
         </div>
 
-        <div class="card" id="videoCard" onmouseleave="closeVideoCard()">
-          <span class="close-icon" onclick="closeVideoCard()">&times;</span>
-          <video src="../assets/video-devices-in.mp4" alt="Video" controls autoplay loop muted></video>
-          <div class="card-content">
-            <p><p><strong>Title</strong></p>
-            <p>Duration : 2h 30m</p>
-            <p>Genre</p></p>
-          </div>
-      </div>
+      <h2 id="nowplaying">NOW PLAYING</h2>
+
+        <div class="newmovies" id="now-playing">
+         
+        </div>
 
       
-      <h2>NOW PLAYING</h2>
+      <h2 id="top">TOP RATED</h2>
 
-        <div class="newmovies" id="now-playing" onmouseover="showVideoCard()">
+        <div class="newmovies" id="top-rated">
          
         </div>
 
-        <div class="card" id="videoCard" onmouseleave="closeVideoCard()">
-          <span class="close-icon" onclick="closeVideoCard()">&times;</span>
-          <video src="../assets/video-devices-in.mp4" alt="Video" controls autoplay loop muted></video>
-          <div class="card-content">
-            <p><p><strong>Title</strong></p>
-            <p>Duration : 2h 30m</p>
-            <p>Genre</p></p>
-          </div>
-      </div>
-      
-      <h2>TOP RATED</h2>
+        
 
-        <div class="newmovies" id="top-rated"onmouseover="showVideoCard()">
+      <h2 id="upc">UPCOMING</h2>
+
+        <div class="newmovies" id="upcoming">
          
         </div>
 
-        <div class="card" id="videoCard" onmouseleave="closeVideoCard()">
-          <span class="close-icon" onclick="closeVideoCard()">&times;</span>
-          <video src="../assets/video-devices-in.mp4" alt="Video" controls autoplay loop muted></video>
-          <div class="card-content">
-            <p><p><strong>Title</strong></p>
-            <p>Duration : 2h 30m</p>
-            <p>Genre</p></p>
-          </div>
-      </div>
-
-      <h2>UPCOMING</h2>
-
-        <div class="newmovies" id="upcoming" onmouseover="showVideoCard()">
-         
-        </div>
-
-        <div class="card" id="videoCard" onmouseleave="closeVideoCard()">
-          <span class="close-icon" onclick="closeVideoCard()">&times;</span>
-          <video src="../assets/video-devices-in.mp4" alt="Video" controls autoplay loop muted></video>
-          <div class="card-content">
-            <p><p><strong>Title</strong></p>
-            <p>Duration : 2h 30m</p>
-            <p>Genre</p></p>
-          </div>
-      </div>
 
       </div>
     </div>
-    <div id="movie_container_outside" onmouseover="showVideoCard()">
+    <div id="movie_container_outside">
     </div>
-    <span class="close-icon" onclick="closeVideoCard()">&times;</span>
-          <video src="../assets/video-devices-in.mp4" alt="Video" controls autoplay loop muted></video>
-          <div class="card-content">
-            <p><p><strong>Title</strong></p>
-            <p>Duration : 2h 30m</p>
-            <p>Genre</p></p>
-          </div>
-      </div>
 
     <script src="../script/tvshows.js"></script>
     <footer class="footer">

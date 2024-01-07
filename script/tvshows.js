@@ -32,13 +32,42 @@ const showContent = (url,elementId) => {
       content.forEach((item) => {
         const newElement = document.createElement("div");
         newElement.className = "innercard";
+
+        const videoElement = document.createElement("video");
+        const videoUrl = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"; // Replace with actual video URL
+        videoElement.src = videoUrl;
+        videoElement.autoplay = true;
+        videoElement.loop = true;
+        videoElement.muted = true;
+        videoElement.style.width = "100%";
+        videoElement.style.height = "100%";
+        videoElement.style.objectFit = "cover";
+        videoElement.style.display = "none";
+
+
         const imageUrl =
           baseImageUrl + item.backdrop_path;
         console.log(imageUrl);
         newElement.style.backgroundImage = `url(${imageUrl})`;
         newElement.style.backgroundSize = "cover";
-        parentElement.appendChild(newElement);
+
+        newElement.addEventListener("mouseenter", () => {
+          newElement.style.transformOrigin = "center top";
+          newElement.style.transform = "scale(1.2)";
+          videoElement.style.display = "block";
       });
+
+      newElement.addEventListener("mouseleave", () => {
+        newElement.style.transformOrigin = "center top";
+        newElement.style.transform = "scale(1)";
+        videoElement.style.display = "none";
+    });
+
+    newElement.appendChild(videoElement);
+
+    // Append the new element to the parent
+    parentElement.appendChild(newElement);
+});
     })
     .catch((err) => console.error(err));
 };
@@ -59,7 +88,6 @@ function showVideoCard() {
   // Show the card
   videoCard.style.display = 'block';
 
-  // Optional: You can dynamically set the video source, description, etc. here if needed
 }
 
 function closeVideoCard() {
@@ -75,7 +103,8 @@ videoCard.style.display = 'none';
 }
 
 
-
+// *******************************************************************************************************************
+          //  Working On It 
 var id1;
 function showCard(id1) {
   document.getElementById('nested-card-movie').innerHTML='';
@@ -114,6 +143,10 @@ function closeCard() {
 function stopPropagation(event) {
   event.stopPropagation();
 }
+
+// ********************************************************************************************************************
+
+
 
 function reload(){
   location.reload();
@@ -156,5 +189,45 @@ function movieTypeSelection() {
         document.getElementById("movie_container_outside").innerHTML=`<h2 style="color : white; font-family: Arial, Helvetica, sans-serif;">THRILLER</h2>`
           showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=53", "movie_container_outside"); // thriller
           break;
+  }
+}
+
+// Function to read content of #content div
+// Load JSON data
+let elementIds;
+
+fetch('../elements.json')
+  .then(response => response.json())
+  .then(data => {
+    elementIds = data;
+    // Set up event delegation for the entire document
+    document.addEventListener('mouseover', function (event) {
+      handleMouseover(event);
+    });
+  });
+
+// Function to toggle audio
+let audioEnabled = false;
+
+function toggleAudio() {
+  audioEnabled = !audioEnabled; // Toggle audio state
+}
+
+// Function to handle mouseover event using event delegation
+function handleMouseover(event) {
+  // console.log("qwertyuiop");
+  if (audioEnabled && elementIds) {
+    // Get the ID from the event target
+    const elementId = event.target.id;
+    // console.log(elementIds[elementId])
+    // Check if the ID is in the JSON file
+    if (elementIds[elementId]) {
+      const contentElement = document.getElementById(elementIds[elementId]);
+      if (contentElement) {
+        const synth = window.speechSynthesis;
+        const utterance = new SpeechSynthesisUtterance(contentElement.innerText);
+        synth.speak(utterance);
+      }
+    }
   }
 }
