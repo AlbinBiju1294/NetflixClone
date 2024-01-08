@@ -1,141 +1,155 @@
-*{
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+body {
+    background-size: cover;
+    /* background-attachment:fixed; */
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    height: 900px;
+    background-image:url(../assets/background.jpg);
+    font-family: 'Roboto', sans-serif;
 }
- 
-body{
-    background: rgba(0, 0, 0, 0.5) url('../assets/background.jpg');
-    background-blend-mode: darken;
+.overlay {
+    position: fixed;
+
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(0, 0, 0, 0.425); 
 }
- 
-.logo img{
-    width: 12%;
-    margin-left: 30px;
-}
- 
-.container{
-    position: absolute;
-    margin-left: 36%;
-    margin-top: 1%;
-    width: 440px;
-    height: 590px;
-    background-color: #00000097;
-    border-radius: 5px;
-}
-img{
-    width: 75px;
-    height :55px;
-    margin-top: 7px;
- 
-}
-.container h1{
-    color: #fff;
-    margin-top: 60px;
-    margin-left: 50px;
-}
- 
-input{
-    margin-left: 50px;
-    margin-top: 20px;
-    width: 320px;
-    height: 47px;
-    background-color: #333;
-    border-radius: 3px;
-    border: none;
-    font-size: 20px;
-}
- 
-input::placeholder{
-    font-size: 17px;
-    margin-left: 15px;
-    padding: 12px;
-}
-input[type="email"]
-{
-    color: white;
-    font-size: medium;
-}
-input[type="password"]
-{
-    color: white;
-    font-size: medium;
-}
-input[type="email"]:not(:placeholder-shown),
-input[type="password"]:not(:placeholder-shown) {
-  padding-left: 18px; /* Adjusted padding for entered text */
-  box-sizing: border-box;
-}
-input[type=submit]{
-    width: 320px;
-    height: 45px;
-    background-color: red;
-    color: #fff;
-    border-radius: 3px;
-    cursor: pointer;
-    margin-top: 40px;
-}
- 
-input[type=checkbox]{
-    width: 25px;
-    height: 18px;
-    border-radius: 5px;
-}
-.input-container {
+.logo {
+    width: 195px;
+    top: 15px;
     position: relative;
-    margin-bottom: 20px;
-  }
-  .placeholder-label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px;
-    pointer-events: none;
-    transition: transform 0.3s ease-out;
-  }
-label{
-    color: rgb(125, 119, 119);
-    font-family:sans-serif;
+    left: 15px;
 }
- 
-.form a{
-    float: right;
-    margin-top: 24px;
-    margin-right: 64px;
-    color: rgb(125, 119, 119);
-    text-decoration: none;
-    font-family:sans-serif;
+.form-wrapper {
+    position: relative;
+    left: 50%;
+    top: 35%;
+    border-radius: 4px;
+    padding: 70px;
+    width: 312px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .75);
 }
-img{
-    width: 75px;
-    height :55px;
-    margin-top: 7px;
-   }
-.content{
-    position: absolute;
-    margin-top: 80px;
-    font-size: 9px;
-    margin-left: 55px;
-    font-family:sans-serif;
- 
-}
- 
-.content h2{
-    color: rgb(125, 119, 119);
-    font-family:sans-serif;
-}
- 
-.container a{
+.form-wrapper h2 {
     color: #fff;
+    font-size: 2rem;
+}
+.form-wrapper form {
+    margin: 25px 0 65px;
+}
+form .form-control {
+    height: 50px;
+    position: relative;
+    margin-bottom: 16px;
+}
+.form-control input {
+    height: 100%;
+    width: 100%;
+    background: #333;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0 20px;
+}
+.form-control input:is(:focus, :valid) {
+    background: #444;
+    padding: 16px 20px 0;
+}
+.form-control label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    pointer-events: none;
+    color: #8c8c8c;
+    transition: all 0.1s ease;
+}
+.form-control input:is(:focus, :valid)~label {
+    font-size: 0.75rem;
+    transform: translateY(-130%);
+}
+form button {
+    width: 100%;
+    padding: 16px 0;
+    font-size: 1rem;
+    background: #e50914;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    margin: 25px 0 10px;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+form button:hover {
+    background: #c40812;
+}
+.form-wrapper a {
     text-decoration: none;
+}
+.form-wrapper a:hover {
+    text-decoration: underline;
+}
+.form-wrapper :where(label, p, small, a) {
+    color: #b3b3b3;
+}
+form .form-help {
+    display: flex;
+    justify-content: space-between;
+}
+form .remember-me {
+    display: flex;
+}
+form .remember-me input {
+    margin-right: 5px;
+    accent-color: #b3b3b3;
+}
+form .form-help :where(label, a) {
+    font-size: 0.9rem;
+}
+.form-wrapper p a {
+    color: #fff;
+}
+.form-wrapper small {
+    display: block;
+    margin-top: 15px;
+    color: #b3b3b3;
+}
+.form-wrapper small a {
+    color: #0071eb;
+}
+@media (max-width: 740px) {
+    body::before {
+        display: none;
+    }
+    nav, .form-wrapper {
+        padding: 20px;
+    }
+    nav a img {
+        width: 140px;
+    }
+    .form-wrapper {
+        width: 100%;
+        top: 43%;
+    }
+    .form-wrapper form {
+        margin: 25px 0 40px;
+    }
 }
 .footer
 {
-    margin-top: 650px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
- 
+    background-color: #00000096;
 }
  
 .innerfooter
@@ -190,24 +204,4 @@ img{
     margin-top: 20px;
     color: #686a73;
     font-size: x-small;
-}
- 
-@media (max-width: 768px) {
-    .container {
-        width: 80%;
-        margin-left: 10%;
-    }
- 
-    input,
-    input::placeholder,
-    input[type="email"]:not(:placeholder-shown),
-    input[type="password"]:not(:placeholder-shown),
-    input[type=submit],
-    input[type=checkbox],
-    .form a,
-    .content,
-    .lastp {
-        width: 100%;
-        margin-left: 0;
-    }
 }

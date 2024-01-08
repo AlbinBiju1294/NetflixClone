@@ -241,4 +241,9 @@ body
     padding: 0 !important;
 }
 
+.videocard
+{
+    border-radius: 10px;
+}
+
 
