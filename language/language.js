@@ -1,3 +1,5 @@
+import { setNavbarProfiles,setSearchKeyword } from "../home/home.js";
+
 const options = {
     method: 'GET',
     headers: {
@@ -8,8 +10,17 @@ const options = {
 
 window.onload = () =>
 {
+  setNavbarProfiles();
   selectLanguage();
 }
+
+document.getElementById('selectlang').addEventListener('change',() => {
+  selectLanguage();
+})
+
+document.getElementById('searchIcon').addEventListener('click',() => {
+  setSearchKeyword();
+})
   
   
   const selectLanguage = () => {

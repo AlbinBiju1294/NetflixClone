@@ -3,34 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/tvshows.css">
+    <link rel="stylesheet" href="./tvshows.css">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-  
+    <script src="../typescript/audio.js"></script>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="innernavbar">
-          <div class="firstinnernavbar">
-            <div class="logoimg">
-              <a href="./home.html"><img src="../assets/Netflixlogo.png" alt="logo" height="80px" /></a>
-            </div>
-            <div class="nav-items">
-              <a id="nav_home" href="./home.html" >Home</a>
-              <a id="nav_tvshows" class="active" href="#">TV Shows</a>
-              <a id="nav_movies" href="./moviepage.html">Movies</a>
-              <a id="nav_newpopular" href="./newsandpopular.html">New & popular</a>
-              <a id="nav_mylist" href="./my_list.html">My List</a>
-              <a id="nav_browse" href="./language.html">Browse by languages</a>
-            </div>
+  <nav class="navbar navbar-expand-lg pt-3 pb-3 ps-5 pe-5" id="navbarselector">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="../assets/logo.png" width="100px" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse ms-md-5" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+          <li class="nav-item" id="nav_home">
+            <a class="nav-link active text-white" aria-current="page" href="../home/home.html">Home</a>
+          </li>
+          <li class="nav-item" id="nav_movies">
+            <a class="nav-link text-white" href="../movie/moviepage.html">Movies</a>
+          </li>
+          <li class="nav-item" id="nav_tvshows">
+            <a class="nav-link text-white" href="../htmlpages/tvshows.html">Tv shows</a>
+          </li>
+          <li class="nav-item" id="nav_newpopular">
+            <a class="nav-link text-white" href="../htmlpages/newsandpopular.html">New & popular</a>
+          </li>
+          <li class="nav-item" id="nav_mylist">
+            <a class="nav-link text-white" href="../htmlpages/my_list.html">My List</a>
+          </li>
+          <li class="nav-item" id="nav_browse">
+            <a class="nav-link text-white" href="../language/language.html">Browse by languages</a>
+          </li>
+        </ul>
+        <input type="text" class="searchbox bg-dark text-white ps-3 pe-3" id="searchbox">
+        <i class="bi bi-search search text-white ms-2" id="searchIcon"></i>
+      </div>
+      <div class="Navbarprofileicon" style="margin-left: 10px;">
+
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn" id="dropdownBtn">
+          <i class="bi bi-caret-down-fill arrow" id="arrowButton" style="margin-left: 10px;"></i>
+        </button>
+        <div class="dropdown-content" id="dropdownContent">
+          <div class="profileDiv" id="profileDivId">
+            
           </div>
-          <div class="secondinnernavbar">
-              <i class="bi bi-search search"></i>
-              <img src="../assets/profile.png" alt="pr" height="20px">
-          </div>
+          <a href="">Manage Profiles</a>
+          <a href="./accounts.html">Account</a>
+          <a href="">Help center</a>
+          <a id="signOutLink" style="color: white; cursor: pointer;">Sign out of Netflix</a>
         </div>
-      </nav>
-    <div class="preview">
+      </div>
+
+    </div>
+  </nav>
+
+  
+    <div class="preview" id="preview">
         <div class="videoContainer">
             <!-- <iframe width="560" height="315" src="./assests/Money heist - bella ciao whatsapp status.mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> --> -->
         </div>
@@ -46,7 +83,7 @@
 
            <!-- <button onclick="readDynamicContent()">Audio</button> -->
            <div class="genre">
-            <select id="genre_dropdown" onchange="movieTypeSelection()">
+            <select id="genre_dropdown">
                 <option id="genre" value="defaults">Genre</option>
                 <option id="horror" value="horror">Horror</option>
                 <option id="romantic" value="romantic">Romantic</option>
@@ -71,20 +108,18 @@
         <button class="info" id="info" onclick="showVideoCard()"><i class="bi bi-info-circle buttonicon"></i>More Info</button>
       </div>
         <div class="title" id="title">
-        <h1 style="font-family: 'Rubik Doodle Shadow';font-size: 50px;">MONEY HEIST</h1>
-        <p>In the heart-pounding world of Money Heist, where the line between heroes and villains blurs, every move is a gamble, every plan a high-stakes heist, and the true currency is not just money, but the cost of loyalty, deception, and the relentless pursuit of a perfect crime.</p>
+        <div id="name"></div>
+        <div id="description"></div> 
         </div>
     </div>
-    <div class="type">
-      <h4>A</h4>
-    </div>
+    
     </div>
     <div class="content">
     <div class="moviescontainer" id="moviescontainer">
-      <div class="maintext">
-        <h2 id="popular">POPULAR</h2>
+     
+        <h2 id="popular" >Popular</h2>
         <div class="hidden-text" onclick="showCard('nested-card-movie')">ExploreAll>></div>
-     </div>
+    
         <div class="newmovies" id="popular-movies">
 
           <!-- ****************************************************************************** -->
@@ -106,14 +141,14 @@
 
         </div>
 
-      <h2 id="nowplaying">NOW PLAYING</h2>
+      <h2 id="nowplaying">Now Playing</h2>
 
         <div class="newmovies" id="now-playing">
          
         </div>
 
       
-      <h2 id="top">TOP RATED</h2>
+      <h2 id="top">Top Rated</h2>
 
         <div class="newmovies" id="top-rated">
          
@@ -121,7 +156,7 @@
 
         
 
-      <h2 id="upc">UPCOMING</h2>
+      <h2 id="upc">Upcoming</h2>
 
         <div class="newmovies" id="upcoming">
          
@@ -130,10 +165,12 @@
 
       </div>
     </div>
+    <div class="genre-name"></div>
     <div id="movie_container_outside">
     </div>
+      </div>
 
-    <script src="../script/tvshows.js"></script>
+    <script type="module" src="./tvshows.js"></script>
     <footer class="footer">
       <div class="innerfooter">
         <div class="socialicons">
@@ -168,5 +205,6 @@
         <p class="lastp">©1997-2023 Netflix,Inc.</p>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,21 +1,34 @@
-const options = {
-  method: "GET",
-  headers: {
-    accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNjdhZDgwMjUxNDdlZThkY2ZiYjZjY2ZiNTIxNDMzNCIsInN1YiI6IjYzN2E0ZDgwOTc2ZTQ4MDBiNDU1ZDI1OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.iz4uW_emM4tQei3loe66oPYe0Te_HpcSKpfj8u921fk",
-  },
-};
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+import { getFirestore, collection, getDoc, doc , arrayUnion, updateDoc, getDocs} from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
+import {firebaseConfig} from '../script/config.js'
+import { getOptions } from '../script/tmdbkeys.js';
+
+// import { addHistory,addList } from '../home/home.js';
+import { setNavbarProfiles } from '../home/home.js';
+import { signOut } from '../home/home.js';
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const colRef = collection(db, "profileCollection");
+const docRef = doc(colRef,`${localStorage.getItem('userId')}`);
+
+const options = getOptions;
  
 const baseUrl = "https://api.themoviedb.org/3/";
 const baseImageUrl = "https://image.tmdb.org/t/p/original";
  
 window.onload = () => {
+    setNavbarProfiles();
     showContent("tv/popular?language=en-US&page=1","popular-movies");
     showContent("tv/top_rated?language=en-US&page=1","top-rated");
     showContent("tv/on_the_air?language=en-US&page=1","now-playing");
     showContent("tv/airing_today?language=en-US&page=1","upcoming");
+    showBanner("tv/top_rated?language=en-US&page=1");
 };
+
+
  
  
 const showContent = (url,elementId) => {
@@ -29,49 +42,92 @@ const showContent = (url,elementId) => {
       content = response.results;
       const parentElement = document.getElementById(elementId);
  
-      content.forEach((item) => {
+      content.forEach(async (item) => {
+        // console.log(item);
         const newElement = document.createElement("div");
         newElement.className = "innercard";
-
-        const videoElement = document.createElement("video");
-        const videoUrl = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"; // Replace with actual video URL
-        videoElement.src = videoUrl;
-        videoElement.autoplay = true;
-        videoElement.loop = true;
-        videoElement.muted = true;
-        videoElement.style.width = "100%";
-        videoElement.style.height = "100%";
-        videoElement.style.objectFit = "cover";
-        videoElement.style.display = "none";
-
-
-        const imageUrl =
-          baseImageUrl + item.backdrop_path;
-        console.log(imageUrl);
+        let availabletitle = "";
+        if (item.name) {
+          availabletitle = item.name;
+        } else if (item.title) {
+          availabletitle = item.title;
+        } else if (item.original_title) {
+          availabletitle = item.original_title;
+        } else if (item.original_name) {
+          availabletitle = item.original_name;
+        }
+ 
+        let posterImage = "";
+        if (item.backdrop_path) {
+          posterImage = item.backdrop_path;
+        } else {
+          posterImage = item.poster_path;
+        }
+ 
+        const itemId = item.id;
+        let videoKey;
+ 
+        try {
+          const response = await fetch(
+            `https://api.themoviedb.org/3/movie/${itemId}/videos?language=en-US`,
+            getOptions
+          );
+          const data = await response.json();
+ 
+          if (data.results && data.results.length > 0) {
+            videoKey = data.results[0].key;
+            // You can use the videoKey here as needed
+          } else {
+            console.error("No video results found");
+          }
+        } catch (err) {
+          console.error(err);
+        }
+ 
+        console.log(videoKey);
+ 
+        const videoFrame = document.createElement("iframe");
+        videoFrame.allow = "autoplay";
+        videoFrame.className = "videocard";
+        console.log(
+          `https://www.youtube.com/embed/${videoKey}?autoplay=1&mute=1&loop=1`
+        );
+        videoFrame.src = `https://www.youtube.com/embed/${videoKey}?autoplay=1&mute=1`;
+        videoFrame.autoplay = true;
+        videoFrame.style.width = "260px";
+        videoFrame.style.height = "150px";
+        videoFrame.style.objectFit = "cover";
+        videoFrame.style.display = "none";
+        const imageUrl = baseImageUrl + posterImage;
         newElement.style.backgroundImage = `url(${imageUrl})`;
         newElement.style.backgroundSize = "cover";
-
+        newElement.innerHTML = `<div class="movie-info"><p class="movie-title">${availabletitle}</p><p class="movie-title">Language:${item.original_language}</p><p class="movie-popularity" style="width: 250px;">Release Date:${item.release_date}</p><div class="PWbuttons"><i class="bi bi-play-circle-fill playbutton" id="playbutton${item.id}"></i><i class="bi bi-plus-circle plusbutton" id="plusbutton${item.id}"></i></div></div>`;
+        newElement
+          .querySelector(`#playbutton${item.id}`)
+          .addEventListener("click", () => {
+            addHistory(item);
+          });
+        newElement
+          .querySelector(`#plusbutton${item.id}`)
+          .addEventListener("click", () => {
+            addList(item);
+          });
+ 
         newElement.addEventListener("mouseenter", () => {
-          newElement.style.transformOrigin = "center top";
-          newElement.style.transform = "scale(1.2)";
-          videoElement.style.display = "block";
+          // newElement.style.backgroundImage = "none";
+          videoFrame.style.display = "block";
+        });
+ 
+        newElement.addEventListener("mouseleave", () => {
+          newElement.style.backgroundImage = `url(${imageUrl})`;
+          videoFrame.style.display = "none";
+        });
+        newElement.appendChild(videoFrame);
+        parentElement.appendChild(newElement);
       });
-
-      newElement.addEventListener("mouseleave", () => {
-        newElement.style.transformOrigin = "center top";
-        newElement.style.transform = "scale(1)";
-        videoElement.style.display = "none";
-    });
-
-    newElement.appendChild(videoElement);
-
-    // Append the new element to the parent
-    parentElement.appendChild(newElement);
-});
     })
     .catch((err) => console.error(err));
 };
-
 window.addEventListener("scroll", function() {
   var headgenreContainer = document.getElementById("banner");
   if (window.scrollY > 50) {
@@ -162,72 +218,82 @@ function movieTypeSelection() {
       case "defaults":reload();
           break;
       case "horror":
-          document.getElementById("movie_container_outside").innerHTML=`<h2 style="color : white; font-family: Arial, Helvetica, sans-serif;">HORROR</h2>`
           showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=27", "movie_container_outside"); // horror
           break;
       case "romantic":
-        document.getElementById("movie_container_outside").innerHTML=`<h2 style="color : white; font-family: Arial, Helvetica, sans-serif;">ROMANTIC</h2>`
           showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=10749", "movie_container_outside"); // romantic
           break;
       case "comedy":
-        document.getElementById("movie_container_outside").innerHTML=`<h2 style="color : white; font-family: Arial, Helvetica, sans-serif;">COMEDY</h2>`
           showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=35", "movie_container_outside"); // comedy
           break;
       case "action":
-        document.getElementById("movie_container_outside").innerHTML=`<h2 style="color : white; font-family: Arial, Helvetica, sans-serif;">ACTION</h2>`
           showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=28", "movie_container_outside"); // action
           break;
       case "adventure":
-        document.getElementById("movie_container_outside").innerHTML=`<h2 style="color : white; font-family: Arial, Helvetica, sans-serif;">ADVENTURE</h2>`
           showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=12", "movie_container_outside"); // adventure
           break;
       case "history":
-        document.getElementById("movie_container_outside").innerHTML=`<h2 style="color : white; font-family: Arial, Helvetica, sans-serif;">HISTORY</h2>`
           showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=36", "movie_container_outside"); // history
           break;
       case "thriller":
-        document.getElementById("movie_container_outside").innerHTML=`<h2 style="color : white; font-family: Arial, Helvetica, sans-serif;">THRILLER</h2>`
           showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=53", "movie_container_outside"); // thriller
           break;
   }
 }
 
-// Function to read content of #content div
-// Load JSON data
-let elementIds;
+document.getElementById("genre_dropdown").addEventListener("change",movieTypeSelection);
 
-fetch('../elements.json')
-  .then(response => response.json())
-  .then(data => {
-    elementIds = data;
-    // Set up event delegation for the entire document
-    document.addEventListener('mouseover', function (event) {
-      handleMouseover(event);
-    });
+
+
+const addHistory = async (item) => {
+  const collection2 = collection(docRef,"profiles");
+  const document2 = doc(collection2,`${localStorage.getItem('profile')}`);
+  const unionRes = await updateDoc(document2,{
+    watchHistory: arrayUnion(item)
   });
-
-// Function to toggle audio
-let audioEnabled = false;
-
-function toggleAudio() {
-  audioEnabled = !audioEnabled; // Toggle audio state
+  location.reload();
 }
 
-// Function to handle mouseover event using event delegation
-function handleMouseover(event) {
-  // console.log("qwertyuiop");
-  if (audioEnabled && elementIds) {
-    // Get the ID from the event target
-    const elementId = event.target.id;
-    // console.log(elementIds[elementId])
-    // Check if the ID is in the JSON file
-    if (elementIds[elementId]) {
-      const contentElement = document.getElementById(elementIds[elementId]);
-      if (contentElement) {
-        const synth = window.speechSynthesis;
-        const utterance = new SpeechSynthesisUtterance(contentElement.innerText);
-        synth.speak(utterance);
-      }
-    }
-  }
+const addList = async (item) => {
+  const collection2 = collection(docRef,"profiles");
+  const document2 = doc(collection2,`${localStorage.getItem('profile')}`);
+  const unionRes = await updateDoc(document2,{
+    watchList: arrayUnion(item)
+  });
+  location.reload();
 }
+
+document.getElementById('signOutLink').addEventListener('click',() => {
+  signOut();
+})
+
+
+
+const showBanner = (url) => {
+  console.log("hj");
+  let content = [];
+  fetch(
+    baseUrl+url,
+    options
+  )
+          .then((response) => response.json())
+          .then((response) => {
+            content = response.results;
+            const parentElement = document.getElementById("preview");
+            const seriesName = document.getElementById("name");
+            const overview = document.getElementById("description");
+            content.forEach((item) => {
+              const imageUrl =
+                baseImageUrl + item.backdrop_path;
+              console.log(imageUrl);
+              parentElement.style.backgroundImage = `url(${imageUrl})`;
+              parentElement.style.backgroundSize = "cover";
+              const title = item.title;
+              const description = item.overview;
+              seriesName.innerHTML = `<h1 style="font-family: 'Rubik Doodle Shadow';font-size: 50px;">${title}</h1>`;
+              overview.innerHTML = `<p>${description}</p>`;
+            });
+          })
+          .catch((err) => console.error(err));
+      };
+
