@@ -1,0 +1,94 @@
+// Variables
+$main-color: white;
+$footer-bg-color: #00000087;
+$icon-size: large;
+$button-padding: 6px 10px;
+$button-border: 1px solid grey;
+$button-color: grey;
+$button-bg-color: #141414;
+$text-color: #686a73;
+$text-size: x-small;
+$danger-color: rgb(255, 0, 0);
+
+// Mixins
+@mixin button-style {
+  background-color: $danger-color;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+body {
+  background: url('../assets/landingpage_bgimage.png');
+  padding-top: 56px; /* Adjust based on your navbar height */
+  margin: 0; /* Remove default margin to ensure full coverage of the background */
+  height: 100vh; /* Set a minimum height to ensure the background is visible */
+}
+
+// Custom styles for the container
+.container-content {
+  color: $main-color; /* Adjust text color for better visibility on the background */
+}
+
+.footer {
+  background-color: $footer-bg-color;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.innerfooter {
+  width: 70%;
+}
+
+.socialicons {
+  margin-top: 40px;
+  color: $main-color;
+}
+
+.socialicons i {
+  font-size: $icon-size;
+  margin-right: 20px;
+}
+
+.mainlinks {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.innerlinks {
+  display: flex;
+  flex-direction: column;
+}
+
+.innerlinks a {
+  margin-bottom: 10px;
+  color: grey;
+  text-decoration: none;
+  font-size: $text-size;
+}
+
+.servicebutton {
+  padding: $button-padding;
+  border: $button-border;
+  color: $button-color;
+  background-color: $button-bg-color;
+  margin-top: 30px;
+}
+
+.lastp {
+  margin-bottom: 10px;
+  margin-top: 20px;
+  color: $text-color;
+  font-size: $text-size;
+}
+
+#signout {
+  @include button-style;
+}
+
+#redeem {
+  @include button-style;
+}

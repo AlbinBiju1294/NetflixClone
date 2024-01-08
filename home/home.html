@@ -24,19 +24,19 @@
         <div class="collapse navbar-collapse ms-md-5" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
             <li class="nav-item">
-              <a class="nav-link active text-white" aria-current="page" href="../home/home.html">Home</a>
+              <a class="nav-link active text-white" aria-current="page" href="../home/home.html" id="nav_home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="../htmlpages/moviepage.html">Movies</a>
+              <a class="nav-link text-white" href="../movie/moviepage.html" id="nav_movies">Movies</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="../htmlpages/tvshows.html">Tv shows</a>
+              <a class="nav-link text-white" href="../htmlpages/tvshows.html" id="nav_tvshows">Tv shows</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="../htmlpages/newsandpopular.html">New & popular</a>
+              <a class="nav-link text-white" href="../htmlpages/newsandpopular.html" id="nav_newpopular">New & popular</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="../language/language.html">Browse by languages</a>
+              <a class="nav-link text-white" href="../language/language.html" id="nav_browse">Browse by languages</a>
             </li>
           </ul>
           <input type="text" class="searchbox bg-dark text-white ps-3 pe-3" id="searchbox">
@@ -164,7 +164,7 @@
     </div>
     <div class="content-section">
       <div class="categoryHeadings">
-        <h2>Trending</h2><h3 id="trending-all-span" style="font-size: 10px;">Explore More></h3>
+        <h2 id="trending">Trending</h2><h3 id="trending-all-span" style="font-size: 10px;">Explore More></h3>
       </div>
       
       
@@ -176,49 +176,49 @@
       
         <div class="newmovies" id="watch-list"></div>
         <div class="categoryHeadings">
-          <h2>Popular Movies</h2><h3 id="popular-movies-span" style="font-size: 10px;">Explore More></h3>
+          <h2 id="popularmovies">Popular Movies</h2><h3 id="popular-movies-span" style="font-size: 10px;">Explore More></h3>
         </div>
       
       
         <div class="newmovies" id="popular-movies"></div>
         <div class="categoryHeadings">
-          <h2>Popular Series</h2><h3 id="popular-series-span" style="font-size: 10px;">Explore More></h3>
+          <h2 id="popularseries">Popular Series</h2><h3 id="popular-series-span" style="font-size: 10px;">Explore More></h3>
         </div>
       
       
         <div class="newmovies" id="popular-series"></div>
         <div class="categoryHeadings">
-          <h2>Comedy Movies</h2><h3 id="comedy-movies-span" style="font-size: 10px;">Explore More></h3>
+          <h2 id="comedymovies">Comedy Movies</h2><h3 id="comedy-movies-span" style="font-size: 10px;">Explore More></h3>
       
         </div>
       
         <div class="newmovies" id="comedy-movies"></div>
         <div class="categoryHeadings">
-          <h2>Action Movies</h2><h3 id="action-movies-span" style="font-size: 10px;">Explore More></h3>
+          <h2 id="actionmovies">Action Movies</h2><h3 id="action-movies-span" style="font-size: 10px;">Explore More></h3>
         </div>
       
       
         <div class="newmovies" id="action-movies"></div>
         <div class="categoryHeadings">
-          <h2>Adventure Movies</h2><h3 id="adventure-movies-span" style="font-size: 10px;">Explore More></h3>
+          <h2 id="adventuremovies">Adventure Movies</h2><h3 id="adventure-movies-span" style="font-size: 10px;">Explore More></h3>
         </div>
       
       
         <div class="newmovies" id="adventure-movies"></div>
         <div class="categoryHeadings">
-          <h2>Romantic Movies</h2><h3 id="romantic-movies-span" style="font-size: 10px;">Explore More></h3>
+          <h2 id="romanticmovies">Romantic Movies</h2><h3 id="romantic-movies-span" style="font-size: 10px;">Explore More></h3>
         </div>
       
       
         <div class="newmovies" id="romantic-movies"></div>
         <div class="categoryHeadings">
-          <h2>History Movies</h2><h3 id="history-movies-span" style="font-size: 10px;">Explore More></h3>
+          <h2 id="historymovies">History Movies</h2><h3 id="history-movies-span" style="font-size: 10px;">Explore More></h3>
         </div>
       
       
         <div class="newmovies" id="history-movies"></div>
         <div class="categoryHeadings">
-          <h2>Thriller Movies</h2><h3 id="thriller-movies-span" style="font-size: 10px;">Explore More></h3>
+          <h2 id="thrillermovies">Thriller Movies</h2><h3 id="thriller-movies-span" style="font-size: 10px;">Explore More></h3>
         </div>
       
       
@@ -234,30 +234,31 @@
         </div>
         <div class="mainlinks">
           <div class="firstlink innerlinks">
-            <a href="#">Audio description</a>
-            <a href="">Investor relations</a>
-            <a href="">Legal notices</a>
+            <a href="#" id="footer_col1_item1">Audio description</a>
+            <a href="" id="footer_col1_item2">Investor relations</a>
+            <a href="" id="footer_col1_item3">Legal notices</a>
           </div>
           <div class="firstlink innerlinks">
-            <a href="#">Help center</a>
-            <a href="">Jobs</a>
-            <a href="">Cookie preference</a>
+            <a href="#" id="footer_col2_item1">Help center</a>
+            <a href="" id="footer_col2_item2">Jobs</a>
+            <a href="" id="footer_col2_item3">Cookie preference</a>
           </div>
           <div class="firstlink innerlinks">
-            <a href="#">Gift cards</a>
-            <a href="">Terms of use</a>
-            <a href="">Corporate Information</a>
+            <a href="#" id="footer_col3_item1">Gift cards</a>
+            <a href="" id="footer_col3_item2">Terms of use</a>
+            <a href="" id="footer_col3_item3">Corporate Information</a>
           </div>
           <div class="firstlink innerlinks">
-            <a href="#">Media center</a>
-            <a href="">Privacy</a>
-            <a href="">Contact as</a>
+            <a href="#" id="footer_col4_item1">Media center</a>
+            <a href="" id="footer_col4_item2">Privacy</a>
+            <a href="" id="footer_col4_item3">Contact as</a>
           </div>
         </div>
-        <button class="servicebutton">Service code</button>
-        <p class="lastp">©1997-2023 Netflix,Inc.</p>
+        <button class="servicebutton" id="servicebutton_id">Service code</button>
+        <p class="lastp" id="lastp_id">©1997-2023 Netflix,Inc.</p>
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="../script/languageChange.js"></script>
   </body>
 </html>
