@@ -71,16 +71,30 @@
         
       </div>
     </div>
-    <div class="bannersection">
+    <div class="moreInfoPage" id="moreInfoPageId">
+
+      <div class="contentPosterImage" id="contentPosterImageId"></div>
+      <div class="contentDetails">
+        <div class="contentTitle">
+          <h2 id="contentTitleId"></h2>
+        </div>
+        <div class="contentOverview">
+          <h5 id="contentOverviewId">
+           
+          </h5>
+        </div>
+        <h6 class="contentReleaseDate">Released on: <span id="contentReleaseDateId"></span></h6>
+        <h6 class="contentLanguage">Language: <span id="contentLanguageId"></span></h6>
+      </div>
+      
+      <i class="bi bi-x-circle moreInfoCloseButton" id="moreInfoCloseButtonId"></i>
+    </div>
+    <!-- <div class="bannersection">
       <div class="innerbannersection">
         <div class="bannercontent">
-          <h1>THE LAST KINGDOM</h1>
+          <h1></h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
-            reprehenderit delectus, voluptatem praesentium error possimus nihil
-            eum. Veniam ad est voluptates, eaque vel hic iusto animi quos
-            molestiae, sit qui maxime cum sint amet inventore! Maiores
-            dignissimos dolore sapiente modi!
+            
           </p>
           <div class="buttons">
             <button class="play">
@@ -92,6 +106,61 @@
           </div>
         </div>
       </div>
+    </div> -->
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="" class="d-block w-100" alt="..." id="bannerImage1">
+          <div class="bannercontent">
+            <h1 id="firstBannerTitle"></h1>
+            <p class="d-none d-md-flex" id="firstBannerOverview">
+              
+            </p>
+            <div class="buttons">
+              <button class="play">
+                <i class="bi bi-play-fill buttonicon"></i>Play
+              </button>
+              <button class="info">
+                <i class="bi bi-info-circle buttonicon"></i>More Info
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="" class="d-block w-100" alt="..." id="bannerImage2">
+          <div class="bannercontent">
+            <h1 id="secondBannerTitle"></h1>
+            <p class="d-none d-md-flex" id="secondBannerOverview">
+              
+            </p>
+            <div class="buttons">
+              <button class="play">
+                <i class="bi bi-play-fill buttonicon"></i>Play
+              </button>
+              <button class="info">
+                <i class="bi bi-info-circle buttonicon"></i>More Info
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="" class="d-block w-100" alt="..." id="bannerImage3">
+          <div class="bannercontent">
+            <h1 id="thirdBannerTitle"></h1>
+            <p class="d-none d-md-flex" id="thirdBannerOverview">
+              
+            </p>
+            <div class="buttons">
+              <button class="play">
+                <i class="bi bi-play-fill buttonicon"></i>Play
+              </button>
+              <button class="info">
+                <i class="bi bi-info-circle buttonicon"></i>More Info
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="content-section">
       <div class="categoryHeadings">
@@ -100,10 +169,10 @@
       
       
         <div class="newmovies" id="trending-all"></div>
-      <h2>Watch History </h2>
+      <h2 class="extraList">Watch History </h2>
       
         <div class="newmovies" id="watch-history"></div>
-      <h2>My List </h2>
+      <h2 class="extraList">My List </h2>
       
         <div class="newmovies" id="watch-list"></div>
         <div class="categoryHeadings">
