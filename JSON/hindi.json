@@ -61,16 +61,14 @@
     "thriller":"थ्रिलर",
     "movieid":"चलचित्र",
 
-    "play_id": "बजाना",
-    "info_id": "और जानकारी",
     "category_movies": "चलचित्र",
-    "movies_exploreall": "सभी का अन्वेषण करें>>",
+    "movies_exploreall": "अन्वेषणकरें>>",
     "category_upcoming": "आगामी",
-    "upcoming_exploreall": "सभी का अन्वेषण करें>>",
+    "upcoming_exploreall": "अन्वेषणकरें>>",
     "category_toprated": "टॉप रेटेड",
-    "top_exploreall": "सभी का अन्वेषण करें>>",
+    "top_exploreall": "अन्वेषणकरें>>",
     "category_popularmovie": "लोकप्रिय फ़िल्में",
-    "popular_exploreall": "सभी का अन्वेषण करें>>",
+    "popular_exploreall": "अन्वेषणकरें>>",
     "footer_col1_item1": "ऑडियो विवरण",
     "footer_col1_item2": "निवेशक संबंध",
     "footer_col1_item3": "कानूनी नोटिस",
@@ -87,8 +85,7 @@
     "lastp_id": "©1997-2023 Netflix,Inc.",
     "title": "",
     "head": "",
-    "play": "",
-    "info": "",
+  
     "popular": "लोकप्रिय",
     "nowplaying": "अब खेल रहे हैं",
     "top": "टॉप रेटेड",
@@ -109,5 +106,18 @@
     "passwordEntryField_id": "पासवर्ड",
     "getOtp": "ओटीपी प्राप्त करें",
     "otpLabel": "ओ.टी.पी",
-    "remember-me": "मुझे याद करो"
+    "remember-me": "मुझे याद करो",
+
+    "trending":"",
+    "watchhistory":"",
+    "mylist":"",
+    "popularmovies":"",
+    "popularseries":"",
+    "actionmovies":"",
+    "adventuremovies":"",
+    "romanticmovies":"",
+    "historymovies":"",
+    "thrillermovies":""
+
+   
 }

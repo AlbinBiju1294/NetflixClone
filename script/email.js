@@ -1,46 +1,70 @@
+import { userKEy,serviceKey,templateKey,templateKey2 } from "./config.js";
+ let otp;
+export function returnOTP() {
+   
+    otp = generateOTP();
+    return otp;
+   
+}
+document.getElementById('getOtp').addEventListener("click",function(event){
 
-const otp=generateOTP();
-
-function sendEmail()
-{
+    event.preventDefault()
+   
     let emailToSend=document.getElementById('email-signup').value;
     console.log(emailToSend);
-    sendEmailSender(emailToSend)
-}
-function sendEmailSender(userEmail) {
-   console.log("eneter");
-    // const otp=otp();
-    // Set up EmailJS parameters
-    emailjs.init("QTkWQghtIbd24HWIK");
+    let userName=document.getElementById('usersname').value;
+    sendEmailSender(emailToSend,userName)
+    document.getElementById('otp-signup').style.display="block";
+    document.getElementById('create-acct-btn').style.display="block";
+    
+    
+    
 
-    // Set up email template parameters
+    
+   
+});
+export function sendEmailSender(userEmail,userName) {
+    
+    emailjs.init(userKEy);
+
     const templateParams = {
-        to_email: userEmail,  // Use the dynamically obtained user's email address
-        otp: otp,
-        // logoim:"<img src='../assets/netflix1_logo.png" + imageBase64 + "'></img>"
+        to_email: userEmail,  
+       to_name:userName,
+       otp:otp
+       
         
         
     };
 
-    // Send email using EmailJS
-    emailjs.send("service_zpt3w8h", "template_ir9awjx", templateParams)
+   
+    if(localStorage.getItem("successKey")=="true")
+    {
+        emailjs.send(serviceKey, templateKey2, templateParams)
+        localStorage.setItem("successKey",false)
+        
+    }
+    else
+    {
+    emailjs.send(serviceKey, templateKey, templateParams)
         .then(response => {
             console.log('Email sent successfully:', response);
-            // Simulate navigating to the OTP verification page (replace this with your actual logic)
-            // window.location.href = '../htmlpages/newsandpopular.html';
+            
+           
         })
         .catch(error => {
             console.error('Error sending email:', error);
-            // Handle error, e.g., display an error message to the user
-            alert('Failed to send OTP. Please try again.');
+            
+            alert('Failed to send mail. Please try again.');
         });
+    }
 }
 
 function generateOTP() {
-    // Simulate OTP generation (replace this with a secure OTP generation logic)
+    
     return Math.floor(100000 + Math.random() * 900000);
    
-  }
+}
+
 
 
 

@@ -5,23 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <title>Responsive Text with Bootstrap</title>
-  <style>
+  <link rel="stylesheet" href="../scss/test.css">
+  <!-- <style>
     body {
         background: url('../assets/landingpage_bgimage.png');
       padding-top: 56px; /* Adjust based on your navbar height */
       margin: 0; /* Remove default margin to ensure full coverage of the background */
       height: 100vh; /* Set a minimum height to ensure the background is visible */
     }
-.superclass{
-    
-}
+
     /* Custom styles for the container */
     .container-content {
       color: white; /* Adjust text color for better visibility on the background */
     }
     .footer
 {   background-color: #00000087;
-    margin-top: 20px;
+    margin-top: 20px;s
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,7 +79,20 @@
     color: #686a73;
     font-size: x-small;
 }
-  </style>
+#signout{
+  background-color: rgb(255, 0, 0);
+  color: white;
+  border: none;
+  border-radius: 5px;
+
+}
+#redeem{
+  background-color: rgb(255, 0, 0);
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+  </style> -->
 </head>
 <body>
   <!-- NavBar -->
@@ -90,22 +102,24 @@
           <img src="../assets/Netflixlogo.png" alt="logo" height="40px">
         </a>
         <div class="ml-auto">
-          <button class="btn btn-outline-secondary" type="button">Sign Out</button>
+          <button class="btn btn-outline-secondary" id="signout" type="button">Sign Out</button>
         </div>
       </nav>
     
       <div class="container mt-5 container-content">
         <div class="row">
-          <div class="col-lg-6 col-md-8 col-sm-12 mx-auto">
+          <div class="col-lg-6 col-md-7 col-sm-8 mx-auto text-center">
             <h1 class="text-lg">Redeem your gift</h1>
             <p class="text-md">Enter your code below to get started.</p>
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Code or PIN">
+            <div class="mb-3">
+              <div>
+                <input type="text" class="form-control form-control-sm" placeholder="Code or PIN">
+              </div>
             </div>
             <div class="mb-3">
-              <button class="btn btn-primary" type="button">Redeem</button>
+              <button class="btn btn-primary col-lg-5 col-md-5" 5type="button" id="redeem">Redeem</button>
             </div>
-            <p>Need help with gift cards</p>
+              <p>Need help with gift cards</p>
           </div>
         </div>
       </div>

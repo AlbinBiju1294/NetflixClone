@@ -61,8 +61,6 @@
     "thriller":"Thriller",
     "movieid":"Movies",
 
-    "play_id": "Play",
-    "info_id": "More Info",
     "category_movies": "Movies",
     "movies_exploreall": "ExploreAll>>",
     "category_upcoming": "Upcoming",
@@ -87,8 +85,6 @@
     "lastp_id": "©1997-2023 Netflix,Inc.",
     "title": "",
     "head": "",
-    "play": "",
-    "info": "",
     "popular": "POPULAR",
     "nowplaying": "NOW PLAYING",
     "top": "TOP RATED",
@@ -109,5 +105,18 @@
     "passwordEntryField_id":"Password",
     "getOtp":"GET OTP",
     "otpLabel":"Otp",
-    "remember-me":"Remember me"
+    "remember-me":"Remember me",
+
+    "trending":"Trending",
+    "watchhistory":"Watch History",
+    "mylist":"My List",
+    "popularmovies":"Popular Movies",
+    "popularseries":"Comedy Movies",
+    "actionmovies":"Action Movies",
+    "adventuremovies":"Adventure Movies",
+    "romanticmovies":"Romantic Movies",
+    "historymovies":"History Movies",
+    "thrillermovies":"Thriller Movies"
+
+
 }

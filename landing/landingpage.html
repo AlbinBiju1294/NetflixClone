@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
     <title>Document</title>
-    <link rel="stylesheet" href="../css/landingpage.css">
+    <link rel="stylesheet" href="./landingpage.css">
    
     
 </head>
@@ -20,10 +20,11 @@
             <div class="signin_button">
                 <div class="signin_button_inner">
                     <select id="languageselect_dropdown" onchange="languageChange(this.value)">
+                        <option value="english" id="select">Select</option>
                         <option value="english" id="english">English</option>
                         <option value="hindi" id="hindi">Hindi</option>
                     </select>
-                    <a href="./login.html"><button type="button" id="signin_button_id">Sign In</button></a>
+                    <a href="../htmlpages/login.html"><button type="button" id="signin_button_id">Sign In</button></a>
                 </div>
             </div>
         </div>
@@ -275,7 +276,7 @@
         </div>
         
     </div>
-    <script src="../script/languageChange.js"></script>
-    <script type="module" src="../script/landingpage.js"></script>
+    <script src="../TypeScript/languagechange.js"></script>
+    <script type="module" src="./landingpage.js"></script>
 </body>
 </html>

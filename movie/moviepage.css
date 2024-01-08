@@ -1,59 +1,131 @@
 body{
     margin: 0;
-    background-color: rgba(0, 0, 0, 0.984);
+    background-color: rgba(0, 0, 0, 0.984) !important;
 }
-.navbar
+.Navbarprofileicon
 {
-    
-    position: fixed;
+    height: 20px;
+    width: 20px;
+    background-color: aqua;
+}
+#navbarselector{
+  position: fixed;
+  color: white;
+  background-color: #0b0b0b;
+}
+
+.movie-info {
+    position: absolute;
     top: 0;
     left: 0;
-    right: 0;
+    width: 260px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with transparency */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
     display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
     justify-content: center;
-    background-color: black;
-    height: 68px;
-    font-family: Arial, Helvetica, sans-serif;
-    align-items: center;
-    z-index: 998;
-}
- 
-.innernavbar
+    /* align-items: center; 
+    text-align: center; */
+    padding: 10px 10px;
+    border-radius: 10px;
+  }
+
+.movie-title
 {
-    width: 90%;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    
+  margin: 0 !important;
+  font-size: small;
 }
- 
-.firstinnernavbar
+
+.movie-popularity
 {
-    display: flex;
-    align-items: center;
+  margin: 0 !important;
+  font-size: small;
 }
- 
-.nav-items
+
+.movie-info .movie-desc
 {
-    margin-bottom: 5px;
-    margin-left: 50px;
+  font-size: xx-small;
+  overflow-wrap: break-word;
 }
- 
-.secondinnernavbar
-{
-    display: flex;
-    align-items: center;
-    width: 50px;
-    justify-content: space-between;
- 
+
+
+.innercard:hover .movie-info {
+  opacity: 1;
 }
- 
-.nav-items a
+
+
+.moviescontainer
 {
-    margin-left: 20px;
-    text-decoration: none;
-    color: white;
-    font-size: smaller;
+  width: 100%;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap;
+  margin-top: 10px;
+}
+
+.innercard
+{
+  float: left;
+  min-height: 150px;
+  min-width: 260px;
+  margin-right: 8px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.innercard:hover
+{
+  border-radius: 10px;
+  /* transform: scale(1.3); */
+  transform: scale(1.25);
+  z-index: 99999;
+  transition: transform 0.7s ease-in-out;
+}
+
+/* .videocard
+{
+  border-radius: 10px;
+}
+
+.newmovies
+{
+  width: 100%;
+  overflow-x: scroll;
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 10px;
+}
+
+.newmovies::-webkit-scrollbar {
+  display: none;
+}
+
+.profileselect
+{
+  background-color: #141414;
+  opacity: 0.5;
+  color: white;
+} */
+
+.PWbuttons
+{
+  margin-top: 10px;
+}
+
+.playbutton
+{
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.plusbutton
+{
+  font-size: 30px;
+  margin-left: 20px;
+  cursor: pointer;
 }
  
 .search
@@ -160,18 +232,26 @@ body{
 #allmovie{
   display: flex;
   overflow-x: scroll;
+  padding: 20px;
+  margin-left: 3%;
 }
 #upcomingmovie{
   display: flex;
   overflow-x: scroll;
+  padding: 20px;
+  margin-left: 3%;
 }
 #topmovie{
   display: flex;
   overflow-x: scroll;
+  padding: 20px;
+  margin-left: 3%;
 }
 #popularmovie{
   display: flex;
   overflow-x: scroll;
+  padding: 20px;
+  margin-left: 3%;
 }
 #movie_container_outside{
     display: flex;

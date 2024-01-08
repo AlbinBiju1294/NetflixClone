@@ -65,10 +65,10 @@ function emailAuthentication(id3,id4){
           localStorage.setItem('Email',email);
             if (signInMethods && signInMethods.length > 0) {
                 console.log("Email exists. User can sign in.");
-                location.href='./login.html';
+                location.href='../htmlpages/login.html';
             } else { 
                 console.log("Email does not exist.");
-                location.href='./signuptry.html';
+                location.href='../htmlpages/signuptry.html';
             }
         })
         .catch((error) => {
