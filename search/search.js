@@ -3,7 +3,6 @@ import {
   baseImageUrl,
   baseUrl,
   setNavbarProfiles,
-  generateInnerCard,
 } from "../home/home.js";
 
 window.onload = () => {

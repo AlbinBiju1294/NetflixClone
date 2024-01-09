@@ -87,6 +87,15 @@ const loadBannerImages = () => {
     .then((response) => response.json())
     .then((response) => {
       bannerContent = response.results;
+      for(let i=0;i<3;i++)
+      {
+        document.getElementsByClassName('info')[i].addEventListener('click',() => {
+          showContentDetails(bannerContent[i]);
+        })
+        document.getElementsByClassName('play')[i].addEventListener('click',() => {
+          window.location.href = '../video/video.html';
+        })
+      }
       const imageIdOne = document.getElementById("bannerImage1");
       const imageIdTwo = document.getElementById("bannerImage2");
       const imageIdThree = document.getElementById("bannerImage3");
@@ -113,6 +122,14 @@ const loadBannerImages = () => {
     })
     .catch((err) => console.error(err));
 };
+
+//bannerplaybutton
+// for(let i=0;i<3;i++)
+// {
+  // document.getElementsByClassName('play')[i].addEventListener('click',() => {
+  //   window.location.href = '../video/video.html';
+//   })
+// }
 
 //function to change background colour of navbar on scroll
 window.addEventListener("scroll", function () {
