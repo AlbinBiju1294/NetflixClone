@@ -68,7 +68,7 @@ function emailAuthentication(id3,id4){
                 location.href='../htmlpages/login.html';
             } else { 
                 console.log("Email does not exist.");
-                location.href='../htmlpages/signuptry.html';
+                location.href='../signup/signup.html';
             }
         })
         .catch((error) => {

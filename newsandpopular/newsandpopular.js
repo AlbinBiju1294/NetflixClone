@@ -1,6 +1,6 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
 import { getFirestore, collection, getDoc, doc , arrayUnion, updateDoc, getDocs} from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
-import {firebaseConfig} from './config.js'
+import {firebaseConfig} from '../script/config.js'
 import { apicall } from './apiexport.js';
 import { setNavbarProfiles } from '../home/home.js';
 
