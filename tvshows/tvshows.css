@@ -174,7 +174,7 @@ body{
 }
 #banner{
     display: flex;
-    transform: translateY(-18%);
+    transform: translateY(48%);
     position: fixed;
     width: 100%;
     z-index: 999;
@@ -252,10 +252,14 @@ body{
 }
 .sound{
     color:white;
-    transform: translateY(200%);
+    transform: translateY(190%);
     margin-right: 120px;
-    margin-left: 1060px; 
-    
+    margin-left: 960px; 
+    min-width:20px;
+    display: flex;
+    position: fixed;
+    font-family: 'Poppins', sans-serif;
+    z-index: 1000;
 }
 .active{
 font-weight: 500;
@@ -355,10 +359,19 @@ font-weight: 500;
     overflow-x: scroll;
     padding: 2%;
   }
+
+  #top h2{
+    padding: 2%;
+  }
+
   #upcoming{
     color: white;
     display: flex;
     overflow-x: scroll;
+    padding: 2%;
+  }
+
+  #upc h2{
     padding: 2%;
   }
 .footer
@@ -442,6 +455,11 @@ font-weight: 500;
 }
 #upcoming::-webkit-scrollbar{
     display: none;
+}
+
+#description p{
+  height: 150px;
+  overflow: hidden;
 }
 
 .image-container {
@@ -639,13 +657,84 @@ font-weight: 500;
     opacity: 1;
   }
 
+  .infobutton
+{
+    font-size: 30px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.moreInfoPage
+{
+    position: fixed;
+    height: 500px;
+    width: 75%;
+    background-color: black;
+    z-index: 1000000000;
+    opacity: 0;
+    display: none;
+    border-radius: 10px;
+    top: 13%;
+    left: 12.5%;
+    overflow-y: scroll;
+    transition: opacity 2s ease-in;
+}
+
+.moreInfoPage::-webkit-scrollbar {
+    display: none;
+}
+
+.contentPosterImage
+{
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+}
+
+.contentDetails{
+    padding: 20px 40px;
+    color: white;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.contentTitle h2
+{
+    font-size: xx-large;
+    font-weight: 400;
+}
+
+.contentOverview h5
+{
+    font-size: medium;
+    font-weight: 300;
+}
+
+.contentReleaseDate{
+    margin-top: 30px;
+    font-weight: 400;
+}
+
+.contentLanguage{
+    margin-top: 30px;
+    font-weight: 400;
+}
+
+.moreInfoCloseButton
+{
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    top: 3%;
+    right: 2%;
+}
+
 
 .moviescontainer
 {
     width: 100%;
     overflow-x: auto; /* Enable horizontal scrolling */
     white-space: nowrap;
-    margin-top: 10px;
+    margin-top: 0px;
     
 }
 
