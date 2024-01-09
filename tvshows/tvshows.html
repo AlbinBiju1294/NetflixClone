@@ -17,29 +17,29 @@
 <body>
   <nav class="navbar navbar-expand-lg pt-3 pb-3 ps-5 pe-5" id="navbarselector">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="../common/assets/Netflixlogo.png" width="100px" alt=""></a>
+      <a class="navbar-brand" href="#"><img src="../assets/logo.png" width="100px" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse ms-md-5" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-          <li class="nav-item" id="nav_home">
-            <a class="nav-link active text-white" aria-current="page" href="../home/home.html">Home</a>
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="../home/home.html" id="nav_home">Home</a>
           </li>
-          <li class="nav-item" id="nav_movies">
-            <a class="nav-link text-white" href="../movie/moviepage.html">Movies</a>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="../movie/moviepage.html" id="nav_movies">Movies</a>
           </li>
-          <li class="nav-item" id="nav_tvshows">
-            <a class="nav-link text-white" href="../htmlpages/tvshows.html">Tv shows</a>
+          <li class="nav-item" >
+            <a class="nav-link text-white" href="../htmlpages/tvshows.html" id="nav_tvshows">Tv shows</a>
           </li>
-          <li class="nav-item" id="nav_newpopular">
-            <a class="nav-link text-white" href="../htmlpages/newsandpopular.html">New & popular</a>
+          <li class="nav-item" >
+            <a class="nav-link text-white" href="../htmlpages/newsandpopular.html" id="nav_newpopular">New & popular</a>
           </li>
-          <li class="nav-item" id="nav_mylist">
-            <a class="nav-link text-white" href="../htmlpages/my_list.html">My List</a>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="../htmlpages/my_list.html" id="nav_mylist">My List</a>
           </li>
-          <li class="nav-item" id="nav_browse">
-            <a class="nav-link text-white" href="../language/language.html">Browse by languages</a>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="../language/language.html" id="nav_browse">Browse by languages</a>
           </li>
         </ul>
         <input type="text" class="searchbox bg-dark text-white ps-3 pe-3" id="searchbox">
@@ -65,12 +65,7 @@
 
     </div>
   </nav>
-  <!-- <div class="exploreMore" id="exploreMoreId">
-    <div class="exploreHeading">
-      <h3>Popular movies</h3>
-      <h3 id="closeButtonId">x</h3>
-    </div>
-    <div class="exploreContent" id="exploreContentId"> -->
+
   
     <div class="preview" id="preview">
         <div class="videoContainer">
@@ -121,30 +116,11 @@
     </div>
     <div class="content">
     <div class="moviescontainer" id="moviescontainer">
-     
-      <div class="main-text">
+        
         <h2 id="popular" >Popular</h2>
-        <div class="hidden-text" onclick="showCard('nested-card-movie')">ExploreAll>></div>
+        
         </div>
-    
         <div class="newmovies" id="popular-movies">
-
-          <!-- ****************************************************************************** -->
-          <!-- Working On It -->
-          <div class="card-container" id="cardContainer">
-            <div class="main-card" id="main-card">
-              <span class="close-btn">X</span>
-              <div id="nested-card-movie"></div>
-              <div id="nested-card-upcoming"></div>
-              <div id="nested-card-topmovie"></div>
-              <div id="nested-card-popularmovie"></div>
-            </div>
-          </div>
-          
-          <div id="allmovie" class="movie">
-          </div>
-
-          <!-- ********************************************************************************* -->
 
         </div>
 

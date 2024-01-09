@@ -25,7 +25,7 @@ window.onload = () => {
     showContent("tv/top_rated?language=en-US&page=1","top-rated");
     showContent("tv/on_the_air?language=en-US&page=1","now-playing");
     showContent("tv/airing_today?language=en-US&page=1","upcoming");
-    showBanner("tv/popular?language=en-US&page=1");
+    showBanner("tv/on_the_air?language=en-US&page=1");
 };
 
 
@@ -307,9 +307,18 @@ const showBanner = (url) => {
               console.log(imageUrl);
               parentElement.style.backgroundImage = `url(${imageUrl})`;
               parentElement.style.backgroundSize = "cover";
-              const title = item.title;
+              let availabletitle = "";
+              if (item.name) {
+                availabletitle = item.name;
+              } else if (item.title) {
+                availabletitle = item.title;
+              } else if (item.original_title) {
+                availabletitle = item.original_title;
+              } else if (item.original_name) {
+                availabletitle = item.original_name;
+              }
               const description = item.overview;
-              seriesName.innerHTML = `<h1 style="font-family: 'Rubik Doodle Shadow';font-size: 50px;">${title}</h1>`;
+              seriesName.innerHTML = `<h1 style="font-family: 'Rubik Doodle Shadow';font-size: 50px;">${availabletitle}</h1>`;
               overview.innerHTML = `<p>${description}</p>`;
             });
           })

@@ -17,6 +17,8 @@ const baseUrl = "https://api.themoviedb.org/3/";
 const baseImageUrl = "https://image.tmdb.org/t/p/original";
  
 window.onload = () => {
+    loadBannerImages();
+
     setNavbarProfiles();
     showContent("movie/popular?language=en-US&page=1","allmovie");
     showContent("movie/top_rated?language=en-US&page=1","upcomingmovie");
@@ -179,6 +181,37 @@ function movieTypeSelection() {
 document.getElementById("genre_dropdown").addEventListener("change", movieTypeSelection);
 
 // *******************************
+const loadBannerImages = () => {
+  console.log("Arrived here");
+let imageSpecificUrl = "discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=28";
+let bannerContent = [];
+fetch(
+  baseUrl+imageSpecificUrl,
+  options
+)
+  .then((response) => response.json())
+  .then((response) => {
+    bannerContent = response.results;
+    const imageIdOne = document.getElementById('bannerid');
+    const head=document.getElementById('heading');
+    const overview=document.getElementById('overview')
+    bannerContent.forEach((item)=>{
+      const imageUrl1=baseImageUrl+item.backdrop_path;
+      imageIdOne.style.backgroundImage=`url(${imageUrl1})`;
+    imageIdOne.style.backgroundSize="cover";
+    head.innerText = item.title;
+    overview.innerText = item.overview;
+    });
+    
+    })
+    .catch((err) => console.error(err));
+  
+}
+
+
+
+
+
 
 function showCard(id1) {
   document.getElementById('nested-card-movie').innerHTML='';
@@ -264,3 +297,4 @@ const addList = async (item) => {
   });
   location.reload();
 }
+

@@ -110,7 +110,11 @@ var elementIds = [
     'adventuremovies',
     'romanticmovies',
     'historymovies',
-    'thrillermovies'
+    'thrillermovies',
+    'manageprofile',
+    'account',
+    'helpcenter',
+    'signOutLink'
 ];
 function checkLocalStorage() {
     var storedValue = localStorage.getItem('languageSelected');
