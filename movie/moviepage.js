@@ -18,7 +18,6 @@ const baseImageUrl = "https://image.tmdb.org/t/p/original";
  
 window.onload = () => {
     loadBannerImages();
-
     setNavbarProfiles();
     showContent("movie/popular?language=en-US&page=1","allmovie");
     showContent("movie/top_rated?language=en-US&page=1","upcomingmovie");
@@ -123,6 +122,10 @@ const showContent = (url,elementId) => {
     })
     .catch((err) => console.error(err));
 };
+const videoPlayer = () =>{
+  window.location.href = '../video/video.html';
+};
+
 function reload(){
   location.reload();
 }
@@ -181,6 +184,8 @@ fetch(
     imageIdOne.style.backgroundSize="cover";
     head.innerText = item.title;
     overview.innerText = item.overview;
+    document.getElementById("info_id").addEventListener('click',() => { showContentDetails(item)});
+    document.getElementById("play_id").addEventListener('click',() => {videoPlayer()});
     });
     
     })
@@ -188,10 +193,25 @@ fetch(
   
 }
 
-
-
-
-
+const closeMoreInfoPage = () => {
+  const moreInfoPage = document.getElementById('moreInfoPageId');
+  moreInfoPage.style.display = 'none';
+  moreInfoPage.style.opacity = 0;
+}
+const showContentDetails = (item) => {
+  const moreInfoPage = document.getElementById('moreInfoPageId');
+  const imageUrl = baseImageUrl + item.backdrop_path;
+  document.getElementById('contentPosterImageId').style.backgroundImage = `url(${imageUrl})`;
+  document.getElementById('contentTitleId').innerText = item.original_name;
+  document.getElementById('contentOverviewId').innerText = item.overview;
+  document.getElementById('contentReleaseDateId').innerText = item.release_date;
+  document.getElementById('contentLanguageId').innerText = item.original_language;
+  moreInfoPage.style.display = 'block';
+  moreInfoPage.style.opacity = 1;
+  document.getElementById('moreInfoCloseButtonId').addEventListener('click',() => {
+    closeMoreInfoPage();
+  })
+}
 
 function showCard(id1) {
   document.getElementById('nested-card-movie').innerHTML='';

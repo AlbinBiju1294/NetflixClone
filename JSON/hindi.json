@@ -83,19 +83,19 @@
     "footer_col4_item3": "के रूप में संपर्क करें",
     "servicebutton_id": "सेवा कोड",
     "lastp_id": "©1997-2023 Netflix,Inc.",
-    "title": "",
-    "head": "",
-  
     "popular": "लोकप्रिय",
     "nowplaying": "अब खेल रहे हैं",
     "top": "टॉप रेटेड",
     "upc": "आगामी",
     
     "signIn_head": "दाखिल करना",
-    "remember_me": "मुझे याद करो",
+    "email-box-label":"ईमेल",
+    "password-box-label":"पासवर्ड",
+    "signInButton":"दाखिल करना",
     "need_help": "मदद की ज़रूरत है?",
     "signUpNow": "अभी साइनअप करें।",
     "page_endLine": "यह पृष्ठ Google reCAPTCHA द्वारा सुरक्षित है ताकि यह सुनिश्चित किया जा सके कि आप बॉट नहीं हैं। और अधिक जानें।",
+    "learnmore":"अधिक जानें।",
 
     "signUp_head": "साइन अप करें",
     "mainhead_line1": "आरंभ करने के लिए एक पासवर्ड बनाएं",
