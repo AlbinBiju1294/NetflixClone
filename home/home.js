@@ -109,7 +109,6 @@ window.onload = () => {
     showContent("trending/all/day?language=en-US","trending-all");
     showContent("movie/popular?language=en-US&page=1","popular-movies");
     showContent("tv/popular?language=en-US&page=1","popular-series");
-    // showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=27","horror-movies");
     showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=12","adventure-movies");
     showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=28","action-movies");
     showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=10749","romantic-movies");
@@ -134,75 +133,79 @@ export const showContent = (url,elementId) => {
       document.getElementById(`${exploreId}`).addEventListener('click',() => {
         generateExploreMore(content);
       })
-
-      
-      content.forEach(async (item) => {
-        const newElement = document.createElement("div");
-        newElement.className = "innercard";
-        // for video
-        
-        const itemId = item.id;
-        let videoKey;
-        try {
-          const response = await fetch(
-            `https://api.themoviedb.org/3/movie/${itemId}/videos?language=en-US`,
-            getOptions
-          );
-          const data = await response.json();
-
-          if (data.results && data.results.length > 0) {
-            videoKey = data.results[0].key;
-            // You can use the videoKey here as needed
-          } else {
-            console.error("No video results found");
-          }
-        } catch (err) {
-          console.error(err);
-        }
-
-        console.log(videoKey);
-
-        const videoFrame = document.createElement("iframe");
-        videoFrame.allow = "autoplay";
-        videoFrame.className = "videocard";
-        console.log(
-          `https://www.youtube.com/embed/${videoKey}?autoplay=1&mute=1&loop=1`
-        );
-        videoFrame.src = `https://www.youtube.com/embed/${videoKey}?autoplay=1&mute=1`;
-        videoFrame.autoplay = true;
-        videoFrame.style.width = "260px";
-        videoFrame.style.height = "150px";
-        videoFrame.style.objectFit = "cover";
-        videoFrame.style.display = "none";
-        // end
-        const imageUrl =
-          baseImageUrl + item.backdrop_path;
-        newElement.style.backgroundImage = `url(${imageUrl})`;
-        newElement.style.backgroundSize = "cover";
-        newElement.innerHTML = `<div class="movie-info"><p class="movie-title">${item.original_title}</p><p class="movie-title">Language:${item.original_language}</p><p class="movie-popularity" style="width: 250px;">Release Date:${item.release_date}</p><div class="PWbuttons"><i class="bi bi-play-circle-fill playbutton" id="playbutton${item.id}"></i><i class="bi bi-plus-circle plusbutton" id="plusbutton${item.id}"></i><i class="bi bi-info-circle infobutton" id="infobutton${item.id}"></i></div></div>`
-        newElement.querySelector(`#playbutton${item.id}`).addEventListener('click',() => { addHistory(item)});
-        newElement.querySelector(`#plusbutton${item.id}`).addEventListener('click',() => { addList(item)});
-        newElement.querySelector(`#infobutton${item.id}`).addEventListener('click',() => { showContentDetails(item)});
-        //video function
-
-        newElement.addEventListener("mouseenter", () => {
-          // newElement.style.backgroundImage = "none";
-          videoFrame.style.display = "block";
-        });
-
-        newElement.addEventListener("mouseleave", () => {
-          newElement.style.backgroundImage = `url(${imageUrl})`;
-          videoFrame.style.display = "none";
-        });
-        newElement.appendChild(videoFrame);
-
-        // end
-        parentElement.appendChild(newElement);
-
-      });
+      generateInnerCard(parentElement,content);
     })
     .catch((err) => console.error(err));
 };
+//end
+
+//generating innercard
+export const generateInnerCard = (parentElement,content) => {
+  content.forEach(async (item) => {
+    const newElement = document.createElement("div");
+    newElement.className = "innercard";
+    // for video
+    
+    const itemId = item.id;
+    let videoKey;
+    try {
+      const response = await fetch(
+        `https://api.themoviedb.org/3/movie/${itemId}/videos?language=en-US`,
+        getOptions
+      );
+      const data = await response.json();
+
+      if (data.results && data.results.length > 0) {
+        videoKey = data.results[0].key;
+        // You can use the videoKey here as needed
+      } else {
+        console.error("No video results found");
+      }
+    } catch (err) {
+      console.error(err);
+    }
+
+    console.log(videoKey);
+
+    const videoFrame = document.createElement("iframe");
+    videoFrame.allow = "autoplay";
+    videoFrame.className = "videocard";
+    console.log(
+      `https://www.youtube.com/embed/${videoKey}?autoplay=1&mute=1&loop=1`
+    );
+    videoFrame.src = `https://www.youtube.com/embed/${videoKey}?autoplay=1&mute=1`;
+    videoFrame.autoplay = true;
+    videoFrame.style.width = "260px";
+    videoFrame.style.height = "150px";
+    videoFrame.style.objectFit = "cover";
+    videoFrame.style.display = "none";
+    // end
+    const imageUrl =
+      baseImageUrl + item.backdrop_path;
+    newElement.style.backgroundImage = `url(${imageUrl})`;
+    newElement.style.backgroundSize = "cover";
+    newElement.innerHTML = `<div class="movie-info"><p class="movie-title">${item.original_title}</p><p class="movie-title">Language:${item.original_language}</p><p class="movie-popularity" style="width: 250px;">Release Date:${item.release_date}</p><div class="PWbuttons"><i class="bi bi-play-circle-fill playbutton" id="playbutton${item.id}"></i><i class="bi bi-plus-circle plusbutton" id="plusbutton${item.id}"></i><i class="bi bi-info-circle infobutton" id="infobutton${item.id}"></i></div></div>`
+    newElement.querySelector(`#playbutton${item.id}`).addEventListener('click',() => { addHistory(item)});
+    newElement.querySelector(`#plusbutton${item.id}`).addEventListener('click',() => { addList(item)});
+    newElement.querySelector(`#infobutton${item.id}`).addEventListener('click',() => { showContentDetails(item)});
+    //video function
+
+    newElement.addEventListener("mouseenter", () => {
+      // newElement.style.backgroundImage = "none";
+      videoFrame.style.display = "block";
+    });
+
+    newElement.addEventListener("mouseleave", () => {
+      newElement.style.backgroundImage = `url(${imageUrl})`;
+      videoFrame.style.display = "none";
+    });
+    newElement.appendChild(videoFrame);
+
+    // end
+    parentElement.appendChild(newElement);
+
+  });
+}
 
 // showing individual content details
 const showContentDetails = (item) => {
@@ -278,15 +281,7 @@ const showWatchHistory = async () => {
   content = newDoc.data().watchHistory;
   console.log(content);
 
-  content.forEach((item) => {
-    const newElement = document.createElement("div");
-    newElement.className = "innercard";
-    const imageUrl =
-      baseImageUrl + item.backdrop_path;
-    newElement.style.backgroundImage = `url(${imageUrl})`;
-    newElement.style.backgroundSize = "cover";
-    parentElement.appendChild(newElement);
-  });
+  generateInnerCard(parentElement,content);
 };
 //end
 
@@ -302,15 +297,7 @@ const showWatchList= async () => {
   content = newDoc.data().watchList;
   console.log(content);
 
-  content.forEach((item) => {
-    const newElement = document.createElement("div");
-    newElement.className = "innercard";
-    const imageUrl =
-      baseImageUrl + item.backdrop_path;
-    newElement.style.backgroundImage = `url(${imageUrl})`;
-    newElement.style.backgroundSize = "cover";
-    parentElement.appendChild(newElement);
-  });
+  generateInnerCard(parentElement,content);
 };
 //end
 
@@ -331,6 +318,10 @@ export const setNavbarProfiles = async () => {
     const childElement = document.createElement('a');
     childElement.className = "profileAnchor";
     childElement.innerHTML = `<div class="outerNavbarProfile"><div class="profileimage bg-primary" id="${doc.data().profileImageId}"></div><p class="iconimagep">${doc.data().name}</p></div>`;
+    childElement.addEventListener("click", () => {
+      localStorage.setItem("profile", doc.id);
+      window.location.href = "../home/home.html";
+    });
     parentElement.appendChild(childElement);
 });
 }

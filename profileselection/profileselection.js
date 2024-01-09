@@ -24,7 +24,7 @@ window.onload = async () => {
   querySnapshot.forEach((doc) => {
     const childElement = document.createElement("div");
     childElement.className = "profileinnerdetails d-flex flex-column me-3";
-    childElement.innerHTML = `<div class="profileimage bg-primary" id="profile${count++}"></div><p class="iconimagep">${
+    childElement.innerHTML = `<div class="profileimage bg-primary" id=${doc.data().profileImageId}></div><p class="iconimagep">${
       doc.data().name
     }</p>`;
     childElement.addEventListener("click", () => {
