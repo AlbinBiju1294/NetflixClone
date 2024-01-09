@@ -1,5 +1,5 @@
 body {
-  background: url("../assets/landingpage_bgimage.png");
+  background: url("../redeemassests/landingpage_bgimage.png");
   padding-top: 56px; /* Adjust based on your navbar height */
   margin: 0; /* Remove default margin to ensure full coverage of the background */
   height: 100vh; /* Set a minimum height to ensure the background is visible */
