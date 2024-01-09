@@ -11,9 +11,8 @@ body{
 #navbarselector{
   position: fixed;
   color: white;
-  background-color: #0b0b0b;
+  background-color: #0b0b0b !important;
 }
-
 .movie-info {
     position: absolute;
     top: 0;
@@ -133,7 +132,7 @@ body{
     color: white;
 }
 .banner{
-    background: url('../assets/johnwick.jpg');
+    /* background: url('../assets/johnwick.jpg'); */
     background-size: cover;
     height: 600px;
 }
@@ -149,7 +148,7 @@ body{
     z-index: 992;
 }
 .moviepage_head{
-    padding-top: 5px;
+    padding-top: 18px;
     padding-left: 4%;
     flex: 1;
     font-size: 18px;
@@ -157,7 +156,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 .genre{
-    padding-top: 33px;
+    padding-top: 30px;
     padding-right: 940px;
     flex: 1;
 }

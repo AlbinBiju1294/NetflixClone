@@ -116,7 +116,10 @@
     "adventuremovies":"Adventure Movies",
     "romanticmovies":"Romantic Movies",
     "historymovies":"History Movies",
-    "thrillermovies":"Thriller Movies"
+    "thrillermovies":"Thriller Movies",
 
-
+    "manageprofile":"Manage Profiles",
+    "account":"Account",
+    "helpcenter":"Help center",
+    "signOutLink":"Sign out of Netflix"
 }
