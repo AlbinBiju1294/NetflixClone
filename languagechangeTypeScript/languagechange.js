@@ -125,7 +125,15 @@ var elementIds = [
     'adventure-movies-span',
     'romantic-movies-span',
     'history-movies-span',
-    'thriller-movies-span'
+    'thriller-movies-span',
+    'newonnetflix',
+    'tvshows',
+    'topmovies',
+    'nextweek',
+    'worthwait',
+    'comingweek',
+    'browse_head',
+    'browse_select'
 ];
 function checkLocalStorage() {
     var storedValue = localStorage.getItem('languageSelected');

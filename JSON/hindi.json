@@ -132,8 +132,16 @@
     "adventure-movies-span":"अन्वेषणकरें>>",
     "romantic-movies-span":"अन्वेषणकरें>>",
     "history-movies-span":"अन्वेषणकरें>>",
-    "thriller-movies-span":"अन्वेषणकरें>>"
+    "thriller-movies-span":"अन्वेषणकरें>>",
 
+    "newonnetflix":"नेटफ्लिक्स पर नया",
+    "tvshows":"आज भारत में शीर्ष टीवी शो",
+    "topmovies":"आज भारत में शीर्ष फिल्में",
+    "nextweek":"अगले सप्ताह आ रहा है",
+    "worthwait":"इंतज़ार के काबिल",
+    "comingweek":"इस सप्ताह आ रहा है",
+    "browse_head":"भाषाओं के अनुसार ब्राउज़ करें",
+    "browse_select":"अपनी प्राथमिकताएँ चुनें"
 
    
 }

@@ -359,9 +359,17 @@ font-weight: 500;
     overflow-x: scroll;
     padding: 2%;
   }
-
-  #top h2{
-    padding: 2%;
+#popular{
+    padding-left: 2.6%;
+    font-size: x-large!important;
+}
+  #top{
+    padding-left: 2.6%;
+    font-size: x-large!important;
+  }
+  #nowplaying{
+    padding-left: 2.6%;
+    font-size: x-large!important;
   }
 
   #upcoming{
@@ -371,8 +379,9 @@ font-weight: 500;
     padding: 2%;
   }
 
-  #upc h2{
-    padding: 2%;
+  #upc{
+    padding-left: 2.6%;
+    font-size: x-large!important;
   }
 .footer
 {

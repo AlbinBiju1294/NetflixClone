@@ -132,5 +132,14 @@
     "adventure-movies-span":"Explore More>>",
     "romantic-movies-span":"Explore More>>",
     "history-movies-span":"Explore More>>",
-    "thriller-movies-span":"Explore More>>"
+    "thriller-movies-span":"Explore More>>",
+
+    "newonnetflix":"New On Netflix",
+    "tvshows":"Top  TV Shows in India Today",
+    "topmovies":"Top Movies in India Today",
+    "nextweek":"Coming Next Week",
+    "worthwait":"Worth The Wait",
+    "comingweek":"Coming This Week",
+    "browse_head":"Browse by languages",
+    "browse_select":"Select your preferences"
 }
