@@ -37,6 +37,12 @@ var filterByLanguage = function (language) {
                 console.log(imageUrl);
                 newElement.style.backgroundImage = "url(".concat(imageUrl, ")");
                 newElement.style.backgroundSize = "cover";
+                newElement.innerHTML = "<div class=\"movie-info\"><p class=\"movie-title\">".concat(item.title, "</p><p class=\"movie-title\">Language:").concat(item.original_language, "</p><p class=\"movie-popularity\" style=\"width: 250px;\">Release Date:").concat(item.release_date, "</p><div class=\"PWbuttons\"><i class=\"bi bi-play-circle-fill playbutton\" id=\"playbutton").concat(item.id, "\"></i></div></div>");
+                newElement
+                    .querySelector("#playbutton".concat(item.id))
+                    .addEventListener("click", function () {
+                    window.location.href = '../video/video.html';
+                });
                 if (parentElement) {
                     parentElement.appendChild(newElement);
                 }
