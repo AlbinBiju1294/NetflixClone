@@ -32,7 +32,7 @@ body{
     border-radius: 10px;
   }
 
-/* .movie-title
+.movie-title
 {
   margin: 0 !important;
   font-size: small;
@@ -50,10 +50,15 @@ body{
   overflow-wrap: break-word;
 }
 
-
+.infobutton
+{
+    font-size: 30px;
+    margin-left: 20px;
+    cursor: pointer;
+}
 .innercard:hover .movie-info {
   opacity: 1;
-} */
+}
 
 
 .moviescontainer
