@@ -1,5 +1,10 @@
 import { getOptions } from "../script/tmdbkeys.js";
-import { baseImageUrl, baseUrl, setNavbarProfiles } from "../home/home.js";
+import {
+  baseImageUrl,
+  baseUrl,
+  setNavbarProfiles,
+  generateInnerCard,
+} from "../home/home.js";
 
 window.onload = () => {
   setNavbarProfiles();
@@ -28,7 +33,6 @@ const searchMoviesAndShows = (searchKeyword) => {
       const parentElement = document.getElementById("filteredcontent");
 
       content.forEach(async (item) => {
-        // console.log(item);
         const newElement = document.createElement("div");
         newElement.className = "innercard";
         let availabletitle = "";
@@ -83,18 +87,6 @@ const searchMoviesAndShows = (searchKeyword) => {
         videoFrame.style.height = "150px";
         videoFrame.style.objectFit = "cover";
         videoFrame.style.display = "none";
-
-        // const videoElement = document.createElement("video");
-        // const videoUrl = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"; // Replace with actual video URL
-        // videoElement.src = videoUrl;
-        // videoElement.className = "videocard";
-        // videoElement.autoplay = true;
-        // videoElement.loop = true;
-        // videoElement.muted = true;
-        // videoElement.style.width = "260px";
-        // videoElement.style.height = "150px";
-        // videoElement.style.objectFit = "cover";
-        // videoElement.style.display = "none";
         const imageUrl = baseImageUrl + posterImage;
         newElement.style.backgroundImage = `url(${imageUrl})`;
         newElement.style.backgroundSize = "cover";
@@ -111,7 +103,6 @@ const searchMoviesAndShows = (searchKeyword) => {
           });
 
         newElement.addEventListener("mouseenter", () => {
-          // newElement.style.backgroundImage = "none";
           videoFrame.style.display = "block";
         });
 
