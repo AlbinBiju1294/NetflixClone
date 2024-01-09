@@ -25,7 +25,7 @@ window.onload = () => {
     showContent("tv/top_rated?language=en-US&page=1","top-rated");
     showContent("tv/on_the_air?language=en-US&page=1","now-playing");
     showContent("tv/airing_today?language=en-US&page=1","upcoming");
-    showBanner("tv/on_the_air?language=en-US&page=1");
+    showBanner("tv/top_rated?language=en-US&page=1");
 };
 
 
@@ -101,18 +101,13 @@ const showContent = (url,elementId) => {
         const imageUrl = baseImageUrl + posterImage;
         newElement.style.backgroundImage = `url(${imageUrl})`;
         newElement.style.backgroundSize = "cover";
-        newElement.innerHTML = `<div class="movie-info"><p class="movie-title">${availabletitle}</p><p class="movie-title">Language:${item.original_language}</p><p class="movie-popularity" style="width: 250px;">Release Date:${item.release_date}</p><div class="PWbuttons"><i class="bi bi-play-circle-fill playbutton" id="playbutton${item.id}"></i><i class="bi bi-plus-circle plusbutton" id="plusbutton${item.id}"></i></div></div>`;
-        newElement
-          .querySelector(`#playbutton${item.id}`)
-          .addEventListener("click", () => {
-            addHistory(item);
-          });
-        newElement
-          .querySelector(`#plusbutton${item.id}`)
-          .addEventListener("click", () => {
-            addList(item);
-          });
- 
+        newElement.innerHTML = `<div class="movie-info"><p class="movie-title">${availabletitle}</p><p class="movie-title">Language:${item.original_language}</p><p class="movie-popularity" style="width: 250px;">Release Date:${item.release_date}</p><div class="PWbuttons"><i class="bi bi-play-circle-fill playbutton" id="playbutton${item.id}"></i><i class="bi bi-plus-circle plusbutton" id="plusbutton${item.id}"></i><i class="bi bi-info-circle infobutton" id="infobutton${item.id}"></i></div></div>`
+        newElement.querySelector(`#playbutton${item.id}`).addEventListener('click',() => { addHistory(item)});
+        newElement.querySelector(`#plusbutton${item.id}`).addEventListener('click',() => { addList(item)});
+        newElement.querySelector(`#infobutton${item.id}`).addEventListener('click',() => { showContentDetails(item)});
+        newElement.querySelector("#playbutton".concat(item.id)).addEventListener("click",() => {videoPlayer()});
+                    
+
         newElement.addEventListener("mouseenter", () => {
           // newElement.style.backgroundImage = "none";
           videoFrame.style.display = "block";
@@ -128,6 +123,11 @@ const showContent = (url,elementId) => {
     })
     .catch((err) => console.error(err));
 };
+
+const videoPlayer = () =>{
+  window.location.href = '../video/video.html';
+};
+
 window.addEventListener("scroll", function() {
   var headgenreContainer = document.getElementById("banner");
   if (window.scrollY > 50) {
@@ -136,6 +136,8 @@ window.addEventListener("scroll", function() {
       headgenreContainer.style.backgroundColor = "transparent";
   }
 });
+
+
 
 function showVideoCard() {
   const imageContainer = document.getElementById('imageContainer');
@@ -159,75 +161,13 @@ videoCard.style.display = 'none';
 }
 
 
-// *******************************************************************************************************************
-          //  Working On It 
-var id1;
-function showCard(id1) {
-  document.getElementById('nested-card-movie').innerHTML='';
-  document.getElementById('nested-card-topmovie').innerHTML='';
-  document.getElementById('nested-card-popularmovie').innerHTML='';
-  document.getElementById('nested-card-upcoming').innerHTML='';
-  const cardContainer = document.getElementById('cardContainer');
-  const mainCard = document.querySelector('.main-card');
-  switch(id1){
-    case "nested-card-movie":  showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=35", "nested-card-movie");
-                              break;
-    case "nested-card-topmovie":  showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=27", "nested-card-topmovie");
-                                break;
-    case "nested-card-popularmovie":  showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=36", "nested-card-popularmovie");
-                                    break;
-    case "nested-card-upcoming":showContent("discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=12", "nested-card-upcoming");
-                                break;
-  }
-  cardContainer.style.display = 'flex';
-  setTimeout(function() {
-    mainCard.style.transform = 'scale(1)';
-    cardContainer.style.opacity = 1;
-  }, 10); 
-}
-
-function closeCard() {
-  const cardContainer = document.getElementById('cardContainer');
-  const mainCard = document.querySelector('.main-card');
-  mainCard.style.transform = 'scale(0.7)';
-  cardContainer.style.opacity = 0;
-  setTimeout(function() {
-    cardContainer.style.display = 'none';
-  }, 500); 
-}
-
-function stopPropagation(event) {
-  event.stopPropagation();
-}
-
-// ********************************************************************************************************************
-
-
-
 function reload(){
   location.reload();
 }
 
 
-// document.getElementById("movies_exploreall").addEventListener("click", function () {
-//   showCard('nested-card-movie');
-// });
-// document.getElementById("upcoming_exploreall").addEventListener("click", function () {
-//   showCard('nested-card-upcoming');
-// });
-// document.getElementById("top_exploreall").addEventListener("click", function () {
-//   showCard('nested-card-topmovie');
-// });
-// document.getElementById("popular_exploreall").addEventListener("click", function () {
-//   showCard('nested-card-popularmovie');
-// });
-
-// document.querySelector('.close-btn').addEventListener('click', closeCard);
-// document.querySelector('.card-container').addEventListener('click', closeCard);
-
-// document.querySelector('.main-card').addEventListener('click', stopPropagation);
-
 function movieTypeSelection() {
+  console.log("mpog");
   var dropdown = document.getElementById("genre_dropdown");
   var selectedOption = dropdown.options[dropdown.selectedIndex].value;
   document.getElementById("moviescontainer").innerHTML = '';
@@ -289,7 +229,6 @@ document.getElementById('signOutLink').addEventListener('click',() => {
 
 
 const showBanner = (url) => {
-  console.log("hj");
   let content = [];
   fetch(
     baseUrl+url,
@@ -320,30 +259,31 @@ const showBanner = (url) => {
               const description = item.overview;
               seriesName.innerHTML = `<h1 style="font-family: 'Rubik Doodle Shadow';font-size: 50px;">${availabletitle}</h1>`;
               overview.innerHTML = `<p>${description}</p>`;
+              document.getElementById("info").addEventListener('click',() => { showContentDetails(item)});
+              document.getElementById("play").addEventListener('click',() => {videoPlayer()});
             });
           })
           .catch((err) => console.error(err));
       };
 
-      // const generateExploreMore = ( content ) => {
-      //   const exploreContentDiv = document.getElementById('exploreContentId');
-      //   content.forEach((item) => {
-      //     const newElement = document.createElement("div");
-      //     newElement.className = "innercard";
-      //     const imageUrl =
-      //       baseImageUrl + item.backdrop_path;
-      //     newElement.style.backgroundImage = `url(${imageUrl})`;
-      //     newElement.style.backgroundSize = "cover";
-      //     newElement.innerHTML = `<div class="movie-info"><p class="movie-title">${item.original_title}</p><p class="movie-title">Language:${item.original_language}</p><p class="movie-popularity" style="width: 250px;">Release Date:${item.release_date}</p><div class="PWbuttons"><i class="bi bi-play-circle-fill playbutton" id="playbutton${item.id}"></i><i class="bi bi-plus-circle plusbutton" id="plusbutton${item.id}"></i></div></div>`
-      //     newElement.querySelector(`#playbutton${item.id}`).addEventListener('click',() => { addHistory(item)});
-      //     newElement.querySelector(`#plusbutton${item.id}`).addEventListener('click',() => { addList(item)});
-      //     exploreContentDiv.appendChild(newElement);
-      
-      //   });
-      //   document.getElementById('exploreMoreId').style.display = 'block';
-      //   document.getElementById('exploreMoreId').style.opacity = 1;
-      //   document.getElementById('closeButtonId').addEventListener('click',() => {
-      //     closeExploreContent();
-      //   })
-      // }
+      const showContentDetails = (item) => {
+        const moreInfoPage = document.getElementById('moreInfoPageId');
+        const imageUrl = baseImageUrl + item.backdrop_path;
+        document.getElementById('contentPosterImageId').style.backgroundImage = `url(${imageUrl})`;
+        document.getElementById('contentTitleId').innerText = item.original_name;
+        document.getElementById('contentOverviewId').innerText = item.overview;
+        document.getElementById('contentReleaseDateId').innerText = item.release_date;
+        document.getElementById('contentLanguageId').innerText = item.original_language;
+        moreInfoPage.style.display = 'block';
+        moreInfoPage.style.opacity = 1;
+        document.getElementById('moreInfoCloseButtonId').addEventListener('click',() => {
+          closeMoreInfoPage();
+        })
+      }
+
+      const closeMoreInfoPage = () => {
+        const moreInfoPage = document.getElementById('moreInfoPageId');
+        moreInfoPage.style.display = 'none';
+        moreInfoPage.style.opacity = 0;
+      }
 

@@ -40,20 +40,10 @@ buttonGet.addEventListener("click", function(event) {
   if(isVerified && checkOtp.value==otp) {
       createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
           .then((userCredential) => {
-            localStorage.setItem("successKey","true");
-            
-              
-          
-            
+            localStorage.setItem("successKey","true");           
             const user = userCredential.user; 
-            window.makepayment(signupEmail,userName)            
-            
-              
-           
-
-
-             
-            
+            localStorage.setItem("uid",user.uid)
+            window.makepayment(signupEmail,userName)                          
           })
           .catch((error) => {
             
@@ -81,7 +71,10 @@ buttonGet.addEventListener("click", function(event) {
 
 window.makepayment = (signupEmail,userName) => {
     const urlParams = new URLSearchParams(window.location.search);
-    const amount = 199;
+    // const amount = 199;
+    const selectGet=document.getElementById("plan-select")
+    const amount=selectGet.value
+    console.log(amount)
      var options = {
         "key": "rzp_test_T6w5d8smpOyvM9",
         "amount": amount*100, // Example: 2000 paise = INR 20
@@ -117,7 +110,7 @@ window.makepayment = (signupEmail,userName) => {
           }, 8100); 
            
            
-            // AFTER TRANSACTION IS COMPLETE YOU WILL GET THE RESPONSE HERE.
+          
         },
         "prefill": {
             "name": "Netflix", // pass customer name

@@ -12,22 +12,7 @@ export const apicall = (apiUrl,containerDiv) => {
         console.log(apicall);
         const parentElement = document.getElementById(containerDiv);
         
-        // apicall.forEach((item) => {
-        //   const newElement = document.createElement("div");
-        //   newElement.className = "innercard";
-        //   const imageUrl =
-        //   "https://image.tmdb.org/t/p/original" + item.backdrop_path;
-        //   newElement.style.backgroundImage = `url(${imageUrl})`;
-        //   newElement.style.backgroundSize = "cover";
-        //   newElement.innerHTML = `<div class="movie-info"><p class="movie-title">${item.original_title}</p><p class="movie-title">Language:${item.original_language}</p><p class="movie-popularity" style="width: 250px;">Release Date:${item.release_date}</p><div class="PWbuttons"><i class="bi bi-play-circle-fill playbutton" id="playbutton${item.id}"></i><i class="bi bi-plus-circle plusbutton" id="plusbutton${item.id}"></i></div></div>`
-        //   newElement.querySelector(`#playbutton${item.id}`).addEventListener('click',() => { addHistory(item)});
-        //   newElement.querySelector(`#plusbutton${item.id}`).addEventListener('click',() => { addList(item)});
-        //   parentElement.appendChild(newElement);
-
-
       
-        // });
-        
       apicall.forEach(async (item) => {
         // console.log(item);
         const newElement = document.createElement("div");
@@ -85,17 +70,7 @@ export const apicall = (apiUrl,containerDiv) => {
         videoFrame.style.objectFit = "cover";
         videoFrame.style.display = "none";
 
-        // const videoElement = document.createElement("video");
-        // const videoUrl = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"; // Replace with actual video URL
-        // videoElement.src = videoUrl;
-        // videoElement.className = "videocard";
-        // videoElement.autoplay = true;
-        // videoElement.loop = true;
-        // videoElement.muted = true;
-        // videoElement.style.width = "260px";
-        // videoElement.style.height = "150px";
-        // videoElement.style.objectFit = "cover";
-        // videoElement.style.display = "none";
+  
         const imageUrl = "https://image.tmdb.org/t/p/original" + posterImage;
         newElement.style.backgroundImage = `url(${imageUrl})`;
         newElement.style.backgroundSize = "cover";
