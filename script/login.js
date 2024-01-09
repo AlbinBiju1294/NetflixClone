@@ -34,8 +34,7 @@ signInButton.addEventListener("click",() => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log("Error occurred. Try again.");
-        emailInput.setAttribute('placeholder','Invalid credentials');
-        passwordInput.setAttribute('placeholder','Invalid credentials');
+        document.getElementById('invalidId').style.display = 'block';
         
       });
   });

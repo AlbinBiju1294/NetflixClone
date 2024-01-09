@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100&family=Rubik+Doodle+Shadow&display=swap');
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin shadow($x: 2px, $y: 2px, $blur: 5px, $color: gray) {
+  box-shadow: $x $y $blur $color;
+}
+
+// Includes
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: aliceblue;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+  padding-left: 60px;
+  padding-right: 20px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  height: 70px;
+}
+
+.logospace {
+  display: flex;
+  align-items: center;
+
+  h3 {
+    margin-left: 20px;
+  }
+}
+
+.navitems {
+  display: flex;
+
+  h5 {
+    font-weight: 200;
+    margin-right: 20px;
+  }
+}
+
+.searchdiv {
+  display: flex;
+}
+
+.firstlinediv {
+  width: 20px;
+  height: 70px;
+  background-color: red;
+}
+
+.secondlinediv {
+  @include flex-center;
+  width: 60px;
+  height: 70px;
+  background-color: black;
+
+  i {
+    color: white;
+  }
+}
+
+.firstcontentsection {
+  padding-top: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.companyprofile {
+  width: 55%;
+  background-image: url('../empire-state-5356x3263-13120.jpg');
+  background-size: cover;
+  background-color: grey;
+  color: white;
+  height: 300px;
+  padding-left: 70px;
+  padding-top: 45px;
+
+  p {
+    margin-top: 20px;
+    width: 70%;
+  }
+}
+
+.middleredsection {
+  width: 10%;
+  height: 300px;
+  background-color: red;
+}
+
+.rightpricingsection {
+  background-color: #221f1f;
+  width: 35%;
+  height: 300px;
+  color: white;
+  padding-top: 20px;
+  padding-left: 40px;
+
+  .head {
+    margin-top: 20px;
+  }
+}
+
+.secondcontentsection {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 20px;
+}
+
+.investorevents {
+  width: 50%;
+}
+
+.investoreventdetails {
+  margin-top: 40px;
+  @include shadow;
+  background-color: whitesmoke;
+  padding: 70px 40px;
+
+  .head {
+    margin-top: 30px;
+  }
+
+  .events {
+    margin-top: 40px;
+    color: red;
+  }
+}
+
+.investorkit {
+  width: 45%;
+}
+
+.investorkitdetails {
+  margin-top: 40px;
+  @include shadow;
+  background-color: whitesmoke;
+  padding: 70px 40px;
+
+  h2 {
+    margin-top: 30px;
+    padding-bottom: 20px;
+    width: 400px;
+    border-bottom: 1px solid gray;
+  }
+}
