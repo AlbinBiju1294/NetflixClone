@@ -108,16 +108,32 @@
     "otpLabel": "ओ.टी.पी",
     "remember-me": "मुझे याद करो",
 
-    "trending":"",
-    "watchhistory":"",
-    "mylist":"",
-    "popularmovies":"",
-    "popularseries":"",
-    "actionmovies":"",
-    "adventuremovies":"",
-    "romanticmovies":"",
-    "historymovies":"",
-    "thrillermovies":""
+    "trending":"रुझान",
+    "watchhistory":"इतिहास देखें",
+    "mylist":"मेरी सूची",
+    "popularmovies":"लोकप्रिय फ़िल्में",
+    "popularseries":"लोकप्रिय श्रृंखला",
+    "comedymovies":"कॉमेडी फिल्में",
+    "actionmovies":"एक्शन फिल्मों",
+    "adventuremovies":"साहसिक फिल्में",
+    "romanticmovies":"रोमांटिक फिल्में",
+    "historymovies":"इतिहास फिल्में",
+    "thrillermovies":"थ्रिलर फिल्में",
+    "manageprofile":"प्रोफ़ाइल प्रबंधित करें",
+    "account":"खाता",
+    "helpcenter":"सहायता केंद्र",
+    "signOutLink":"नेटफ्लिक्स से साइन आउट करें",
+
+    "trending-all-span":"अन्वेषणकरें>>",
+    "popular-movies-span":"अन्वेषणकरें>>",
+    "popular-series-span":"अन्वेषणकरें>>",
+    "comedy-movies-span":"अन्वेषणकरें>>",
+    "action-movies-span":"अन्वेषणकरें>>",
+    "adventure-movies-span":"अन्वेषणकरें>>",
+    "romantic-movies-span":"अन्वेषणकरें>>",
+    "history-movies-span":"अन्वेषणकरें>>",
+    "thriller-movies-span":"अन्वेषणकरें>>"
+
 
    
 }

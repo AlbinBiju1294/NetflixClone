@@ -464,3 +464,15 @@ body{
 {
     padding-left: 40px;
 }
+#languageselect_dropdown{
+    background-color: rgba(0, 0, 0, 0);
+    color: aliceblue;
+    width: 100px;
+    height: 36px;
+
+}
+
+#languageselect_dropdown option{
+    background-color: #141414;
+    color: #ffffffe8;
+}

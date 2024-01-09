@@ -105,12 +105,26 @@ var elementIds = [
     'watchhistory',
     'mylist',
     'popularmovies',
+    'comedymovies',
     'popularseries',
     'actionmovies',
     'adventuremovies',
     'romanticmovies',
     'historymovies',
-    'thrillermovies'
+    'thrillermovies',
+    'manageprofile',
+    'account',
+    'helpcenter',
+    'signOutLink',
+    'trending-all-span',
+    'popular-movies-span',
+    'popular-series-span',
+    'comedy-movies-span',
+    'action-movies-span',
+    'adventure-movies-span',
+    'romantic-movies-span',
+    'history-movies-span',
+    'thriller-movies-span'
 ];
 function checkLocalStorage() {
     var storedValue = localStorage.getItem('languageSelected');
