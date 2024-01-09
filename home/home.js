@@ -184,7 +184,7 @@ export const generateInnerCard = (parentElement,content) => {
       baseImageUrl + item.backdrop_path;
     newElement.style.backgroundImage = `url(${imageUrl})`;
     newElement.style.backgroundSize = "cover";
-    newElement.innerHTML = `<div class="movie-info"><p class="movie-title">${item.original_title}</p><p class="movie-title">Language:${item.original_language}</p><p class="movie-popularity" style="width: 250px;">Release Date:${item.release_date}</p><div class="PWbuttons"><i class="bi bi-play-circle-fill playbutton" id="playbutton${item.id}"></i><i class="bi bi-plus-circle plusbutton" id="plusbutton${item.id}"></i><i class="bi bi-info-circle infobutton" id="infobutton${item.id}"></i></div></div>`
+    newElement.innerHTML = `<div class="movie-info"><p class="movie-title">${item.original_title?item.original_title:item.name}</p><p class="movie-title">Language:${item.original_language}</p><p class="movie-popularity" style="width: 250px;">Release Date:${item.release_date}</p><div class="PWbuttons"><i class="bi bi-play-circle-fill playbutton" id="playbutton${item.id}"></i><i class="bi bi-plus-circle plusbutton" id="plusbutton${item.id}"></i><i class="bi bi-info-circle infobutton" id="infobutton${item.id}"></i></div></div>`
     newElement.querySelector(`#playbutton${item.id}`).addEventListener('click',() => { addHistory(item)});
     newElement.querySelector(`#plusbutton${item.id}`).addEventListener('click',() => { addList(item)});
     newElement.querySelector(`#infobutton${item.id}`).addEventListener('click',() => { showContentDetails(item)});
@@ -233,7 +233,7 @@ const generateExploreMore = ( content ) => {
       baseImageUrl + item.backdrop_path;
     newElement.style.backgroundImage = `url(${imageUrl})`;
     newElement.style.backgroundSize = "cover";
-    newElement.innerHTML = `<div class="movie-info"><p class="movie-title">${item.original_title}</p><p class="movie-title">Language:${item.original_language}</p><p class="movie-popularity" style="width: 250px;">Release Date:${item.release_date}</p><div class="PWbuttons"><i class="bi bi-play-circle-fill playbutton" id="playbutton${item.id}"></i><i class="bi bi-plus-circle plusbutton" id="plusbutton${item.id}"></i></div></div>`
+    newElement.innerHTML = `<div class="movie-info"><p class="movie-title">${item.original_title?item.original_title:item.name }</p><p class="movie-title">Language:${item.original_language}</p><p class="movie-popularity" style="width: 250px;">Release Date:${item.release_date}</p><div class="PWbuttons"><i class="bi bi-play-circle-fill playbutton" id="playbutton${item.id}"></i><i class="bi bi-plus-circle plusbutton" id="plusbutton${item.id}"></i></div></div>`
     newElement.querySelector(`#playbutton${item.id}`).addEventListener('click',() => { addHistory(item)});
     newElement.querySelector(`#plusbutton${item.id}`).addEventListener('click',() => { addList(item)});
     exploreContentDiv.appendChild(newElement);
@@ -254,7 +254,7 @@ export const addHistory = async (item) => {
   const unionRes = await updateDoc(document2,{
     watchHistory: arrayUnion(item)
   });
-  location.reload();
+  showWatchHistory();
 }
 //end
 
@@ -265,7 +265,7 @@ export const addList = async (item) => {
   const unionRes = await updateDoc(document2,{
     watchList: arrayUnion(item)
   });
-  location.reload();
+  showWatchList();
 }
 //end
 
