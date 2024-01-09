@@ -27,11 +27,12 @@ body {
 .form-wrapper {
     position: relative;
     left: 50%;
-    top: 45%;
+    top: 50%;
     border-radius: 4px;
     padding: 70px;
     padding-top: 5px;
     width: 400px;
+    height: 700px;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, .75);
 }
@@ -151,6 +152,7 @@ form .form-help :where(label, a) {
 
 #create-acct-btn{
     display: none;
+    margin-top: 90px;
 }
 #otp-signup
 {
@@ -161,11 +163,12 @@ form .form-help :where(label, a) {
 }
 .footer
 {
-    margin-top: 20px;
+    margin-top: 130px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #00000096;
+    
 }
  
 .innerfooter
@@ -236,3 +239,27 @@ form .form-help :where(label, a) {
     font-family: 'sans serif';
     font-size: small;
 }
+.form-control select {
+    height: 100%;
+    width: 100%;
+    background: #333;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.form-control select:is(:focus, :valid) {
+    background: #444;
+    padding: 16px 20px 0;
+}
+#plan-select{
+    display: none;
+}
+.razorpay-backdrop span{
+    display:none;
+}
+

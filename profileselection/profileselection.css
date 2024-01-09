@@ -46,31 +46,31 @@ body{
 
 #profile1
 {
-    background-image: url('../common/assets/p1.png');
+    background-image: url('../common/assets/profile1.png');
     background-size: cover;
 }
 
 #profile2
 {
-    background-image: url('../common/assets/p2.png');
+    background-image: url('../common/assets/profile2.png');
     background-size: cover;
 }
 
 #profile3
 {
-    background-image: url('../common/assets/p3.png');
+    background-image: url('../common/assets/profile3.png');
     background-size: cover;
 }
 
 #profile4
 {
-    background-image: url('../common/assets/p4.png');
+    background-image: url('../common/assets/profile4.png');
     background-size: cover;
 }
 
 #profile5
 {
-    background-image: url('../common/assets/p5.png');
+    background-image: url('../common/assets/profile5.png');
     background-size: cover;
 }
 

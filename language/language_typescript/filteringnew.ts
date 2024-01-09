@@ -70,6 +70,12 @@ interface Movie {
             console.log(imageUrl);
             newElement.style.backgroundImage = `url(${imageUrl})`;
             newElement.style.backgroundSize = "cover";
+            newElement.innerHTML = `<div class="movie-info"><p class="movie-title">${item.title}</p><p class="movie-title">Language:${item.original_language}</p><p class="movie-popularity" style="width: 250px;">Release Date:${item.release_date}</p><div class="PWbuttons"><i class="bi bi-play-circle-fill playbutton" id="playbutton${item.id}"></i></div></div>`;
+        newElement
+          .querySelector(`#playbutton${item.id}`)
+          .addEventListener("click", () => {
+            window.location.href = '../video/video.html';
+          });
             if (parentElement) {
               parentElement.appendChild(newElement);
             }
