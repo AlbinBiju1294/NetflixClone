@@ -100,7 +100,7 @@ var elementIds = [
     'passwordEntryField_id',
     'getOtp',
     'otpLabel',
-    'remember-me',
+    'remember-me-text',
     'trending',
     'watchhistory',
     'mylist',

@@ -105,7 +105,7 @@
     "passwordEntryField_id":"Password",
     "getOtp":"GET OTP",
     "otpLabel":"Otp",
-    "remember-me":"Remember me",
+    "remember-me-text":"Remember me",
 
     "trending":"Trending",
     "watchhistory":"Watch History",

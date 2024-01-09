@@ -32,7 +32,7 @@ body{
     border-radius: 10px;
   }
 
-.movie-title
+/* .movie-title
 {
   margin: 0 !important;
   font-size: small;
@@ -53,7 +53,7 @@ body{
 
 .innercard:hover .movie-info {
   opacity: 1;
-}
+} */
 
 
 .moviescontainer
@@ -227,6 +227,10 @@ body{
 }
 .movie_container{
   color: white;
+}
+.category-title{
+  font-size: x-large !important;
+  padding-top: 10px;
 }
 #allmovie{
   display: flex;
