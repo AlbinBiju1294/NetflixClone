@@ -25,7 +25,7 @@ window.onload = () => {
     showContent("tv/top_rated?language=en-US&page=1","top-rated");
     showContent("tv/on_the_air?language=en-US&page=1","now-playing");
     showContent("tv/airing_today?language=en-US&page=1","upcoming");
-    showBanner("tv/top_rated?language=en-US&page=1");
+    showBanner("tv/popular?language=en-US&page=1");
 };
 
 
@@ -208,6 +208,25 @@ function reload(){
   location.reload();
 }
 
+
+// document.getElementById("movies_exploreall").addEventListener("click", function () {
+//   showCard('nested-card-movie');
+// });
+// document.getElementById("upcoming_exploreall").addEventListener("click", function () {
+//   showCard('nested-card-upcoming');
+// });
+// document.getElementById("top_exploreall").addEventListener("click", function () {
+//   showCard('nested-card-topmovie');
+// });
+// document.getElementById("popular_exploreall").addEventListener("click", function () {
+//   showCard('nested-card-popularmovie');
+// });
+
+// document.querySelector('.close-btn').addEventListener('click', closeCard);
+// document.querySelector('.card-container').addEventListener('click', closeCard);
+
+// document.querySelector('.main-card').addEventListener('click', stopPropagation);
+
 function movieTypeSelection() {
   var dropdown = document.getElementById("genre_dropdown");
   var selectedOption = dropdown.options[dropdown.selectedIndex].value;
@@ -296,4 +315,26 @@ const showBanner = (url) => {
           })
           .catch((err) => console.error(err));
       };
+
+      // const generateExploreMore = ( content ) => {
+      //   const exploreContentDiv = document.getElementById('exploreContentId');
+      //   content.forEach((item) => {
+      //     const newElement = document.createElement("div");
+      //     newElement.className = "innercard";
+      //     const imageUrl =
+      //       baseImageUrl + item.backdrop_path;
+      //     newElement.style.backgroundImage = `url(${imageUrl})`;
+      //     newElement.style.backgroundSize = "cover";
+      //     newElement.innerHTML = `<div class="movie-info"><p class="movie-title">${item.original_title}</p><p class="movie-title">Language:${item.original_language}</p><p class="movie-popularity" style="width: 250px;">Release Date:${item.release_date}</p><div class="PWbuttons"><i class="bi bi-play-circle-fill playbutton" id="playbutton${item.id}"></i><i class="bi bi-plus-circle plusbutton" id="plusbutton${item.id}"></i></div></div>`
+      //     newElement.querySelector(`#playbutton${item.id}`).addEventListener('click',() => { addHistory(item)});
+      //     newElement.querySelector(`#plusbutton${item.id}`).addEventListener('click',() => { addList(item)});
+      //     exploreContentDiv.appendChild(newElement);
+      
+      //   });
+      //   document.getElementById('exploreMoreId').style.display = 'block';
+      //   document.getElementById('exploreMoreId').style.opacity = 1;
+      //   document.getElementById('closeButtonId').addEventListener('click',() => {
+      //     closeExploreContent();
+      //   })
+      // }
 

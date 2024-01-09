@@ -17,7 +17,7 @@
 <body>
   <nav class="navbar navbar-expand-lg pt-3 pb-3 ps-5 pe-5" id="navbarselector">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="../assets/logo.png" width="100px" alt=""></a>
+      <a class="navbar-brand" href="#"><img src="../common/assets/Netflixlogo.png" width="100px" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -65,7 +65,12 @@
 
     </div>
   </nav>
-
+  <!-- <div class="exploreMore" id="exploreMoreId">
+    <div class="exploreHeading">
+      <h3>Popular movies</h3>
+      <h3 id="closeButtonId">x</h3>
+    </div>
+    <div class="exploreContent" id="exploreContentId"> -->
   
     <div class="preview" id="preview">
         <div class="videoContainer">
@@ -117,16 +122,18 @@
     <div class="content">
     <div class="moviescontainer" id="moviescontainer">
      
+      <div class="main-text">
         <h2 id="popular" >Popular</h2>
         <div class="hidden-text" onclick="showCard('nested-card-movie')">ExploreAll>></div>
+        </div>
     
         <div class="newmovies" id="popular-movies">
 
           <!-- ****************************************************************************** -->
           <!-- Working On It -->
-          <div class="card-container" id="cardContainer" onclick="closeCard()">
-            <div class="main-card" id="main-card" onclick="stopPropagation(event)">
-              <span class="close-btn" onclick="closeCard()">X</span>
+          <div class="card-container" id="cardContainer">
+            <div class="main-card" id="main-card">
+              <span class="close-btn">X</span>
               <div id="nested-card-movie"></div>
               <div id="nested-card-upcoming"></div>
               <div id="nested-card-topmovie"></div>
