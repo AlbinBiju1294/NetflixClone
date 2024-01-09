@@ -47,7 +47,7 @@ var elementIds = [
     'nav_tvshows',
     'nav_movies',
     'nav_newpopular',
-    'nav_mylist',
+    'nav_mylisy',
     'nav_browse',
     'movieid',
     'genre',

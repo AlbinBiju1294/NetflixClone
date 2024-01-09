@@ -6,35 +6,62 @@
     <title>My List</title>
     <link rel="stylesheet" href="../css/my_list.css">
     <link rel ="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/navbar.css">
     <script src="../script/my_list.js" type="module"></script>
 </head>
 <body>
   
-    <nav class="navbar">
-        <div class="innernavbar">
-          <div class="firstinnernavbar">
-            <div class="logoimg">
-              <img src="../assets/logo.png" alt="logo" height="25px" />
-            </div>
-            <div class="nav-items">
-              <a class="active" href="../htmlpages/home.html">Home</a>
-              <a href="../htmlpages/tvshows.html">TV Shows</a>
-              <a href="../htmlpages/moviepage.html">Movies</a>
-              <a href="../htmlpages/newsandpopular.html">New & popular</a>
-              <a href="../htmlpages/my_list.html">My List</a>
-              <a href="../htmlpages/language.html">Browse by languages</a>
-            </div>
+  <nav class="navbar navbar-expand-lg pt-3 pb-3 ps-5 pe-5" id="navbarselector">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="../assets/logo.png" width="100px" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse ms-md-5" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="../home/home.html" id="nav_home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="../movie/moviepage.html" id="nav_movies">Movies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="../tvshows/tvshows.html" id="nav_tvshows">Tv shows</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="../newsandpopular/newsandpopular.html" id="nav_newpopular">New & popular</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="../htmlpages/my_list.html" id="nav_mylisy">My List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="../language/language.html" id="nav_browse">Browse by languages</a>
+          </li>
+        </ul>
+        <input type="text" class="searchbox bg-dark text-white ps-3 pe-3" id="searchbox">
+        <i class="bi bi-search search text-white ms-2" id="searchIcon"></i>
+      </div>
+      <div class="Navbarprofileicon" style="margin-left: 10px;">
 
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn" id="dropdownBtn">
+          <i class="bi bi-caret-down-fill arrow" id="arrowButton" style="margin-left: 10px;"></i>
+        </button>
+        <div class="dropdown-content" id="dropdownContent">
+          <div class="profileDiv" id="profileDivId">
+            
           </div>
-          <div class="secondinnernavbar">
-              <i class="bi bi-search search"></i>
-              <img src="../assets/profile__logo.png" alt="pr" height="20px">
-          </div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" position="relative" class="bi bi-bell-fill" viewBox="0 0 16 16">
-            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
-          </svg>
+          <a href="" id="manageprofile">Manage Profiles</a>
+          <a href="" id="account">Account</a>
+          <a href="" id="helpcenter">Help center</a>
+          <a id="signOutLink" style="color: white; cursor: pointer;">Sign out of Netflix</a>
         </div>
-      </nav>
+      </div>
+
+    </div>
+  </nav>
       <h1>My List</h1><br>
       <div class="newcontent" id="filteredcontent">
 
@@ -74,5 +101,7 @@
         </div>
       </footer>
       <script src="../languagechangeTypeScript/languagechange.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 </body>
 </html>
