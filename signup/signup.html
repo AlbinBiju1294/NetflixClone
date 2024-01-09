@@ -3,11 +3,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix</title>
-    <link rel="stylesheet" href="../css/signuptry.css">
+    <link rel="stylesheet" href="./signup.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-    <script type = "module" src = "../script/signuptry.js"></script>
+    <script type = "module" src = "./signup.js"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="module" src="../script/email.js"></script>
+    <script type="module" src="./email.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   </head>
 <body>
     <div class="overlay"></div>
@@ -17,7 +18,7 @@
     <h2 id="signUp_head">Sign Up</h2>
     <h2 id="mainhead_line1">Create a password to start</h2>
     <h2 id="mainhead_line2">your membership </h2>    
-    <h3 id="fewmoresteps">Just a few more steps and you're done!  We hate paperwork, too.</h3>
+    <h3 id="fewmoresteps">Just a few more steps and you're done!<br>We hate paperwork, too.</h3>
     <form action="#">
       <div class="form-control">
         <input id = "usersname" type="text" required>
@@ -32,16 +33,27 @@
             <label id="passwordEntryField_id">Password</label>
         </div>
         <button id = "getOtp" >GET OTP</button>
+        <div class="form-control">
+          <select id = "plan-select" name="plan-select">
+            <option default>--choose your plan--</option>
+            <option value="149">Mobile</option>
+            <option value="199">Basic</option>
+            <option value="499">Standard</option>
+            <option value="649">Premium</option>
+          
+      </div>
         
         <div class="form-control">
           <input id = "otp-signup" type="text">
           <label id="otpLabel">Otp</label>
       </div>
+      
+    
         <button id = "create-acct-btn" >Sign Up</button>
         <div class="form-help"> 
             <div class="remember-me">
                 <input type="checkbox" id="remember-me">
-                <label for="remember-me" id="remember-me-text">Remember me</label>
+                <label id="remember-me-text">Remember me</label>
             </div>
             <a href="#" id="need_help">Need help?</a>
         </div>

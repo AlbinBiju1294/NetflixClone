@@ -7,53 +7,73 @@
     <link rel="stylesheet" href="../css/navbar.css">
     
     <link rel="stylesheet" href="../css/newsandpopular.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"/>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <script type="module" src="../script/newsandpopularnew.js"></script>
+    
     
   </head>
   
 <body id="body">
-    <nav class="navbar">
-        <div class="innernavbar">
-          <div class="firstinnernavbar">
-            <div class="logoimg">
-              <img src="../assets/netflix1_logo.png" alt="logo" height="25px" id="nlogo"/>
-            </div>
-            <div class="nav-items">
-              <a class="active" href="../htmlpages/home.html">Home</a>
-              <a href="../htmlpages/tvshows.html">TV Shows</a>
-              <a href="../htmlpages/moviepage.html">Movies</a>
-              <a href="../htmlpages/newsandpopular.html">New & popular</a>
-              <a href="../htmlpages/my_list.html">My List</a>
-              <a href="../htmlpages/language.html">Browse by languages</a>
-            </div>
+  <nav class="navbar navbar-expand-lg pt-3 pb-3 ps-5 pe-5" id="navbarselector">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="../assets/logo.png" width="100px" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse ms-md-5" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="../home/home.html" id="nav_home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="../movie/moviepage.html" id="nav_movies">Movies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="../htmlpages/tvshows.html" id="nav_tvshows">Tv shows</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="../htmlpages/newsandpopular.html" id="nav_newpopular">New & popular</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="../language/language.html" id="nav_browse">Browse by languages</a>
+          </li>
+        </ul>
+        <input type="text" class="searchbox bg-dark text-white ps-3 pe-3" id="searchbox">
+        <i class="bi bi-search search text-white ms-2" id="searchIcon"></i>
+      </div>
+      <div class="Navbarprofileicon" style="margin-left: 10px;">
+
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn" id="dropdownBtn">
+          <i class="bi bi-caret-down-fill arrow" id="arrowButton" style="margin-left: 10px;"></i>
+        </button>
+        <div class="dropdown-content" id="dropdownContent">
+          <div class="profileDiv" id="profileDivId">
+           
           </div>
-          <div class="secondinnernavbar">
-              <i class="bi bi-search search"></i>
-              <img src="../assets/profile_pic.png" alt="pr" height="20px">
-          </div>
+          <a href="" id="manageprofile">Manage Profiles</a>
+          <a href="" id="account">Account</a>
+          <a href="" id="helpcenter">Help center</a>
+          <a id="signOutLink" style="color: white; cursor: pointer;">Sign out of Netflix</a>
         </div>
-      </nav>
+      </div>
+
+    </div>
+  </nav>
 
       <div class="content">
 
         <div class="newon-netflix">
             <div id="main-text"><h5 id="newonnetflix">New On Netflix</h5>
-              <!-- <div class="hidden-text" id="hidden-text" onclick="showCard('nested-card-movie')">ExploreAll>></div>
-               -->
+              
             </div>
-            <!-- <div class="card-container" id="popcardContainer" onclick="closeCard()"> -->
-              <!-- <div class="main-card" id="main-card" onclick="stopPropagation(event)"> -->
-                <!-- <span class="close-btn" onclick="closeCard()">X</span>
-                <div id="nested-card-movie"></div>
-                <div id="nested-card-upcoming"></div>
-                <div id="nested-card-topmovie"></div>
-                <div id="nested-card-popularmovie"></div>
-              </div>
-            </div> -->
+            
             <div class="cardContainer" id="cardContainer"></div>
 
             
@@ -98,42 +118,42 @@
 
 
 <footer class="footer">
-  <div class="innerfooter">
-    <div class="socialicons">
-      <i class="bi bi-facebook"></i>
-      <i class="bi bi-instagram"></i>
-      <i class="bi bi-twitter-x"></i>
-      <i class="bi bi-youtube"></i>
-    </div>
-    <div class="mainlinks">
-      <div class="firstlink innerlinks">
-        <a href="#" id="footer_col1_item1">Audio description</a>
-        <a href="" id="footer_col1_item2">Investor relations</a>
-        <a href="" id="footer_col1_item3">Legal notices</a>
+      <div class="innerfooter">
+        <div class="socialicons">
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-twitter-x"></i>
+          <i class="bi bi-youtube"></i>
+        </div>
+        <div class="mainlinks">
+          <div class="firstlink innerlinks">
+            <a href="#">Audio description</a>
+            <a href="">Investor relations</a>
+            <a href="">Legal notices</a>
+          </div>
+          <div class="firstlink innerlinks">
+            <a href="#">Help center</a>
+            <a href="">Jobs</a>
+            <a href="">Cookie preference</a>
+          </div>
+          <div class="firstlink innerlinks">
+            <a href="#">Gift cards</a>
+            <a href="">Terms of use</a>
+            <a href="">Corporate Information</a>
+          </div>
+          <div class="firstlink innerlinks">
+            <a href="#">Media center</a>
+            <a href="">Privacy</a>
+            <a href="">Contact as</a>
+          </div>
+        </div>
+        <button class="servicebutton">Service code</button>
+        <p class="lastp">©1997-2023 Netflix,Inc.</p>
       </div>
-      <div class="firstlink innerlinks">
-        <a href="#" id="footer_col2_item1">Help center</a>
-        <a href="" id="footer_col2_item2">Jobs</a>
-        <a href="" id="footer_col2_item3">Cookie preference</a>
-      </div>
-      <div class="firstlink innerlinks">
-        <a href="#" id="footer_col3_item1">Gift cards</a>
-        <a href="" id="footer_col3_item2">Terms of use</a>
-        <a href="" id="footer_col3_item3">Corporate Information</a>
-      </div>
-      <div class="firstlink innerlinks">
-        <a href="#" id="footer_col4_item1">Media center</a>
-        <a href="" id="footer_col4_item2">Privacy</a>
-        <a href="" id="footer_col4_item3">Contact as</a>
-      </div>
-    </div>
-    <button class="servicebutton" id="servicebutton_id">Service code</button>
-    <p class="lastp" id="lastp_id">©1997-2023 Netflix,Inc.</p>
-  </div>
-</footer>
+    </footer>
     
-<script src="../languagechangeTypeScript/languagechange.js"></script>
+      
 
-      <script src="../script/newsandpopularnew.js"></script>
+      
 </body>
 </html>

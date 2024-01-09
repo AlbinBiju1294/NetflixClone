@@ -1,17 +1,17 @@
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+import { getFirestore, collection, getDoc, doc , arrayUnion, updateDoc, getDocs} from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+import {firebaseConfig} from './config.js'
+import { apicall } from './apiexport.js';
+import { setNavbarProfiles } from '../home/home.js';
 
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const colRef = collection(db, "profileCollection");
+const docRef = doc(colRef,`${localStorage.getItem('userId')}`);
 
-// import options from './config.js'; // Importing the default export from config.js
-
-// console.log("nsjn  " +options)
 
 const dynamicImages=[]
-const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkOTE3OTg4MzMyOTg2NmIwMzVjNGEyYzc1NjJmZmNkMCIsInN1YiI6IjY1ODE4ZWNkZDUxOTFmMDhhNGFlMWIyMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7D9t0FdYo_NqaFsELFkSVFcyfv-WlRwMSkmx0v_HYrA'
-  }
-};
+
 
 
 const imagePaths = [
@@ -36,23 +36,6 @@ const imagePaths = [
     "../assets/9block.png",
     "../assets/10block.png"
   ]
-//   function toptenShows(showspath,numcrpimg,elementdiv)
-// {
-//     const cardContainer = document.getElementById(elementdiv);
-
-//     const cardHtml = `
-//       <div class="card">
-//         <div class="card-body">
-//           <img src="${showspath}" class="card-img-top" id="topshowsimg">
-//           <img src="${numcrpimg}" class="card-img-top" id="numcrpimg">
-//         </div>
-//       </div>
-//     `;
-
-//     // Append the card HTML to the container
-//     cardContainer.innerHTML += cardHtml;
-
-// }
 
   
 
@@ -60,16 +43,13 @@ const imagePaths = [
 
 
   window.onload= () =>{
+    setNavbarProfiles()
     for(let i=0;i<6;i++)
     {
         apicall(apiFetches[i],containerDivs[i]);
        
     }
-      // for(let i=0;i<5;i++){
-      //   toptenShows(numimgpaths[i],imagePaths[i],'showscontainer')
-      //   toptenShows(numimgpaths[i],dynamicImages[i],'moviesContainer')
-        
-      // }
+     
    
   }
 
@@ -95,62 +75,23 @@ const containerDivs=[
 ]
 
 
-   const apicall = (apiUrl,containerDiv) => {
-    console.log("here");
-    let apicall = [];
-    fetch(
-      apiUrl,
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        apicall = response.results;
-        console.log("Hello");
-        console.log(apicall);
-        const parentElement = document.getElementById(containerDiv);
-        
-       apicall.forEach((movie) => {
-        
-          console.log("innercard");
+   
 
-
-          
-         
-
-          const cardElement = document.createElement("div");
-          cardElement.className = "innercard"; 
-          const imageUrl = "https://image.tmdb.org/t/p/original" + movie.backdrop_path;
-          console.log(imageUrl);
-          cardElement.style.backgroundImage = `url(${imageUrl})`;
-          cardElement.style.backgroundSize = "cover";
-          
-         
-          const descriptionContainer = document.createElement("div");
-          descriptionContainer.className = "description";
-          const titleElement = document.createElement("h3");
-          titleElement.textContent = "Title"; // Set the title text content
-          const descriptionElement = document.createElement("p");
-          descriptionElement.textContent =
-            "Additional description goes here. This is some more information about the card.";
-          
-          // Append description elements to the "innercard" element
-          descriptionContainer.appendChild(titleElement);
-          descriptionContainer.appendChild(descriptionElement);
-          cardElement.appendChild(descriptionContainer);
-          
-          // Append the "innercard" element to the parent container
-          parentElement.appendChild(cardElement);
-          
-          
-          
-          
-          
-        });
-      })
-      .catch((err) => console.error(err));
+  const addList = async (item) => {
+    const collection2 = collection(docRef,"profiles");
+    const document2 = doc(collection2,`${localStorage.getItem('profile')}`);
+    const unionRes = await updateDoc(document2,{
+      watchList: arrayUnion(item)
+    });
     
-  };
+  }
 
-
-
+  const addHistory = async (item) => {
+    const collection2 = collection(docRef,"profiles");
+    const document2 = doc(collection2,`${localStorage.getItem('profile')}`);
+    const unionRes = await updateDoc(document2,{
+      watchHistory: arrayUnion(item)
+    });
+   
+  }
   
