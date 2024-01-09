@@ -86,6 +86,9 @@ padding-left: 140px;
     padding-left: 330px;
     
 }
+#email_id{
+    padding-left: 10px;
+}
 .start_button{
     flex: 1;
     padding-right: 150px;
@@ -340,6 +343,9 @@ span{
 }
 #accordion label +input[type="radio"]:checked +.content{
     max-height: 300px;
+}
+#email_id_end{
+    padding-left: 10px;
 }
 .footer{
     background-color: rgb(0, 0, 0);

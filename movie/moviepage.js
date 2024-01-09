@@ -18,7 +18,6 @@ const baseImageUrl = "https://image.tmdb.org/t/p/original";
  
 window.onload = () => {
     loadBannerImages();
-
     setNavbarProfiles();
     showContent("movie/popular?language=en-US&page=1","allmovie");
     showContent("movie/top_rated?language=en-US&page=1","upcomingmovie");
@@ -100,35 +99,16 @@ const showContent = (url,elementId) => {
         videoFrame.style.height = "150px";
         videoFrame.style.objectFit = "cover";
         videoFrame.style.display = "none";
-
-        // const videoElement = document.createElement("video");
-        // const videoUrl = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"; // Replace with actual video URL
-        // videoElement.src = videoUrl;
-        // videoElement.className = "videocard";
-        // videoElement.autoplay = true;
-        // videoElement.loop = true;
-        // videoElement.muted = true;
-        // videoElement.style.width = "260px";
-        // videoElement.style.height = "150px";
-        // videoElement.style.objectFit = "cover";
-        // videoElement.style.display = "none";
         const imageUrl = baseImageUrl + posterImage;
         newElement.style.backgroundImage = `url(${imageUrl})`;
         newElement.style.backgroundSize = "cover";
-        newElement.innerHTML = `<div class="movie-info"><p class="movie-title">${availabletitle}</p><p class="movie-title">Language:${item.original_language}</p><p class="movie-popularity" style="width: 250px;">Release Date:${item.release_date}</p><div class="PWbuttons"><i class="bi bi-play-circle-fill playbutton" id="playbutton${item.id}"></i><i class="bi bi-plus-circle plusbutton" id="plusbutton${item.id}"></i></div></div>`;
-        newElement
-          .querySelector(`#playbutton${item.id}`)
-          .addEventListener("click", () => {
-            addHistory(item);
-          });
-        newElement
-          .querySelector(`#plusbutton${item.id}`)
-          .addEventListener("click", () => {
-            addList(item);
-          });
+        newElement.innerHTML = `<div class="movie-info"><p class="movie-title">${availabletitle}</p><p class="movie-title">Language:${item.original_language}</p><p class="movie-popularity" style="width: 250px;">Release Date:${item.release_date}</p><div class="PWbuttons"><i class="bi bi-play-circle-fill playbutton" id="playbutton${item.id}"></i><i class="bi bi-plus-circle plusbutton" id="plusbutton${item.id}"></i><i class="bi bi-info-circle infobutton" id="infobutton${item.id}"></i></div></div>`
+        newElement.querySelector(`#playbutton${item.id}`).addEventListener('click',() => { addHistory(item)});
+        newElement.querySelector(`#plusbutton${item.id}`).addEventListener('click',() => { addList(item)});
+        newElement.querySelector(`#infobutton${item.id}`).addEventListener('click',() => { showContentDetails(item)});
+        newElement.querySelector("#playbutton".concat(item.id)).addEventListener("click",() => {videoPlayer()});
 
         newElement.addEventListener("mouseenter", () => {
-          // newElement.style.backgroundImage = "none";
           videoFrame.style.display = "block";
         });
 
@@ -142,10 +122,13 @@ const showContent = (url,elementId) => {
     })
     .catch((err) => console.error(err));
 };
+const videoPlayer = () =>{
+  window.location.href = '../video/video.html';
+};
+
 function reload(){
   location.reload();
 }
-// var originalContent = document.getElementById("movie_container").cloneNode(true);
 function movieTypeSelection() {
   const dropdown = document.getElementById("genre_dropdown");
   let selectedOption = dropdown.options[dropdown.selectedIndex].value;
@@ -201,6 +184,8 @@ fetch(
     imageIdOne.style.backgroundSize="cover";
     head.innerText = item.title;
     overview.innerText = item.overview;
+    document.getElementById("info_id").addEventListener('click',() => { showContentDetails(item)});
+    document.getElementById("play_id").addEventListener('click',() => {videoPlayer()});
     });
     
     })
@@ -208,10 +193,25 @@ fetch(
   
 }
 
-
-
-
-
+const closeMoreInfoPage = () => {
+  const moreInfoPage = document.getElementById('moreInfoPageId');
+  moreInfoPage.style.display = 'none';
+  moreInfoPage.style.opacity = 0;
+}
+const showContentDetails = (item) => {
+  const moreInfoPage = document.getElementById('moreInfoPageId');
+  const imageUrl = baseImageUrl + item.backdrop_path;
+  document.getElementById('contentPosterImageId').style.backgroundImage = `url(${imageUrl})`;
+  document.getElementById('contentTitleId').innerText = item.original_name;
+  document.getElementById('contentOverviewId').innerText = item.overview;
+  document.getElementById('contentReleaseDateId').innerText = item.release_date;
+  document.getElementById('contentLanguageId').innerText = item.original_language;
+  moreInfoPage.style.display = 'block';
+  moreInfoPage.style.opacity = 1;
+  document.getElementById('moreInfoCloseButtonId').addEventListener('click',() => {
+    closeMoreInfoPage();
+  })
+}
 
 function showCard(id1) {
   document.getElementById('nested-card-movie').innerHTML='';
