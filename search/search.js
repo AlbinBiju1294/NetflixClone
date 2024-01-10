@@ -1,4 +1,4 @@
-import { getOptions } from "../script/tmdbkeys.js";
+import { getOptions } from "../signup/config.js";
 import {
   baseImageUrl,
   baseUrl,
