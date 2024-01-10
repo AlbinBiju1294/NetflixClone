@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/emailreset.css">
-    <script type="module" src="../script/accounts.js"></script>
+    <script type="module" src="../script/emailreset.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -22,20 +22,23 @@
       <div class="change-credentials">
         <div class="password">
             <form>
+              <label for="password"><h3>ENTER YOUR CURRENT EMAIL &nbsp;&nbsp;</h3></label>
+              <input type="text" id="currentEmail" name="currentEmail" placeholder="Current Email">
               <label for="password"><h3>ENTER YOUR CURRENT PASSWORD &nbsp;&nbsp;</h3></label>
               <input type="password" id="password" name="password" placeholder="Current Password">
             </form>
-            <button>Submit</button>
+            <button id="emailsubmit">Submit</button>
           </div>
           <br>
           <br>
-       <div class="email">
+       <div class="email" id="newEmail">
           <form>
             <label for="email"><h3>ENTER YOUR NEW EMAIL HERE  &nbsp;&nbsp;</h3></label>
-            <input type="text" id="email" name="email" placeholder="New Email">
+            <input type="text" id="newemailinp" name="email" placeholder="New Email">
           </form>
-          <button id="resetbt">Reset</button>
+          <button id="resetbtem">Reset</button>
         </div> 
+        <div id="success" style="color: red;"></div>
     </div>
     </div>
       <footer class="footer">

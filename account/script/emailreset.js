@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, updatePassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, updateEmail } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAcbi3_oCi8ZvIaVJCo_nity5rZnjpObow",
@@ -13,23 +13,24 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-const newPasswordContainer = document.getElementById('newpassword');
-const newPasswordInput = document.getElementById('epassword');
-const sendButton = document.getElementById('submitButton');
-const resetButton = document.getElementById('resetbt');
+const newEmailContainer = document.getElementById('newEmail');
+const newEmailInput = document.getElementById('newemailinp');
+const sendButton = document.getElementById('emailsubmit');
+const resetButton = document.getElementById('resetbtem');
 
-newPasswordContainer.style.display = "none";
+
+newEmailContainer.style.display = "none";
 
 //function to authenticate the user
 
 sendButton.addEventListener("click", function () {
-    const email = document.getElementById('username').value;
+    const email = document.getElementById('currentEmail').value;
     const password = document.getElementById('password').value;
 
     signInWithEmailAndPassword(auth, email, password)
         .then(() => {
-            // Authentication successful, show the new password container
-            newPasswordContainer.style.display = "block";
+           
+            newEmailContainer.style.display = "block";
             errormessage.innerHTML = "";
         })
         .catch((error) => {
@@ -43,21 +44,19 @@ sendButton.addEventListener("click", function () {
         });
 });
 
-//function to update password
+//function to update email
 
 resetButton.addEventListener("click", function () {
     const user = auth.currentUser;
-    const newPassword = newPasswordInput.value;
+    const newEmail = newEmailInput.value;
 
-    updatePassword(user, newPassword)
-        .then(() => {
-            console.log("Password updated successfully");
-            alert("Password changed successfully");
-        })
-        .catch((error) => {
-            console.error('Password update error:', error.message);
-            alert("Error changing password");
-        });
-});
-
+    updateEmail(user, newEmail)
+            .then(() => {
+                alert("Email updated successfully");
+            })
+            .catch((error) => {
+                console.error("Error updating email:", error.message);
+            });
+    })
+    
 

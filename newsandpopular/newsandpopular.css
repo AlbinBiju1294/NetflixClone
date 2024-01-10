@@ -33,13 +33,15 @@
     display:none;
 }
 
-
+.commonContainer{
+    padding: 2%;
+}
 
 
 #newonnetflix{
     color: white;
     margin-top: 80px;
-     
+    
     z-index: 1;
     font-size: x-large
     /* font-family: ;    */
@@ -245,6 +247,13 @@
     font-size: x-small;
 }
 
+.infobutton
+{
+    font-size: 30px;
+    margin-left: 20px;
+    cursor: pointer;
+    color: white;
+}
 
 
 .innercard
@@ -327,7 +336,70 @@
     color: white;
 }
  
-  
+.moreInfoPage
+{
+    position: fixed;
+    height: 500px;
+    width: 75%;
+    background-color: black;
+    z-index: 1000000000;
+    opacity: 0;
+    display: none;
+    border-radius: 10px;
+    top: 13%;
+    left: 12.5%;
+    overflow-y: scroll;
+    transition: opacity 2s ease-in;
+}
+
+.moreInfoPage::-webkit-scrollbar {
+    display: none;
+}
+
+.contentPosterImage
+{
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+}
+
+.contentDetails{
+    padding: 20px 40px;
+    color: white;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.contentTitle h2
+{
+    font-size: xx-large;
+    font-weight: 400;
+}
+
+.contentOverview h5
+{
+    font-size: medium;
+    font-weight: 300;
+}
+
+.contentReleaseDate{
+    margin-top: 30px;
+    font-weight: 400;
+}
+
+.contentLanguage{
+    margin-top: 30px;
+    font-weight: 400;
+}
+
+.moreInfoCloseButton
+{
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    top: 3%;
+    right: 2%;
+}
+
   
 
 
