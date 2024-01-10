@@ -32,6 +32,9 @@
             <a class="nav-link text-white" href="../newsandpopular/newsandpopular.html" id="nav_newpopular">New & popular</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link text-white" href="../htmlpages/my_list.html" id="nav_mylisy">My List</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link text-white" href="../language/language.html" id="nav_browse">Browse by languages</a>
           </li>
         </ul>
@@ -58,6 +61,25 @@
 
     </div>
   </nav>
+  <div class="moreInfoPage" id="moreInfoPageId">
+
+    <div class="contentPosterImage" id="contentPosterImageId"></div>
+    <div class="contentDetails">
+      <div class="contentTitle">
+        <h2 id="contentTitleId"></h2>
+      </div>
+      <div class="contentOverview">
+        <h5 id="contentOverviewId">
+         
+        </h5>
+      </div>
+      <h6 class="contentReleaseDate">Released on: <span id="contentReleaseDateId"></span></h6>
+      <h6 class="contentLanguage">Language: <span id="contentLanguageId"></span></h6>
+    </div>
+    
+    <i class="bi bi-x-circle moreInfoCloseButton" id="moreInfoCloseButtonId"></i>
+  </div>
+  
       <div class="moviepage_banner" >
         
         <div class="banner" id="bannerid">
@@ -92,7 +114,7 @@
       </div>
       <div class="movie_container" id="movie_container" >
           <div class="main-text">
-            <h2 id="category_movies">Movies</h2>
+            <h2 id="category_movies" class="category-title">Movies</h2>
             <div class="hidden-text" id="movies_exploreall">ExploreAll>></div>
           </div>
           <!-- **************************** -->
@@ -110,20 +132,20 @@
           </div>
          
           <div class="main-text">
-            <h2 id="category_upcoming">Upcoming</h2>
+            <h2 id="category_upcoming" class="category-title">Upcoming</h2>
             <div class="hidden-text" id="upcoming_exploreall" >ExploreAll>></div>
           </div>
           <div id="upcomingmovie" class="movie">
           </div>
           
           <div class="main-text">
-            <h2 id="category_toprated">Top Rated</h2>
+            <h2 id="category_toprated" class="category-title">Top Rated</h2>
             <div class="hidden-text" id="top_exploreall" >ExploreAll>></div>
           </div>
           <div id="topmovie" class="movie">
           </div>
           <div class="main-text">
-            <h2 id="category_popularmovie">Popular Movies</h2>
+            <h2 id="category_popularmovie" class="category-title">Popular Movies</h2>
             <div class="hidden-text" id="popular_exploreall">ExploreAll>></div>
           </div>
           <div id="popularmovie" class="movie">
@@ -151,7 +173,7 @@
               <a href="" id="footer_col2_item3">Cookie preference</a>
             </div>
             <div class="firstlink innerlinks">
-              <a href="#" id="footer_col3_item1">Gift cards</a>
+              <a href="../redeemgift/redeem.html" id="footer_col3_item1">Gift cards</a>
               <a href="" id="footer_col3_item2">Terms of use</a>
               <a href="" id="footer_col3_item3">Corporate Information</a>
             </div>
