@@ -17,7 +17,11 @@ export const apicall = (apiUrl,containerDiv) => {
         console.log(apicall);
         const parentElement = document.getElementById(containerDiv);
         
+<<<<<<< HEAD:script/apiexport.js
         
+=======
+      
+>>>>>>> ec606015b9a7558cb23e2ad53b13dfbaa8429100:newsandpopular/apiexport.js
       apicall.forEach(async (item) => {
         // console.log(item);
         const newElement = document.createElement("div");
@@ -74,6 +78,11 @@ export const apicall = (apiUrl,containerDiv) => {
         videoFrame.style.height = "150px";
         videoFrame.style.objectFit = "cover";
         videoFrame.style.display = "none";
+<<<<<<< HEAD:script/apiexport.js
+=======
+
+  
+>>>>>>> ec606015b9a7558cb23e2ad53b13dfbaa8429100:newsandpopular/apiexport.js
         const imageUrl = "https://image.tmdb.org/t/p/original" + posterImage;
         newElement.style.backgroundImage = `url(${imageUrl})`;
         newElement.style.backgroundSize = "cover";
