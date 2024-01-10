@@ -8,8 +8,8 @@ import {
   updateDoc,
   getDocs,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-import { firebaseConfig } from "../script/config.js";
-import { getOptions } from "../script/tmdbkeys.js";
+import { firebaseConfig } from "../signup/config.js";
+import { getOptions } from "../signup/config.js";
 
 // Initializing Firebase
 const app = initializeApp(firebaseConfig);
