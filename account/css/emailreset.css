@@ -99,18 +99,27 @@
     width: 100%;
 }
 
+#resetbtem{
+    width: 100px;
+    transform: translateY(45%);
+}
+
 .change-credentials{
     /* background-image: url(./assets/wp6751611.jpg); */
     /* background-color: rgba(0, 0, 0, 1); */
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.5); /* Add box shadow here */
-    height: 200px;
+    height: 350px;
     padding: 150px;
     padding-top: 50px;
     border-radius: 6px;
     
 }
+
+/* #newEmail{
+    display: none;
+} */
 
 .email{
     display: flex;
