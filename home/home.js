@@ -123,14 +123,6 @@ const loadBannerImages = () => {
     .catch((err) => console.error(err));
 };
 
-//bannerplaybutton
-// for(let i=0;i<3;i++)
-// {
-  // document.getElementsByClassName('play')[i].addEventListener('click',() => {
-  //   window.location.href = '../video/video.html';
-//   })
-// }
-
 //function to change background colour of navbar on scroll
 window.addEventListener("scroll", function () {
   var navbarSelector = document.getElementById("navbarselector");
@@ -189,42 +181,7 @@ export const generateInnerCard = (parentElement, content) => {
     } else if (item.original_name) {
       availabletitle = item.original_name;
     }
-    // for video
-
-    // const itemId = item.id;
-    // let videoKey;
-    // try {
-    //   const response = await fetch(
-    //     `https://api.themoviedb.org/3/movie/${itemId}/videos?language=en-US`,
-    //     getOptions
-    //   );
-    //   const data = await response.json();
-
-    //   if (data.results && data.results.length > 0) {
-    //     videoKey = data.results[0].key;
-    //     // You can use the videoKey here as needed
-    //   } else {
-    //     console.error("No video results found");
-    //   }
-    // } catch (err) {
-    //   console.error(err);
-    // }
-
-    // console.log(videoKey);
-
-    // const videoFrame = document.createElement("iframe");
-    // videoFrame.allow = "autoplay";
-    // videoFrame.className = "videocard";
-    // console.log(
-    //   `https://www.youtube.com/embed/${videoKey}?autoplay=1&mute=1&loop=1`
-    // );
-    // videoFrame.src = `https://www.youtube.com/embed/${videoKey}?autoplay=1&mute=1`;
-    // videoFrame.autoplay = true;
-    // videoFrame.style.width = "260px";
-    // videoFrame.style.height = "150px";
-    // videoFrame.style.objectFit = "cover";
-    // videoFrame.style.display = "none";
-    // end
+    
     const imageUrl = baseImageUrl + item.backdrop_path;
     newElement.style.backgroundImage = `url(${imageUrl})`;
     newElement.style.backgroundSize = "cover";
@@ -256,19 +213,6 @@ export const generateInnerCard = (parentElement, content) => {
       .addEventListener("click", () => {
         showContentDetails(item);
       });
-    //video function
-
-    // newElement.addEventListener("mouseenter", () => {
-    //   videoFrame.style.display = "block";
-    // });
-
-    // newElement.addEventListener("mouseleave", () => {
-    //   newElement.style.backgroundImage = `url(${imageUrl})`;
-    //   videoFrame.style.display = "none";
-    // });
-    // newElement.appendChild(videoFrame);
-
-    // end
     parentElement.appendChild(newElement);
   });
 };
