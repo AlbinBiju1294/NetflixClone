@@ -1,10 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, updatePassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
-function emailReset() {
-    window.location.href = "./emailreset.html";
-}
-
 const firebaseConfig = {
     apiKey: "AIzaSyAcbi3_oCi8ZvIaVJCo_nity5rZnjpObow",
     authDomain: "netflixclone-28d52.firebaseapp.com",
@@ -22,8 +18,9 @@ const newPasswordInput = document.getElementById('epassword');
 const sendButton = document.getElementById('submitButton');
 const resetButton = document.getElementById('resetbt');
 
-// Initially hide the new password container
 newPasswordContainer.style.display = "none";
+
+//function to authenticate the user
 
 sendButton.addEventListener("click", function () {
     const email = document.getElementById('username').value;
@@ -46,6 +43,8 @@ sendButton.addEventListener("click", function () {
         });
 });
 
+//function to update password
+
 resetButton.addEventListener("click", function () {
     const user = auth.currentUser;
     const newPassword = newPasswordInput.value;
@@ -60,3 +59,5 @@ resetButton.addEventListener("click", function () {
             alert("Error changing password");
         });
 });
+
+

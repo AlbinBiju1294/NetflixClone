@@ -1,3 +1,8 @@
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+import { getFirestore, collection, getDoc, doc , arrayUnion, updateDoc, getDocs} from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+import {firebaseConfig} from './config.js'
+
+
 export const apicall = (apiUrl,containerDiv) => {
     console.log("here");
     let apicall = [];
@@ -12,7 +17,11 @@ export const apicall = (apiUrl,containerDiv) => {
         console.log(apicall);
         const parentElement = document.getElementById(containerDiv);
         
+<<<<<<< HEAD:script/apiexport.js
+        
+=======
       
+>>>>>>> ec606015b9a7558cb23e2ad53b13dfbaa8429100:newsandpopular/apiexport.js
       apicall.forEach(async (item) => {
         // console.log(item);
         const newElement = document.createElement("div");
@@ -69,22 +78,19 @@ export const apicall = (apiUrl,containerDiv) => {
         videoFrame.style.height = "150px";
         videoFrame.style.objectFit = "cover";
         videoFrame.style.display = "none";
+<<<<<<< HEAD:script/apiexport.js
+=======
 
   
+>>>>>>> ec606015b9a7558cb23e2ad53b13dfbaa8429100:newsandpopular/apiexport.js
         const imageUrl = "https://image.tmdb.org/t/p/original" + posterImage;
         newElement.style.backgroundImage = `url(${imageUrl})`;
         newElement.style.backgroundSize = "cover";
-        newElement.innerHTML = `<div class="movie-info"><p class="movie-title">${availabletitle}</p><p class="movie-title">Language:${item.original_language}</p><p class="movie-popularity" style="width: 250px;">Release Date:${item.release_date}</p><div class="PWbuttons"><i class="bi bi-play-circle-fill playbutton" id="playbutton${item.id}"></i><i class="bi bi-plus-circle plusbutton" id="plusbutton${item.id}"></i></div></div>`;
-        newElement
-          .querySelector(`#playbutton${item.id}`)
-          .addEventListener("click", () => {
-            addHistory(item);
-          });
-        newElement
-          .querySelector(`#plusbutton${item.id}`)
-          .addEventListener("click", () => {
-            addList(item);
-          });
+        newElement.innerHTML = `<div class="movie-info"><p class="movie-title">${availabletitle}</p><p class="movie-title">Language:${item.original_language}</p><p class="movie-popularity" style="width: 250px;">Release Date:${item.release_date}</p><div class="PWbuttons"><i class="bi bi-play-circle-fill playbutton" id="playbutton${item.id}"></i><i class="bi bi-plus-circle plusbutton" id="plusbutton${item.id}"></i><i class="bi bi-info-circle infobutton" id="infobutton${item.id}"></i></div></div>`
+        newElement.querySelector(`#playbutton${item.id}`).addEventListener('click',() => { addHistory(item)});
+        newElement.querySelector(`#plusbutton${item.id}`).addEventListener('click',() => { addList(item)});
+        newElement.querySelector(`#infobutton${item.id}`).addEventListener('click',() => { showContentDetails(item)});
+        newElement.querySelector("#playbutton".concat(item.id)).addEventListener("click",() => {videoPlayer()});
 
         newElement.addEventListener("mouseenter", () => {
           // newElement.style.backgroundImage = "none";
@@ -109,3 +115,46 @@ export const apicall = (apiUrl,containerDiv) => {
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkOTE3OTg4MzMyOTg2NmIwMzVjNGEyYzc1NjJmZmNkMCIsInN1YiI6IjY1ODE4ZWNkZDUxOTFmMDhhNGFlMWIyMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7D9t0FdYo_NqaFsELFkSVFcyfv-WlRwMSkmx0v_HYrA'
     }
   };
+
+  const showContentDetails = (item) => {
+    const moreInfoPage = document.getElementById('moreInfoPageId');
+    const imageUrl = "https://image.tmdb.org/t/p/original" + item.backdrop_path;
+    document.getElementById('contentPosterImageId').style.backgroundImage = `url(${imageUrl})`;
+    document.getElementById('contentTitleId').innerText = item.original_name;
+    document.getElementById('contentOverviewId').innerText = item.overview;
+    document.getElementById('contentReleaseDateId').innerText = item.release_date;
+    document.getElementById('contentLanguageId').innerText = item.original_language;
+    moreInfoPage.style.display = 'block';
+    moreInfoPage.style.opacity = 1;
+    document.getElementById('moreInfoCloseButtonId').addEventListener('click',() => {
+      closeMoreInfoPage();
+    })
+  }
+
+  const closeMoreInfoPage = () => {
+    const moreInfoPage = document.getElementById('moreInfoPageId');
+    moreInfoPage.style.display = 'none';
+    moreInfoPage.style.opacity = 0;
+  }
+
+  const videoPlayer = () =>{
+    window.location.href = '../video/video.html';
+  };
+
+  const addList = async (item) => {
+    const collection2 = collection(docRef,"profiles");
+    const document2 = doc(collection2,`${localStorage.getItem('profile')}`);
+    const unionRes = await updateDoc(document2,{
+      watchList: arrayUnion(item)
+    });
+    
+  }
+
+  const addHistory = async (item) => {
+    const collection2 = collection(docRef,"profiles");
+    const document2 = doc(collection2,`${localStorage.getItem('profile')}`);
+    const unionRes = await updateDoc(document2,{
+      watchHistory: arrayUnion(item)
+    });
+   
+  }

@@ -17,6 +17,8 @@ const options = getOptions;
  
 const baseUrl = "https://api.themoviedb.org/3/";
 const baseImageUrl = "https://image.tmdb.org/t/p/original";
+
+
  
 window.onload = () => {
     setNavbarProfiles();
@@ -28,7 +30,7 @@ window.onload = () => {
 };
 
 
- 
+ //function to display the film posters
  
 const showContent = (url,elementId) => {
   let content = [];
@@ -123,9 +125,13 @@ const showContent = (url,elementId) => {
     .catch((err) => console.error(err));
 };
 
+//video player
+
 const videoPlayer = () =>{
   window.location.href = '../video/video.html';
 };
+
+
 
 window.addEventListener("scroll", function() {
   var headgenreContainer = document.getElementById("banner");
@@ -147,23 +153,14 @@ function showVideoCard() {
 
 }
 
-function closeVideoCard() {
-const videoCard = document.getElementById('videoCard');
-const video = videoCard.querySelector('video');
-
-// Pause the video
-video.pause();
-video.currentTime = 0; // Reset the video to the beginning
-
-// Close the card
-videoCard.style.display = 'none';
-}
 
 
 function reload(){
   location.reload();
 }
 
+
+//function to sort by genre
 
 function movieTypeSelection() {
   console.log("mpog");
@@ -202,6 +199,7 @@ function movieTypeSelection() {
 document.getElementById("genre_dropdown").addEventListener("change",movieTypeSelection);
 
 
+//function to add to watchlist
 
 const addHistory = async (item) => {
   const collection2 = collection(docRef,"profiles");
@@ -211,6 +209,8 @@ const addHistory = async (item) => {
   });
   location.reload();
 }
+
+//function to add to my list
 
 const addList = async (item) => {
   const collection2 = collection(docRef,"profiles");
@@ -225,7 +225,7 @@ document.getElementById('signOutLink').addEventListener('click',() => {
   signOut();
 })
 
-
+//function to display the first banner poster dynamically
 
 const showBanner = (url) => {
   let content = [];
@@ -264,6 +264,8 @@ const showBanner = (url) => {
           })
           .catch((err) => console.error(err));
       };
+
+      //function to show more info card
 
       const showContentDetails = (item) => {
         const moreInfoPage = document.getElementById('moreInfoPageId');
