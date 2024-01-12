@@ -307,6 +307,7 @@ export const addList = async (item) => {
 const showWatchHistory = async () => {
   let content = [];
   const parentElement = document.getElementById("watch-history");
+  parentElement.innerHTML = '';
 
   const collection2 = collection(docRef, "profiles");
   const document2 = doc(collection2, `${localStorage.getItem("profile")}`);
@@ -322,6 +323,7 @@ const showWatchHistory = async () => {
 const showWatchList = async () => {
   let content = [];
   const parentElement = document.getElementById("watch-list");
+  parentElement.innerHTML = '';
 
   const collection2 = collection(docRef, "profiles");
   const document2 = doc(collection2, `${localStorage.getItem("profile")}`);
