@@ -85,3 +85,33 @@ body{
     margin-top: 17px;
     margin-left: 25px;
 }
+
+#profile6
+{
+    background-image: url('../common/assets/profile6.png');
+    background-size: cover;
+}
+
+#profile7
+{
+    background-image: url('../common/assets/profile7.png');
+    background-size: cover;
+}
+
+#profile8
+{
+    background-image: url('../common/assets/profile8.png');
+    background-size: cover;
+}
+
+#profile9
+{
+    background-image: url('../common/assets/profile9.png');
+    background-size: cover;
+}
+
+#profile10
+{
+    background-image: url('../common/assets/profile10.png');
+    background-size: cover;
+}

@@ -1,7 +1,7 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
 import { getFirestore, collection, getDoc, doc , arrayUnion, updateDoc, getDocs } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
-import {firebaseConfig} from '../script/config.js'
-import { getOptions } from '../script/tmdbkeys.js';
+import {firebaseConfig,getOptions} from '../signup/config.js';
+import { setNavbarProfiles } from '../home/home.js';
  
 const baseImageUrl = "https://image.tmdb.org/t/p/original";
  
@@ -12,6 +12,7 @@ const options = getOptions;
 const colRef = collection(db, "profileCollection");
 const docRef = doc(colRef,`${localStorage.getItem('userId')}`);
 window.onload = () => {
+  setNavbarProfiles();
   showWatchList();
 }
  

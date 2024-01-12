@@ -1,14 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
-
-const firebaseConfig = {
-    apiKey: "AIzaSyAcbi3_oCi8ZvIaVJCo_nity5rZnjpObow",
-    authDomain: "netflixclone-28d52.firebaseapp.com",
-    projectId: "netflixclone-28d52",
-    storageBucket: "netflixclone-28d52.appspot.com",
-    messagingSenderId: "478121105015",
-    appId: "1:478121105015:web:f14cdfd963421075805872"
-  };
+import {firebaseConfig} from '../signup/config.js';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);

@@ -50,6 +50,14 @@ body{
   overflow-wrap: break-word;
 }
 
+#heading{
+  font-family: 'Rubik Doodle Shadow';
+ 
+}
+#overview{
+  font-family: Arial, Helvetica, sans-serif;
+  width: 500px;
+}
 .infobutton
 {
     font-size: 30px;

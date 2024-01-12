@@ -1,0 +1,87 @@
+body {
+  background-image: url("https://cdn.neowin.com/news/images/uploaded/2023/05/1683747988_background-size1920x1080-4e1694a6-75aa-4c36-9d4d-7fb6a3102005-bc5318781aad7f5c8520.jpg");
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+body .navbar {
+  background-color: transparent;
+  height: 80px;
+  position: relative;
+}
+body .navbar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+}
+body .feedback-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-45%);
+  left: 38%; /* Adjust the value as needed */
+  color: #fff;
+  font-weight: bold;
+  font-size: 45px;
+  text-align: center;
+}
+body .container {
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  background-color: rgba(8, 2, 2, 0.74);
+  justify-content: center !important;
+}
+body h2 {
+  color: #007bff;
+}
+body label {
+  font-weight: bold;
+  display: block;
+}
+body .btn-primary {
+  background-color: #ff0000;
+  border-color: #ff0000;
+}
+body .btn-primary:hover {
+  background-color: #cc0000;
+  border-color: #cc0000;
+}
+body .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+  width: 80%;
+}
+body .form-control {
+  border-radius: 4px;
+  color: #000;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+body #logo {
+  width: 150px;
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+#button {
+  margin-left: 420px;
+  margin-top: 20px;
+}
+
+#name {
+  margin-left: 300px;
+}
+
+#email {
+  margin-top: 40px;
+  margin-left: 300px;
+}
+
+#feedback {
+  margin-left: 300px;
+  margin-top: 40px;
+}/*# sourceMappingURL=contactus.css.map */

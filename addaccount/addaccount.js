@@ -1,4 +1,4 @@
-import {firebaseConfig} from '../script/config.js'
+import {firebaseConfig} from '../signup/config.js'
 
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
 

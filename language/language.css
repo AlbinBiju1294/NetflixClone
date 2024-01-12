@@ -35,21 +35,7 @@ body{
 {
     font-size: 20px;
 }
-.innercard
-{
-    min-height: 150px;
-    min-width: 260px;
-    margin-right: 33px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
 
-.newcontent
-{
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 58px;
-}
 
 .selectsortlanguage
 {
@@ -86,29 +72,7 @@ body{
     font-size: x-small;
 }
 
-.innercard:hover
-{
-    transform: scale(1.25);
-    transition: transform 0.5s ease-in-out;
-}
 
-.innercard
-{
-    position: relative;
-    min-height: 150px;
-    min-width: 260px;
-    margin-right: 33px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
-
-.newcontent
-{
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 58px;
-    margin-top: 40px;
-}
 
 .movie-info {
     position: absolute;
@@ -144,6 +108,30 @@ body{
     overflow-wrap: break-word;
   }
 
+  .innercard:hover
+{
+    transform: scale(1.25);
+    transition: transform 0.5s ease-in-out;
+}
+
+.innercard
+{
+    position: relative;
+    min-height: 150px;
+    min-width: 260px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.newcontent
+{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 58px;
+    margin-top: 40px;
+}
+
   
   .innercard:hover .movie-info {
     opacity: 1;
@@ -162,7 +150,6 @@ body{
 .innercard:hover
 {
     border-radius: 10px;
-    /* transform: scale(1.3); */
     transform: scale(1.25);
     z-index: 9999;
     transition: transform 0.7s ease-in-out;
