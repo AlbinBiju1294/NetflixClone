@@ -41,11 +41,10 @@
 #newonnetflix{
     color: white;
     margin-top: 80px;
-  
     z-index: 1;
     font-size: x-large
-    /* font-family: ;    */
 }
+
 .toptentvshows{
     margin-top: 20px;
    
@@ -53,9 +52,7 @@
  
 #tvshows{
     color: white;
-    
     font-size: x-large;
-    /* width: 400px; */
     margin-top: 10px;
     
    
