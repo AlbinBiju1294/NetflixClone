@@ -41,7 +41,7 @@
 #newonnetflix{
     color: white;
     margin-top: 80px;
-    margin-left: 2%;
+  
     z-index: 1;
     font-size: x-large
     /* font-family: ;    */
@@ -53,11 +53,11 @@
  
 #tvshows{
     color: white;
-    margin-left: 2%;
+    
     font-size: x-large;
     /* width: 400px; */
     margin-top: 10px;
-    margin-left: 2%;
+    
    
    
  
@@ -96,7 +96,7 @@
  
 #topmovies{
     color: white;
-    margin-left: 2%;
+    
    margin-top: 20px;
     font-size: x-large;
    
@@ -120,7 +120,7 @@
 #nextweek{
    
     color: white;
-    margin-left: 2%;
+    
     font-size: x-large;
  
    
@@ -141,7 +141,7 @@
 #worthwait{
 
     color: white;
-    margin-left: 2%;
+    
     font-size: x-large;
 }
 .worthwaitcontainer{
@@ -163,7 +163,7 @@
 }
 #comingweek{
     color: white;
-    margin-left: 2%;
+    
     font-size: x-large;
 }
 .comingthisweekcontainer{
