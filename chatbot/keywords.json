@@ -1,0 +1,114 @@
+{
+  "categories": [
+      {
+          "keywords": ["hi", "hello", "hey", "greetings", "howdy", "hi there"],
+          "categoryName": "greetings"
+      },
+      {
+          "keywords": ["create account", "signup", "register", "new account", "account setup","create an account"],
+          "categoryName": "accountCreation"
+      },
+      {
+          "keywords": ["forgot password", "password recovery", "reset password", "recover account", "password help","forgot my password","forgot our password"],
+          "categoryName": "passwordRecovery"
+      },
+      {
+          "keywords": ["what is netflix", "tell me about netflix", "netflix overview", "netflix information", "netflix details","whats netflix"],
+          "categoryName": "whatIsNetflix"
+      },
+      {
+          "keywords": ["streaming platform", "where can I watch", "platforms", "online streaming", "streaming services"],
+          "categoryName": "streamingPlatform"
+      },
+      {
+          "keywords": ["recommend", "suggest something", "recommend something", "movie suggestions", "show recommendations", "what to watch"],
+          "categoryName": "recommendation"
+      },
+      {
+          "keywords": ["genre inquiry", "favorite genre", "genre recommendations", "movie genres", "show genres"],
+          "categoryName": "genreInquiry"
+      },
+      {
+          "keywords": ["subscription benefits", "subscribe", "membership perks", "premium account", "subscription details"],
+          "categoryName": "subscriptionBenefits"
+      },
+      {
+          "keywords": ["inquiry", "help", "assistance", "support", "get help"],
+          "categoryName": "inquiry"
+      },
+      {
+          "keywords": ["search assistance", "find", "search movies", "find shows", "search content"],
+          "categoryName": "searchAssistance"
+      },
+      {
+          "keywords": ["app feedback", "improve", "suggestions", "feedback", "app suggestions"],
+          "categoryName": "appFeedback"
+      },
+      {
+          "keywords": ["recommendation settings", "preferences", "personalized recommendations", "customize recommendations"],
+          "categoryName": "recommendationSettings"
+      },
+      {
+          "keywords": ["coming soon", "upcoming releases", "soon on netflix", "new arrivals", "upcoming content"],
+          "categoryName": "comingSoon"
+      },
+      {
+          "keywords": ["behind the scenes", "making of", "production insights", "filmmaking details", "behind-the-scenes content"],
+          "categoryName": "behindTheScenes"
+      },
+      {
+          "keywords": ["holiday specials", "festive content", "holiday shows", "festive movies", "holiday entertainment"],
+          "categoryName": "holidaySpecials"
+      },
+      {
+          "keywords": ["nostalgia", "classics", "old favorites", "nostalgic shows", "retro content"],
+          "categoryName": "nostalgia"
+      },
+      {
+          "keywords": ["who are you", "who r u", "introduce yourself", "bot introduction", "bot identity"],
+          "categoryName": "whoru"
+      },
+     
+      {
+          "keywords": ["recommend movies", "suggestions for films", "movie picks", "movies to watch", "film recommendations","suggest a movie","suggest movies"],
+          "categoryName": "movieRecommendation"
+      },
+      {
+          "keywords": ["recommend series", "series suggestions", "series picks", "TV series to watch", "TV shows recommendations"],
+          "categoryName": "seriesRecommendation"
+      },
+      {
+          "keywords": ["recommend shows", "suggestions for shows", "show picks", "shows to watch", "recommendations for TV shows","suggest shows","suggest a show"],
+          "categoryName": "showRecommendation"
+      },
+
+
+      {
+        "keywords": ["comedy", "humor", "funny", "laughter"],
+        "categoryName": "comedyGenre"
+      },
+      {
+        "keywords": ["drama", "emotional", "intense", "serious"],
+        "categoryName": "dramaGenre"
+      },
+      {
+        "keywords": ["action", "adventure", "exciting", "thrilling"],
+        "categoryName": "actionGenre"
+      },
+      {
+        "keywords": ["romance", "love story", "heartwarming", "romantic"],
+        "categoryName": "romanceGenre"
+      },
+      {
+        "keywords": ["science fiction", "sci-fi", "futuristic", "space"],
+        "categoryName": "scifiGenre"
+      },
+      {
+        "keywords": ["horror", "scary", "spooky", "thriller"],
+        "categoryName": "horrorGenre"
+      }
+
+      
+        
+  ]
+}

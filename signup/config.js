@@ -18,12 +18,11 @@ export const firebaseConfig = {
   };
 
 
-  // export const userKEy="mpW7OvXu4dvJTk3Pi";
-  // export const serviceKey="service_8b4j1zb";
-  // export const templateKey="template_elg0qwa";
-  // export const templateKey2="template_4ypp7ud";
-
-  export const userKEy="bJlnHSbvtgzttlKEX";
-  export const serviceKey="service_c4dl8ei";
-  export const templateKey="template_lgdrbtw";
-  export const templateKey2="template_lgdrbtw";
+  export const userKEy="mpW7OvXu4dvJTk3Pi";
+  export const serviceKey="service_8b4j1zb";
+  export const templateKey="template_elg0qwa";
+  export const templateKey2="template_4ypp7ud";
+ 
+  export const userKEy2="bJlnHSbvtgzttlKEX";
+  export const serviceKey2="service_c4dl8ei";
+  export const templateKey3="template_lgdrbtw";

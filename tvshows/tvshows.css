@@ -64,6 +64,10 @@ body{
     border: none;
   }
   
+#movie_container_outside{
+  color: white;
+}
+
 .arrow
 {
     outline: none;

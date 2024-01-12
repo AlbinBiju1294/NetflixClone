@@ -1,0 +1,90 @@
+{
+  "accountCreation": [
+    "To create a Netflix account, simply click on the 'Sign Up' button on this of this page.",
+    "Creating a Netflix account is a breeze! Just click on 'Sign Up' and follow the prompts.",
+    "Ready to join Netflix? Click on 'Sign Up' to get started with your account creation."
+  ],
+  "passwordRecovery": [
+    "Forgot your password? No worries! Click on 'Forgot Password' below the login button, and we'll guide you through the recovery process.",
+    "If you can't remember your password, click on 'Forgot Password' to reset it. Just follow the promts",
+    "Need to reset your password? Click 'Forgot Password' and follow the steps. We'll make sure you regain access to your account."
+  ],
+  "whatIsNetflix": [
+    "Netflix is a streaming service that offers a wide variety of TV shows, movies, documentaries, and more.",
+    "Netflix is a popular streaming platform known for its extensive library of movies, TV series, and original content.",
+    "With Netflix, you can watch a diverse range of content anytime, anywhere, on various devices."
+  ],
+  "streamingPlatform": [
+    "Netflix is a versatile streaming platform accessible on smart TVs, smartphones, tablets, and gaming consoles.",
+    "Enjoy Netflix on your preferred device – be it a smart TV, smartphone, tablet, or gaming console.",
+    "Dive into the world of entertainment with Netflix, available on multiple streaming devices."
+  ],
+  "netflixContents": [
+    "Explore a vast array of content on Netflix, from blockbuster movies to binge-worthy TV series and documentaries.",
+    "Netflix offers a rich selection of content, including exclusive series, movies, and genre-spanning titles.",
+    "Discover the latest and greatest on Netflix – from trending shows to classic favorites."
+  ],
+  "greetings": ["Hello!", "Hi there!", "Welcome to Netflix! How can I assist you today?", "Hey!"],
+  "farewell": ["Goodbye!", "See you later! Enjoy your time on Netflix.", "Farewell!"],
+  "recommendation": ["I recommend checking out our latest blockbuster 'Rebel Moon '.", "For a great series, try 'Berlin'.", "You might enjoy 'Dark'. Check it out!"],
+  "genreInquiry": ["Tell me your favorite genre, and I'll recommend something for you.", "Looking for a specific genre? Let me know, and I'll find the perfect match.", "Interested in action, drama, comedy, or something else?"],
+  "subscriptionBenefits": ["Unlock a world of entertainment with Netflix's premium subscription.", "Discover the benefits of subscribing to Netflix, including ad-free streaming and exclusive content.", "Enjoy perks like offline viewing and multiple device access with a Netflix subscription."],
+  "inquiry": ["How can I help you with our movies and shows?", "What are you looking for on Netflix?", "Is there a specific genre or movie you're interested in?"],
+  "searchAssistance": ["Looking for something specific? Let me know, and I'll help you find it.", "I can assist you in searching for movies or shows. What are you looking for?", "Tell me keywords or titles, and I'll find the perfect match for you."],
+  "appFeedback": ["We value your feedback! Let us know how we can improve Netflix.", "Your feedback is important to us. Share your thoughts on the Netflix experience.", "Help us enhance Netflix by providing your valuable feedback."],
+  "recommendationSettings": ["Customize your recommendation preferences to get personalized content suggestions.", "Adjust your recommendation settings to tailor your Netflix experience.", "Explore how to refine your content recommendations based on your viewing history."],
+  "comingSoon": ["Exciting content is coming soon to Netflix. Stay tuned for updates!", "Get ready for upcoming releases on Netflix. We have some amazing shows and movies in the pipeline.", "Explore a sneak peek of what's coming soon to Netflix. Exciting times ahead!"],
+  "behindTheScenes": ["Discover the behind-the-scenes stories of your favorite shows and movies.", "Explore the making of Netflix's exclusive content with behind-the-scenes footage.", "Get an insider's look at the production process. Dive into the behind-the-scenes world of Netflix."],
+  "holidaySpecials": ["Celebrate the holidays with special festive content on Netflix.", "Explore our holiday specials for a dose of festive cheer.", "Discover holiday-themed movies and shows to get into the spirit of the season on Netflix."],
+  "nostalgia": ["Take a trip down memory lane with nostalgic classics on Netflix.", "Relive the past with our collection"],
+  "NotUnderstand":["Sorry i didnt get it can u rephrase the sentence","Sorry i didnt understand can you elaborate"],
+  "whoru":["Hey! I am Ted .I am a cahtbot. I am here to assist you with your queries"],
+  "movieRecommendation":[
+    "Sure, I recommend checking out the movie 'Inception'. It's a mind-bending thriller!",
+    "Looking for a great film? Try 'The Shawshank Redemption'. It's a classic!",
+    "If you're in the mood for a comedy, 'The Grand Budapest Hotel' is a hilarious choice."
+],
+"seriesRecommendation": [
+    "For a gripping TV series, I suggest 'Stranger Things'. It's full of mystery and adventure!",
+    "If you enjoy drama, 'Breaking Bad' is a must-watch series with intense storytelling.",
+    "Looking for a light-hearted series? 'Brooklyn Nine-Nine' is a fantastic comedy option."
+],
+"showRecommendation": [
+    "Interested in captivating shows? 'Game of Thrones' is an epic fantasy series worth watching.",
+    "For a heartwarming show, 'This Is Us' offers compelling storytelling and emotional depth.",
+    "If you're a fan of crime dramas, 'Sherlock' is a brilliant detective series to dive into."
+],
+
+  "comedyGenre": [
+    "I recommend checking out 'Brooklyn Nine-Nine'. It's a hilarious sitcom that will keep you laughing.",
+    "For a good comedy movie, try 'Superbad'. It's a classic with plenty of laughs.",
+    "Looking for a stand-up special? 'John Mulaney: Kid Gorgeous' is a must-watch for comedy fans."
+  ],
+  "dramaGenre": [
+    "If you're into intense drama, 'Breaking Bad' is a series you won't want to miss.",
+    "'The Shawshank Redemption' is a powerful drama film with a compelling storyline.",
+    "For a thought-provoking drama series, give 'The Crown' a try. It's a royal masterpiece."
+  ],
+  "actionGenre": [
+    "Gear up for action with 'John Wick'. It's a thrilling ride filled with jaw-dropping stunts.",
+    "Looking for a classic action movie? 'Die Hard' is a must-watch for adrenaline junkies.",
+    "'Stranger Things' combines action and suspense, making it a binge-worthy series."
+  ],
+  "romanceGenre": [
+    "For a heartwarming romantic movie, try 'The Notebook'. It's a classic love story.",
+    "'Pride and Prejudice' is a timeless romance film with captivating characters.",
+    "If you're in the mood for a romantic series, 'Outlander' offers a perfect blend of love and adventure."
+  ],
+  "scifiGenre": [
+    "Explore the unknown with 'Blade Runner 2049'. It's a visually stunning sci-fi masterpiece.",
+    "'Black Mirror' is a thought-provoking sci-fi series that delves into the impact of technology.",
+    "If you love time travel, 'Stranger Things' combines sci-fi elements with a nostalgic twist."
+  ],
+  "horrorGenre": [
+    "Prepare for scares with 'The Conjuring'. It's a chilling horror film based on true events.",
+    "'Get Out' is a mind-bending horror-thriller that keeps you on the edge of your seat.",
+    "If you enjoy supernatural horror, 'The Haunting of Hill House' is a must-watch series."
+  ]
+}
+
+
