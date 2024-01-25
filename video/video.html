@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom HTML5 Video Player</title>
+    <link rel="stylesheet" href="video.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  </head>
+  <body>
+    <div class="video-player" id="video-player-id">
+      <video class="video" id="videoPlayerId">
+        <source
+          src="../assets/netflixlogovideo.mp4"
+          type="video/mp4"
+        />
+        <p>Your browser doesn't support HTML5 video.</p>
+      </video>
+      <div class="controls">
+        <div class="progress">
+          <div class="progress__filled"></div>
+        </div>
+        <button class="controls__button toggleButton" title="Toggle Play">
+          ►
+        </button>
+        <input
+          type="range"
+          name="volume"
+          class="controls__slider"
+          min="0"
+          max="1"
+          step="0.05"
+          value="1"
+        />
+        <input
+          type="range"
+          name="playbackRate"
+          class="controls__slider"
+          min="0.5"
+          max="2"
+          step="0.1"
+          value="1"
+        />
+        <button class="controls__button" data-skip="-10">« 10s</button>
+        <button class="controls__button" data-skip="25">10s »</button>
+      </div>
+      <i class="bi bi-arrows-fullscreen fullscreenbutton " id="fullscreenbuttonId"></i>
+    </div>
+    <script src="video.js"></script>
+  </body>
+</html>

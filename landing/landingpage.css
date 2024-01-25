@@ -1,0 +1,393 @@
+
+body{
+    margin: 0;
+    font-family:sans-serif;
+}
+.section1{
+    background: url('../assets/landingpage_bgimage.png');
+    position: relative;
+    height: 600px;
+    background-size: cover;
+}
+.bg_shadow{
+   
+    position:absolute;
+    height: 600px;
+    width: 1263px;
+    background: linear-gradient(rgba(0, 0, 0, 0.628) 0%, rgba(0, 0, 0, 0.728) 35%, rgba(4, 4, 4, 0.436));
+
+}
+.bar{
+    height: 8px;
+    background-color: rgb(35, 36, 36);
+}
+.logo_container{
+    display: flex;
+    padding-top: 20px;
+}
+.netflix_logo{
+flex: 10;
+padding-left: 140px;
+}
+.netflix_logo img{
+    padding-top: 5px;
+    width: 181px;
+}
+.signin_button{
+    padding-top: 13px;
+    padding-left: 437px;
+    flex: 5;
+}
+.signin_button button{
+    background-color: rgb(255, 12, 12);
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    width: 78px;
+    height: 35px;
+    border-radius: 7px;
+    border: solid 0.5px black;
+    letter-spacing: 0.5px;
+    
+}
+
+
+.signin_button_inner select{
+    background-color: black;
+    color: aliceblue;
+    width: 90px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+.signin_button_inner option{
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0);
+}
+
+.landing_text_getstart h1{
+    color: white;
+    padding-top:170px;
+    font-size: 45px;
+    text-align: center;
+}
+.landing_text_getstart p{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+.getstart_conatiner{
+    padding: 10px;
+    display: flex;
+    
+}
+.email{
+    flex: 1;
+    padding-left: 330px;
+    
+}
+#email_id{
+    padding-left: 10px;
+}
+.start_button{
+    flex: 1;
+    padding-right: 150px;
+    
+}
+.start_button button{
+    height: 60px;
+    width: 200px;
+    letter-spacing: 1px;
+    font-size: 24px;
+    color: white;
+    border: 0.5px solid rgb(64, 64, 64);
+    border-radius: 5px;
+    background-color: rgb(255, 0, 0);
+}
+.email input{
+    width: 365px;
+    height: 57px;
+    color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.545);
+    border: 0.5px solid rgb(131, 126, 126);
+    border-radius: 5px;
+}
+#errormsg{
+    font-size: 15px;
+    padding-right: 230px;
+}
+
+.section2{
+    background-color: rgb(0, 0, 0);
+    height: 500px;
+}
+.tv_container{
+    display: flex;
+}
+.tvoutside_text{
+    flex: 1;
+    color: white;
+    padding-left: 160px;
+    padding-top: 130px;
+    font-size: 25px;
+}
+.tv_image{
+    flex: 1;
+    position: relative;
+}
+.tv_video video{
+    position: absolute;
+    padding-top: 70px;
+    padding-left: 50px;
+    width: 330px;
+    height: 320px;
+}
+.tv_img img{
+    padding-top: 70px;
+    position: absolute;
+    width: 430px;
+    height: 320px;
+}
+
+
+.section3{
+    background-color: rgb(0, 0, 0);
+    height: 500px;
+}
+.mobile_container{
+    display: flex;
+}
+.mobileside{
+    flex: 1;
+   position: relative;
+}
+.mobile_image{
+    position: absolute;
+}
+
+.mobileoutside_text{
+    flex: 1;
+    color: white;
+    padding-top: 75px;
+    padding-left: 35px;
+    font-size: 25px;
+}
+
+.mobile_image img{
+    width: 500px;
+    height: 320px;
+    padding-top: 80px;
+    padding-left: 150px;
+    position: relative;
+}
+.mobile_imageover_container{
+    background-color: black;
+    position: absolute;
+    display: flex;
+    height: 95px;
+    width: 270px;
+    margin-top: 300px;
+    margin-left: 265px;
+    border: 1.8px solid rgb(83, 82, 82);
+    border-radius: 15px;
+}
+
+.strangerThings_img{
+    flex: 1;
+}
+.strangerThings_text{
+    flex: 2;
+    color: white;
+    padding-top: 20px;
+    font-size: 10px;
+}
+
+.strangerThings_gif{
+    flex:1
+}
+.strangerThings_img img{
+    padding: 15px;
+    height: 65px;
+    width: 55px;
+}
+.strangerThings_gif img{
+    padding-top: 28px;
+    width: 50px;
+    height: 50px;
+}
+.strangerThings_text h2 span{
+    color: rgb(0, 0, 255);
+    font-size: 12px;
+    padding-top: 2px;
+}
+.section4{
+    background-color: rgb(0, 0, 0);
+    height: 500px;
+}
+.tvmobile_container{
+    display: flex;
+}
+.tvmobileoutside_text{
+    flex: 1;
+    color: white;
+    padding-left: 160px;
+    padding-top: 130px;
+    font-size: 25px;
+}
+.tvmobile_image{
+    flex: 1;
+}
+.tvmobile_video video{
+    position: absolute;
+    padding-top: 10px;
+    padding-left: 80px;
+    width: 265px;
+    height: 300px;
+}
+.tvmobile_img img{
+    padding-top: 70px;
+    position: absolute;
+    width: 430px;
+    height: 320px;
+}
+
+.section5{
+    background-color: rgb(0, 0, 0);
+    height: 390px;
+}
+.children_container{
+    display: flex;
+}
+.children_image{
+    flex: 1;
+}
+.childrenoutside_text{
+    flex: 1;
+    color: white;
+    padding-top: 45px;
+    padding-left: 35px;
+    font-size: 25px;
+}
+
+.children_image img{
+    width: 350px;
+    height: 208px;
+    padding-top: 80px;
+    padding-left: 150px;
+}
+.section6{
+    background-color: rgb(0, 0, 0);
+    height: 300px;
+}
+
+.question_text{
+    color: white;
+    padding-top: 45px;
+    text-align: center  ;
+    font-size: 25px;
+}
+#errormsg_end{
+    font-size: 15px;
+    padding-right: 230px;
+}
+.section6{
+    height: 1000px;
+    color: white; 
+    
+}
+.section6 p{
+    color: white; 
+    text-align: center;
+}
+#accordion{
+    padding-left: 160px;
+    width: 1000px;
+}
+#accordion li{
+    background-color: rgb(38, 38, 39);
+    list-style: none;
+    width: 950px;
+    margin-bottom:10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+#accordion li label{
+    padding: 10px;
+    display: flex;
+    color: rgb(252, 252, 252);
+    justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    font-size: 20px;
+    cursor: pointer;
+
+}
+#accordion label +input[type="radio"]{
+   display: none; 
+}
+#accordion .content{
+    line-height: 26px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s;
+}
+span{
+    transform: rotate(90deg);
+    font-size: 35px;
+}
+#accordion .content p{
+    color: rgb(251, 251, 251);
+    padding-left: 20px;
+    font-size: 20px;
+    text-align: left;
+}
+#accordion label +input[type="radio"]:checked +.content{
+    max-height: 300px;
+}
+#email_id_end{
+    padding-left: 10px;
+}
+.footer{
+    background-color: rgb(0, 0, 0);
+    height: 405px;
+    color: rgb(178, 179, 181); 
+    font-size: 16px;
+    letter-spacing: 0.02rem;
+}
+.footer_text{
+    padding-left: 155px;
+    padding-top: 50px;
+    color: rgb(165, 171, 174);
+}
+.footer_text a{
+    color: rgb(219, 219, 220);
+}
+.footer_container{
+    margin-left: 113px;
+    margin-right: 130px;
+    display: flex;
+}
+.col1{
+    flex: 1;
+}
+.col2{
+    flex: 1;
+}
+.col3{
+    flex: 1;
+}
+.col4{
+    flex: 1;
+}
+ul {
+    list-style-type: none;
+  }
+li{
+    padding-bottom: 16px;
+    font-size: 14px;
+}
+li a{
+    color: rgb(160, 161, 162);    
+} 
+
+

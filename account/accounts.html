@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./sass/accounts.css">
+    <script src="../script/accounts.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="innernavbar">
+          <div class="firstinnernavbar">
+            <div class="logoimg">
+              <a href="../home/home.html"><img src="./assests/Netflixlogo.png" alt="logo" height="80px" /></a>
+            </div>
+          
+        </div>
+      </nav>
+    <div class="content">
+      <div class="header">
+      <div class="account">
+        <H2>ACCOUNT</H2>
+      </div>
+      <div class="membership">
+        <h5><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-btn" viewBox="0 0 16 16">
+          <path d="M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"/>
+          <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
+        </svg>
+        <strong>Member Since December 2023</strong></h5>
+      </div>
+      </div>
+      <hr>
+      <H2 >Account Details</H2>
+      <div class="change-credentials">
+       <div class="email">
+          <form>
+            <label for="email"><h3>YOUR CURRENT EMAIL &nbsp;&nbsp;</h3></label>
+            <input type="text" id="email" name="email" value="*******@gmail.com" readonly>
+          </form>
+          <a href="./emailreset.html"><button onclick="emailreset()">Change Email</button></a>
+        </div> 
+          <br>
+          <br>
+        <div class="password">
+          <form>
+            <label for="email"><h3>YOUR CURRENT PASSWORD &nbsp;&nbsp;</h3></label>
+            <input type="password" id="password" name="password" value="ab@123" readonly>
+          </form>
+          <a href="./passwordreset.html"><button onclick="passwordreset()">New Password</button></a>
+        </div>
+    </div>
+      <footer class="footer">
+        <div class="innerfooter">
+          <div class="socialicons">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-twitter-x"></i>
+            <i class="bi bi-youtube"></i>
+          </div>
+          <div class="mainlinks">
+            <div class="firstlink innerlinks">
+              <a href="#">Audio description</a>
+              <a href="">Investor relations</a>
+              <a href="">Legal notices</a>
+            </div>
+            <div class="firstlink innerlinks">
+              <a href="#">Help center</a>
+              <a href="">Jobs</a>
+              <a href="">Cookie preference</a>
+            </div>
+            <div class="firstlink innerlinks">
+              <a href="#">Gift cards</a>
+              <a href="">Terms of use</a>
+              <a href="">Corporate Information</a>
+            </div>
+            <div class="firstlink innerlinks">
+              <a href="#">Media center</a>
+              <a href="">Privacy</a>
+              <a href="">Contact as</a>
+            </div>
+          </div>
+          <button class="servicebutton">Service code</button>
+          <p class="lastp">©1997-2023 Netflix,Inc.</p>
+        </div>
+      </footer>
+</body>
+</html>

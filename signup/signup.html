@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="./signup.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <script type = "module" src = "./signup.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="module" src="./email.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  </head>
+<body>
+    
+    <img class="logo" src="../assets/netflix1_logo.png" alt="netflix logo">
+    
+<div class="form-wrapper">
+    <h2 id="signUp_head">Sign Up</h2>
+    <h2 id="mainhead_line1">Create a password to start</h2>
+    <h2 id="mainhead_line2">your membership </h2>    
+    <h3 id="fewmoresteps">Just a few more steps and you're done!<br>We hate paperwork, too.</h3>
+    <form action="#">
+      <div class="form-control">
+        <input id = "usersname" type="text" required>
+        <label>Your Name</label>
+    </div>
+        <div class="form-control">
+            <input id = "email-signup" type="text" required>
+            <label id="emailentryfield_id">Email</label>
+        </div>
+        <div class="form-control">
+            <input id = "password-signup" type="password" required>
+            <label id="passwordEntryField_id">Password</label>
+        </div>
+        <button id = "getOtp" >GET OTP</button>
+        <div class="form-control">
+          <select id = "plan-select" name="plan-select">
+            <option default>--choose your plan--</option>
+            <option value=149>Mobile</option>
+            <option value=199>Basic</option>
+            <option value=499>Standard</option>
+            <option value=649>Premium</option>
+          
+      </div>
+        
+        <div class="form-control">
+          <input id = "otp-signup" type="text">
+          <label id="otpLabel">Otp</label>
+      </div>
+      
+    
+        <button id = "create-acct-btn" >Sign Up</button>
+        <div class="form-help"> 
+            <div class="remember-me">
+                <input type="checkbox" id="remember-me">
+                <label id="remember-me-text">Remember me</label>
+            </div>
+            <a href="../chatbot/index.html" id="need_help">Need help?</a>
+        </div>
+    </form>
+ 
+</div>
+<footer class="footer">
+  <div class="innerfooter">
+    <div class="socialicons">
+      <i class="bi bi-facebook"></i>
+      <i class="bi bi-instagram"></i>
+      <i class="bi bi-twitter-x"></i>
+      <i class="bi bi-youtube"></i>
+    </div>
+    <div class="mainlinks">
+      <div class="firstlink innerlinks">
+        <a href="#" id="footer_col1_item1">Audio description</a>
+        <a href="" id="footer_col1_item2">Investor relations</a>
+        <a href="" id="footer_col1_item3">Legal notices</a>
+      </div>
+      <div class="firstlink innerlinks">
+        <a href="#" id="footer_col2_item1">Help center</a>
+        <a href="" id="footer_col2_item2">Jobs</a>
+        <a href="" id="footer_col2_item3">Cookie preference</a>
+      </div>
+      <div class="firstlink innerlinks">
+        <a href="#" id="footer_col3_item1">Gift cards</a>
+        <a href="" id="footer_col3_item2">Terms of use</a>
+        <a href="" id="footer_col3_item3">Corporate Information</a>
+      </div>
+      <div class="firstlink innerlinks">
+        <a href="#" id="footer_col4_item1">Media center</a>
+        <a href="" id="footer_col4_item2">Privacy</a>
+        <a href="../contactus/contactus.html" id="footer_col4_item3">Contact as</a>
+      </div>
+    </div>
+    <button class="servicebutton" id="servicebutton_id">Service code</button>
+    <p class="lastp" id="lastp_id">©1997-2023 Netflix,Inc.</p>
+  </div>
+</footer>
+<script src="../languagechangeTypeScript/languagechange.js"></script>
+</body>
+
+</html>

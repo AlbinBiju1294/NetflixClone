@@ -1,0 +1,159 @@
+$main-color: red;
+$background-color: black;
+$box-bg-color: #fffafa;
+$box-shadow-color: rgba(0, 0, 0, 0.1);
+$footer-text-color: grey;
+
+// Mixin for button styling
+@mixin button-style {
+  background-color: $main-color;
+  color: #fffafa;
+  border-color: $main-color;
+  border-radius: 4px;
+  font: sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('./set_up_your_account.gif');
+  background-size: cover;
+  background-color: $background-color;
+  height: 900px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  .logo1 {
+    width: 195px;
+    top: 20px;
+    position: absolute;
+    left: 20px;
+  }
+
+  .logo2 {
+    width: 368px;
+    position: relative;
+    right: 7px;
+  }
+
+  .sign-in {
+    position: relative;
+    top: 20px;
+    left: 80%;
+    background-color: $main-color;
+    color: #fffafa;
+    border-color: $main-color;
+    border-radius: 3px;
+    width: 200px;
+    height: 50px;
+    font-family: sans-serif;
+    font-size: large;
+    font-weight: bold;
+  }
+
+  .content1 {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: small;
+    font-weight: 750;
+    color: $footer-text-color;
+  }
+
+  .content2 {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 30px;
+    margin: 5px;
+    font-weight: 750;
+    color: $footer-text-color;
+  }
+
+  .content3 {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: large;
+    color: $footer-text-color;
+    line-height: 24px;
+  }
+
+  p {
+    margin: 10px;
+  }
+
+  .box-container {
+    position: absolute;
+    width: 375px;
+    height: 400px;
+    bottom: 30px;
+    background-color: $box-bg-color;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px $box-shadow-color;
+    top: 25%;
+    right: 38%;
+    padding: 5px;
+
+    .next-button {
+      @include button-style;
+      position: absolute;
+      width: 360px;
+      left: 13.5px;
+      height: 65px;
+    }
+  }
+
+  .footer {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 1000px;
+
+    .innerfooter {
+      width: 70%;
+    }
+
+    .socialicons {
+      margin-top: 40px;
+      color: white;
+
+      i {
+        font-size: large;
+        margin-right: 20px;
+      }
+    }
+
+    .mainlinks {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .innerlinks {
+      display: flex;
+      flex-direction: column;
+
+      a {
+        margin-bottom: 10px;
+        color: $footer-text-color;
+        text-decoration: none;
+        font-size: smaller;
+      }
+    }
+
+    .servicebutton {
+      padding: 6px 10px;
+      border: 1px solid $footer-text-color;
+      color: $footer-text-color;
+      background-color: #141414;
+      margin-top: 30px;
+    }
+
+    .lastp {
+      margin-bottom: 10px;
+      margin-top: 20px;
+      color: #686a73;
+      font-size: x-small;
+    }
+  }
+}

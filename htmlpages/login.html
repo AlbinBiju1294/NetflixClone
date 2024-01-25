@@ -1,0 +1,79 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <script type="module" src="../script/login.js"></script>
+    <script src="../languagechangeTypeScript/languagechange.js"></script>
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <a href="../landing/landingpage.html"><img class="logo" src="../assets/logo.png" alt="netflix logo" /></a>
+    <!-- login form -->
+    <div class="form-wrapper">
+      <h2 id="signIn_head" >Sign In</h2>
+      <form>
+        <div class="form-control">
+          <input type="text" id="email-box" required />
+          <label id="email-box-label">Email</label>
+        </div>
+        <div class="form-control">
+          <input type="password" id="password-box" required />
+          <label id="password-box-label">Password</label>
+        </div>
+        <p class="invalid" id="invalidId">Invalid credentials</p>
+          <button type="button" id="signInButton">Sign In</button>
+        <div class="form-help">
+          <div class="remember-me">
+            <input type="checkbox" id="remember-me" />
+            <label for="remember-me" id="remember-me-text">Remember me</label>
+          </div>
+          <a href="../forget_password/forgotpassword.html" id="need_help">Need help?</a>
+        </div>
+      </form>
+      <p>New to Netflix? <a href="../signup/signup.html" id="signUpNow">Sign up now</a></p>
+      <small id="page_endLine">
+        This page is protected by Google reCAPTCHA to ensure you're not a bot.
+        <a href="#" id="learnmore">Learn more.</a>
+      </small>
+    </div>
+    <footer class="footer">
+      <div class="innerfooter">
+        <div class="socialicons">
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-twitter-x"></i>
+          <i class="bi bi-youtube"></i>
+        </div>
+        <div class="mainlinks">
+          <div class="firstlink innerlinks">
+            <a href="#" id="footer_col1_item1">Audio description</a>
+            <a href="" id="footer_col1_item2">Investor relations</a>
+            <a href="" id="footer_col1_item3">Legal notices</a>
+          </div>
+          <div class="firstlink innerlinks">
+            <a href="#" id="footer_col2_item1">Help center</a>
+            <a href="" id="footer_col2_item2">Jobs</a>
+            <a href="" id="footer_col2_item3">Cookie preference</a>
+          </div>
+          <div class="firstlink innerlinks">
+            <a href="../redeemgift/redeem.html" id="footer_col3_item1">Gift cards</a>
+            <a href="" id="footer_col3_item2">Terms of use</a>
+            <a href="" id="footer_col3_item3">Corporate Information</a>
+          </div>
+          <div class="firstlink innerlinks">
+            <a href="#" id="footer_col4_item1">Media center</a>
+            <a href="" id="footer_col4_item2">Privacy</a>
+            <a href="../contactus/contactus.html" id="footer_col4_item3">Contact as</a>
+          </div>
+        </div>
+        <button class="servicebutton" id="servicebutton_id">Service code</button>
+        <p class="lastp" id="lastp_id">©1997-2023 Netflix,Inc.</p>
+      </div>
+    </footer>
+    <script src="../languagechangeTypeScript/languagechange.js"></script>
+  </body>
+  
+</html>

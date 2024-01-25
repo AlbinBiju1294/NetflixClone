@@ -1,0 +1,232 @@
+
+
+.thirdcontentsection
+{
+    height: 400px;
+    background-color: gainsboro;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.thirdcontentsection h1
+{
+    text-align: center;
+    padding-top: 30px;
+}
+
+.cards
+{
+    margin-top: 30px;
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+}
+
+.card
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    height: 200px;
+    width: 400px;
+    background-color: white;
+    box-shadow: 2px 2px 2px gray;
+}
+
+.card h4
+{
+    width: 300px;
+    color: red;
+    font-weight: 200;
+    font-size: larger;
+
+}
+
+.card h6
+{
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+.buttondiv
+{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.button
+{
+    width: 200px;
+    height: 40px;
+    background-color: red;
+    color: white;
+    border: 1px solid red;
+}
+
+.fourthcontentsection
+{
+    margin-top: 60px;
+    height: 400px;
+    margin-bottom: 60px;
+    width: 100%;
+    background-image: url('./quarterly-earnings-bg.jpg');
+    background-size: cover;
+}
+
+.fourthinnercontent
+{
+    min-height: 100%;
+    width: 100%;
+    background:rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.fourthinnercontent h3
+{
+    margin-top: 30px;
+    font-size: xx-large;
+}
+
+.fourthinnercontent h4
+{
+    margin-top: 30px;
+}
+
+.actions
+{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.action
+{
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.action h4
+{
+    font-weight: 300;
+    margin-top: 7px;
+}
+
+.fifthcontentsection
+{
+    padding: 0px 30px;
+    width: 100%;
+    height: 300px;
+}
+
+.fifthinnercontent
+{
+    background-color: azure;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.quicklinks
+{
+    width: 300px;
+    background-color: #221f1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.quicklinks h3
+{
+    font-size: xx-large;
+    font-weight: 500;
+}
+
+.middlereddiv
+{
+    width: 30px;
+    background-color: red;
+    min-height: 100%;
+}
+
+.rigthquicklinks
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 900px;
+}
+.quicklink
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    text-align: center;
+}
+
+.footer
+{
+    padding: 0 20px;
+    margin-top: 60px;
+    height: 90px;
+    display: flex;
+    background-color: azure;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.imagelogo
+{
+    display: flex;
+    align-items: center;
+}
+
+.imagelogo h5
+{
+    margin-left: 20px;
+}
+
+.footerrightcontent
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.footeruppercontent
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logos
+{
+    display: flex;
+    margin-left: 50px;
+}
+
+.logos i
+{
+    margin-left: 20px;
+}
+
+.footerlowercontent
+{
+    display: flex;
+    margin-top: 15px;
+}
+
+.footerlowercontent p
+{
+    font-size: x-small;
+    margin-right: 20px;
+}

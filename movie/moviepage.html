@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./moviepage.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"/>
+    <title>Document</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg pt-3 pb-3 ps-5 pe-5" id="navbarselector">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="../assets/logo.png" width="100px" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse ms-md-5" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="../home/home.html" id="nav_home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="../movie/moviepage.html" id="nav_movies">Movies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="../tvshows/tvshows.html" id="nav_tvshows">Tv shows</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="../newsandpopular/newsandpopular.html" id="nav_newpopular">New & popular</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="../htmlpages/my_list.html" id="nav_mylisy">My List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="../language/language.html" id="nav_browse">Browse by languages</a>
+          </li>
+        </ul>
+        <input type="text" class="searchbox bg-dark text-white ps-3 pe-3" id="searchbox">
+        <i class="bi bi-search search text-white ms-2" id="searchIcon"></i>
+      </div>
+      <div class="Navbarprofileicon" style="margin-left: 10px;">
+
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn" id="dropdownBtn">
+          <i class="bi bi-caret-down-fill arrow" id="arrowButton" style="margin-left: 10px;"></i>
+        </button>
+        <div class="dropdown-content" id="dropdownContent">
+          <div class="profileDiv" id="profileDivId">
+            
+          </div>
+          <a href="" id="manageprofile">Manage Profiles</a>
+          <a href="../account/htmlpages/accounts.html" id="account">Account</a>
+          <a href="" id="helpcenter">Help center</a>
+          <a id="signOutLink" style="color: white; cursor: pointer;">Sign out of Netflix</a>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+  <div class="moreInfoPage" id="moreInfoPageId">
+
+    <div class="contentPosterImage" id="contentPosterImageId"></div>
+    <div class="contentDetails">
+      <div class="contentTitle">
+        <h2 id="contentTitleId"></h2>
+      </div>
+      <div class="contentOverview">
+        <h5 id="contentOverviewId">
+         
+        </h5>
+      </div>
+      <h6 class="contentReleaseDate">Released on: <span id="contentReleaseDateId"></span></h6>
+      <h6 class="contentLanguage">Language: <span id="contentLanguageId"></span></h6>
+    </div>
+    
+    <i class="bi bi-x-circle moreInfoCloseButton" id="moreInfoCloseButtonId"></i>
+  </div>
+  
+      <div class="moviepage_banner" >
+        
+        <div class="banner" id="bannerid">
+            <div class="headgenre_container" id="headgenre_container">
+              <div class="moviepage_head">
+                <h1 id="movieid">Movies</h1>
+              </div>
+              <div class="genre">
+                <select id="genre_dropdown">
+                    <option value="defaults" id="genre">Genre</option>
+                    <option value="horror" id="horror">Horror</option>
+                    <option value="romantic" id="romantic">Romantic</option>
+                    <option value="comedy" id="comedy">Comedy</option>
+                    <option value="action" id="action">Action</option>
+                    <option value="adventure" id="adventure">Adventure</option>
+                    <option value="history" id="history">History</option>
+                    <option value="thriller" id="thriller">Thriller</option>
+                </select>
+              </div>
+            </div>
+            <div class="movie_description" >
+              <h1 id="heading"></h1>
+              <p id="overview"></p>
+            </div>
+            
+            <div class="playinfo_buttons">
+              <button class="play" id="play_id"><i class="bi bi-play-fill buttonicon"></i>Play</button>
+              <button class="info" id="info_id"><i class="bi bi-info-circle buttonicon"></i>More Info</button>
+            </div>
+            
+        </div>
+      </div>
+      <div class="movie_container" id="movie_container" >
+          <div class="main-text">
+            <h2 id="category_movies" class="category-title">Movies</h2>
+            <div class="hidden-text" id="movies_exploreall">ExploreAll>></div>
+          </div>
+          <!-- **************************** -->
+          <div class="card-container" id="cardContainer">
+            <div class="main-card" id="main-card">
+              <span class="close-btn">X</span>
+              <div id="nested-card-movie"></div>
+              <div id="nested-card-upcoming"></div>
+              <div id="nested-card-topmovie"></div>
+              <div id="nested-card-popularmovie"></div>
+            </div>
+          </div>
+          <!-- **************************** -->
+          <div id="allmovie" class="movie">
+          </div>
+         
+          <div class="main-text">
+            <h2 id="category_upcoming" class="category-title">Upcoming</h2>
+            <div class="hidden-text" id="upcoming_exploreall" >ExploreAll>></div>
+          </div>
+          <div id="upcomingmovie" class="movie">
+          </div>
+          
+          <div class="main-text">
+            <h2 id="category_toprated" class="category-title">Top Rated</h2>
+            <div class="hidden-text" id="top_exploreall" >ExploreAll>></div>
+          </div>
+          <div id="topmovie" class="movie">
+          </div>
+          <div class="main-text">
+            <h2 id="category_popularmovie" class="category-title">Popular Movies</h2>
+            <div class="hidden-text" id="popular_exploreall">ExploreAll>></div>
+          </div>
+          <div id="popularmovie" class="movie">
+          </div>
+      </div>
+      <div id="movie_container_outside">
+      </div>
+      <footer class="footer">
+        <div class="innerfooter">
+          <div class="socialicons">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-twitter-x"></i>
+            <i class="bi bi-youtube"></i>
+          </div>
+          <div class="mainlinks">
+            <div class="firstlink innerlinks">
+              <a href="#" id="footer_col1_item1">Audio description</a>
+              <a href="" id="footer_col1_item2">Investor relations</a>
+              <a href="" id="footer_col1_item3">Legal notices</a>
+            </div>
+            <div class="firstlink innerlinks">
+              <a href="#" id="footer_col2_item1">Help center</a>
+              <a href="" id="footer_col2_item2">Jobs</a>
+              <a href="" id="footer_col2_item3">Cookie preference</a>
+            </div>
+            <div class="firstlink innerlinks">
+              <a href="../redeemgift/redeem.html" id="footer_col3_item1">Gift cards</a>
+              <a href="" id="footer_col3_item2">Terms of use</a>
+              <a href="" id="footer_col3_item3">Corporate Information</a>
+            </div>
+            <div class="firstlink innerlinks">
+              <a href="#" id="footer_col4_item1">Media center</a>
+              <a href="" id="footer_col4_item2">Privacy</a>
+              <a href="../contactus/contactus.html" id="footer_col4_item3">Contact as</a>
+            </div>
+          </div>
+          <button class="servicebutton" id="servicebutton_id">Service code</button>
+          <p class="lastp" id="lastp_id">©1997-2023 Netflix,Inc.</p>
+        </div>
+      </footer>
+      <script type="module" src="./moviepage.js"></script>
+      <script src="../languagechangeTypeScript/languagechange.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

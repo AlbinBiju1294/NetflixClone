@@ -1,0 +1,381 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100&family=Rubik+Doodle+Shadow&display=swap");
+
+#body {
+  height: 1000px;
+
+  background-color: #121212;
+  margin-left: 3.3%;
+}
+
+#navbarselector {
+  position: fixed;
+  background-color: #0b0b0b;
+  color: white;
+}
+
+#cardContainer {
+  display: flex;
+  scroll-behavior: smooth;
+  overflow-x: scroll;
+
+  margin-top: 10px;
+}
+.cardContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.commonContainer {
+  padding: 2%;
+}
+
+#newonnetflix {
+  color: white;
+  margin-top: 80px;
+  z-index: 1;
+  font-size: x-large;
+}
+
+.toptentvshows {
+  margin-top: 20px;
+}
+
+#tvshows {
+  color: white;
+  font-size: x-large;
+  margin-top: 10px;
+}
+.showscontainer {
+  display: flex;
+  margin-top: 20px;
+  margin: left 10px !important;
+  overflow-x: scroll;
+}
+.showscontainer::-webkit-scrollbar {
+  display: none;
+}
+
+#topshowsimg {
+  width: 210px;
+  height: 120px;
+}
+
+.moviescontainer {
+  display: flex;
+  margin-top: 20px;
+  overflow-x: scroll;
+}
+.moviescontainer::-webkit-scrollbar {
+  display: none;
+}
+
+#topmovies {
+  color: white;
+
+  margin-top: 20px;
+  font-size: x-large;
+}
+
+.comingnextweek {
+  height: 200px;
+
+  z-index: 1;
+  margin-top: 20px;
+}
+
+.nextweekcontainer {
+  display: flex;
+  overflow-x: scroll;
+}
+.nextweekcontainer::-webkit-scrollbar {
+  display: none;
+}
+#nextweek {
+  color: white;
+
+  font-size: x-large;
+}
+#topmoviesimg {
+  width: 210px;
+  height: 100%;
+}
+
+.worththewait {
+  height: 200px;
+  margin-top: 20px;
+}
+#worthwait {
+  color: white;
+
+  font-size: x-large;
+}
+.worthwaitcontainer {
+  display: flex;
+
+  overflow-x: scroll;
+  z-index: 1;
+}
+.worthwaitcontainer::-webkit-scrollbar {
+  display: none;
+}
+
+.comingthisweek {
+  margin-top: 20px;
+}
+#comingweek {
+  color: white;
+
+  font-size: x-large;
+}
+.comingthisweekcontainer {
+  display: flex;
+  overflow-x: scroll;
+}
+.comingthisweekcontainer::-webkit-scrollbar {
+  display: none;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.innerfooter {
+  width: 70%;
+}
+
+.socialicons {
+  margin-top: 40px;
+  color: white;
+}
+
+.socialicons i {
+  font-size: large;
+  margin-right: 20px;
+}
+
+.mainlinks {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.innerlinks {
+  display: flex;
+  flex-direction: column;
+}
+
+.innerlinks a {
+  margin-bottom: 10px;
+  color: grey;
+  text-decoration: none;
+  font-size: smaller;
+}
+
+.servicebutton {
+  padding: 6px 10px;
+  border: 1px solid grey;
+  color: grey;
+  background-color: #141414;
+  margin-top: 30px;
+}
+
+.lastp {
+  margin-bottom: 10px;
+  margin-top: 20px;
+  color: #686a73;
+  font-size: x-small;
+}
+
+.infobutton {
+  font-size: 30px;
+  margin-left: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+.innercard {
+  float: left;
+  min-height: 150px;
+  min-width: 260px;
+  margin-right: 8px;
+  border-radius: 5px;
+  position: relative;
+}
+.innercard:hover {
+  border-radius: 10px;
+  /* transform: scale(1.3); */
+  transform: scale(1.25);
+  z-index: 99999;
+  transition: transform 0.7s ease-in-out;
+}
+.innercard:hover .movie-info {
+  opacity: 12;
+}
+
+.movie-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+
+.movie-title {
+  margin: 0 !important;
+  font-size: small;
+  color: white;
+}
+
+.movie-popularity {
+  margin: 0 !important;
+  font-size: small;
+  color: white;
+}
+
+.movie-info .movie-desc {
+  font-size: xx-small;
+  overflow-wrap: break-word;
+  color: white;
+}
+.playbutton {
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+.plusbutton {
+  font-size: 30px;
+  margin-left: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+.moreInfoPage {
+  position: fixed;
+  height: 500px;
+  width: 75%;
+  background-color: black;
+  z-index: 1000000000;
+  opacity: 0;
+  display: none;
+  border-radius: 10px;
+  top: 13%;
+  left: 12.5%;
+  overflow-y: scroll;
+  transition: opacity 2s ease-in;
+}
+
+.moreInfoPage::-webkit-scrollbar {
+  display: none;
+}
+
+.contentPosterImage {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+}
+
+.contentDetails {
+  padding: 20px 40px;
+  color: white;
+  font-family: "Poppins", sans-serif !important;
+}
+
+.contentTitle h2 {
+  font-size: xx-large;
+  font-weight: 400;
+}
+
+.contentOverview h5 {
+  font-size: medium;
+  font-weight: 300;
+}
+
+.contentReleaseDate {
+  margin-top: 30px;
+  font-weight: 400;
+}
+
+.contentLanguage {
+  margin-top: 30px;
+  font-weight: 400;
+}
+
+.moreInfoCloseButton {
+  color: white;
+  font-size: 25px;
+  position: absolute;
+  top: 3%;
+  right: 2%;
+}
+
+.main-text {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+#hidden-text {
+  position: absolute;
+  left: 0px;
+  top: 1px;
+  opacity: 0;
+  transition: left 1s, opacity 0.3s;
+  z-index: 1;
+  height: 800px;
+  width: 200px;
+  z-index: 999 !important;
+  background-color: yellowgreen !important;
+}
+#hidden-text {
+  font-size: 13px;
+  color: rgb(3, 102, 102);
+  z-index: 10;
+}
+.main-text:hover .hidden-text {
+  left: 110%;
+  opacity: 1;
+  z-index: 10;
+}
+
+.card-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.main-card {
+  width: 70%;
+  max-height: 70vh;
+  background-color: #0b0b0b;
+  padding-left: 80px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  position: fixed;
+  overflow: auto;
+  transform: scale(0.7);
+  z-index: 999;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}

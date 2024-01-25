@@ -1,0 +1,117 @@
+body{
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    background-color: #14140f !important;
+    color: white !important;
+    font-family: sans-serif;
+}
+
+.mainsection
+{
+    height: 100vh;
+}
+
+.heading
+{
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.profileimage
+{
+    width: 125px;
+    height: 125px;
+    border-radius: 10px;
+}
+
+.profiledetails
+{
+    margin-top: 50px;
+}
+
+.profileinnerdetails
+{
+    margin-right: 20px;
+}
+
+.addicon
+{
+    margin-left: 30px;
+    margin-top: 15px;
+    font-size: 70px;
+    background-color: #14140f;
+    color:  #808080;
+}
+
+#profile1
+{
+    background-image: url('../common/assets/profile1.png');
+    background-size: cover;
+}
+
+#profile2
+{
+    background-image: url('../common/assets/profile2.png');
+    background-size: cover;
+}
+
+#profile3
+{
+    background-image: url('../common/assets/profile3.png');
+    background-size: cover;
+}
+
+#profile4
+{
+    background-image: url('../common/assets/profile4.png');
+    background-size: cover;
+}
+
+#profile5
+{
+    background-image: url('../common/assets/profile5.png');
+    background-size: cover;
+}
+
+.iconimagep
+{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.iconp
+{
+    margin-top: 17px;
+    margin-left: 25px;
+}
+
+#profile6
+{
+    background-image: url('../common/assets/profile6.png');
+    background-size: cover;
+}
+
+#profile7
+{
+    background-image: url('../common/assets/profile7.png');
+    background-size: cover;
+}
+
+#profile8
+{
+    background-image: url('../common/assets/profile8.png');
+    background-size: cover;
+}
+
+#profile9
+{
+    background-image: url('../common/assets/profile9.png');
+    background-size: cover;
+}
+
+#profile10
+{
+    background-image: url('../common/assets/profile10.png');
+    background-size: cover;
+}
